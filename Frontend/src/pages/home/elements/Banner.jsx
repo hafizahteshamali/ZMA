@@ -21,9 +21,9 @@ const Banner = ({ BannerData, experienceData }) => {
         scrub: 2,
         markers: false,
       },
-      y: isLargeScreen ? 800 : 900,
-      x: isLargeScreen ? -1400 : 0, // 👈 x only if large screen
-      width: isLargeScreen ? "200px" : "380px",
+      y: isLargeScreen ? 500 : 900,
+      x: isLargeScreen ? -1000 : 0, // 👈 x only if large screen
+      width: isLargeScreen ? "300px" : "380px",
       ease: "power4.inOut",
     });
   }, []);
