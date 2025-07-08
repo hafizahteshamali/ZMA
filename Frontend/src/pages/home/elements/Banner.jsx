@@ -54,7 +54,7 @@ const Banner = ({ BannerData, experienceData }) => {
               />
             </div>
 
-            <img src={imgUrl} className="lg:right-16 top-[150px] lg:top-[220px] img fixed" alt="" />
+            <img src={imgUrl} className="lg:right-36 top-[150px] lg:top-[180px] h-[500px] w-[500px] object-contain img fixed" alt="" />
           </div>
 
           <div className="flex flex-wrap justify-start mt-[400px] lg:mt-0">
