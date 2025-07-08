@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+*{
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+:root{
+    --text-color: #3D4F60;
+    --text-hover-color: #00264B;
+    --sm-heading: #636363;
+    --white-color: #ffffff;
+    --black-color: #000000;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    
+}
