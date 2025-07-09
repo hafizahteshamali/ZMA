@@ -63,3 +63,53 @@ export const experienceData = [
         pg: "Explore how we built AI tools for law firms, scaled e-commerce backends, empowered education platforms, and rescued critical IT projects."
     }
 ]
+
+export const AboutHeadingData = {
+    heading: "We Test Before You Rest",
+    des: "Rigorous testing and QA mean your product launches without surprises. We break it so your users don’t."
+}
+
+export const AboutContentData = {
+    smHeading: "About Us",
+    lgHeading: "Driven by Innovation. Defined by Delivery.",
+    para: "ZMA is a modern IT company based in Pakistan with a European mindset. We build scalable, secure, and innovative tech solutions with a strong focus on Artificial Intelligence and Full Project Delivery.",
+    btnText: "Learn More",
+    imgUrl: "/assets/images/home/bubble.png"
+}
+
+export const SeviceContent = {
+    lgHeading: "How Our Tech Brings Ideas to Life.",
+    smHeading: "See How We Build Success",
+    description: "From concept to launch, we combine intelligent design, advanced development, and dedicated teams to transform your vision into powerful, scalable digital solutions that drive real impact.",
+    btnText: "Learn More",
+    imgUrl: "/assets/images/home/service-img.png"
+}
+
+export const tabs = [
+    {
+      number: "01",
+      title: "We Understand Your Vision",
+      description:
+        "Every great product starts with understanding your goals, your users, your market. We listen first, then plan.",
+    },
+    {
+      number: "02",
+      title: "We Design Smart Solutions",
+      description: "Every great product starts with understanding your goals, your users, your market. We listen first, then plan.",
+    },
+    {
+      number: "03",
+      title: "We Build Scalable Systems",
+      description: "Every great product starts with understanding your goals, your users, your market. We listen first, then plan.",
+    },
+    {
+      number: "04",
+      title: "We Deploy Expert Teams",
+      description: "Every great product starts with understanding your goals, your users, your market. We listen first, then plan.",
+    },
+    {
+      number: "05",
+      title: "We Deliver with Precision",
+      description: "Every great product starts with understanding your goals, your users, your market. We listen first, then plan.",
+    },
+  ]

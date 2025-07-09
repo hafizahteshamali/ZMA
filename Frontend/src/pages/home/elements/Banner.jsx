@@ -12,7 +12,7 @@ const Banner = ({ BannerData, experienceData }) => {
 
   useGSAP(() => {
     const isLargeScreen = window.innerWidth >= 1024; // 1024px is Tailwind's `lg` breakpoint
-  
+
     gsap.to(".img", {
       scrollTrigger: {
         trigger: ".img",
@@ -21,8 +21,8 @@ const Banner = ({ BannerData, experienceData }) => {
         scrub: 2,
         markers: false,
       },
-      y: isLargeScreen ? 500 : 850,
-      x: isLargeScreen ? -900 : 0, // 👈 x only if large screen
+      y: isLargeScreen ? 580 : 850,
+      x: isLargeScreen ? -870 : 0, // 👈 x only if large screen
       width: isLargeScreen ? "300px" : "380px",
       ease: "power4.inOut",
     });
@@ -31,7 +31,7 @@ const Banner = ({ BannerData, experienceData }) => {
   return (
     <>
       <div
-        className="bg-cover w-full bg-no-repeat py-10 filter brightness-100 saturate-150"
+        className="bg-cover w-full bg-no-repeat pt-10 filter brightness-100 saturate-150"
         style={{ backgroundImage: `url('/assets/images/home/banne-bg.png')` }}
       >
         <div className="container mx-auto">
@@ -54,43 +54,55 @@ const Banner = ({ BannerData, experienceData }) => {
               />
             </div>
 
-            <img src={imgUrl} className="lg:right-36 top-[150px] lg:top-[180px] h-[500px] w-[500px] object-contain img fixed" alt="" />
+            <img
+              src={imgUrl}
+              className="lg:right-36 top-[150px] lg:top-[180px] h-[500px] w-[500px] object-contain img fixed"
+              alt=""
+            />
           </div>
+        </div>
+        <div
+          className="bg-cover bg-center bg-no-repeat min-h-[100vh] flex justify-center items-center"
+          style={{
+            backgroundImage: `url('/assets/images/home/bg-second.png')`,
+          }}
+        >
+          <div className="container mx-auto">
+            <div className="flex flex-wrap justify-start mt-[400px] lg:mt-0">
+              <div className="w-[100%] lg:w-[30%]"></div>
 
-          <div className="flex flex-wrap justify-start mt-[400px] lg:mt-0">
-            <div className="w-[100%] lg:w-[30%]"></div>
+              {experienceData.map((exp, index) => (
+                <div
+                  key={index}
+                  className="w-[100%] lg:w-[30%] m-2 rounded-2xl py-10 px-7 bg-cover shadow-2xl"
+                  style={{
+                    backgroundImage: `url('/assets/images/home/card-bg.png')`,
+                  }}
+                >
+                  <div className="h-full flex gap-2.5 justify-between">
+                    {/* Image on top */}
+                    <div className="h-full flex flex-col justify-end items-start">
+                      <img
+                        src={exp.vector}
+                        alt=""
+                        className="w-[100px] object-contain"
+                      />
+                    </div>
 
-            {experienceData.map((exp, index) => (
-              <div
-                key={index}
-                className="w-[100%] lg:w-[30%] m-2 rounded-2xl py-10 px-7 bg-cover shadow-2xl"
-                style={{
-                  backgroundImage: `url('/assets/images/home/card-bg.png')`,
-                }}
-              >
-                <div className="h-full flex gap-2.5 justify-between">
-                  {/* Image on top */}
-                  <div className="h-full flex flex-col justify-end items-start">
-                    <img
-                      src={exp.vector}
-                      alt=""
-                      className="w-[100px] object-contain"
-                    />
-                  </div>
+                    {/* Text below */}
+                    <div className="flex flex-col justify-between">
+                      <h1 className=" text-[var(--text-hover-color)] text-3xl font-bold rounded">
+                        {exp.head}
+                      </h1>
 
-                  {/* Text below */}
-                  <div className="flex flex-col justify-between">
-                    <h1 className=" text-[var(--text-hover-color)] text-3xl font-bold rounded">
-                      {exp.head}
-                    </h1>
-
-                    <p className="text-[var(--text-color)] text-[16px] font-[600]">
-                      {exp.pg}
-                    </p>
+                      <p className="text-[var(--text-color)] text-[16px] font-[600]">
+                        {exp.pg}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
