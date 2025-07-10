@@ -113,3 +113,28 @@ export const tabs = [
       description: "Every great product starts with understanding your goals, your users, your market. We listen first, then plan.",
     },
   ]
+
+export const FAQsHeadingData = {
+    lgHeading: "Frequently Asked Questions",
+    description: "Quick answers about our services, process, and how we work with clients around the world.",
+    FAQsTabs: [
+        {
+            question: "What services do you offer?",
+            answer: "AI tools, web development, IT outsourcing, and full project delivery",
+            imgUrl: "/assets/images/home/faqs-img.png",
+            isLarge: false
+        },
+        {
+            question: "How do we get started?",
+            answer: "Book a call  we’ll assess your needs and plan the next steps.",
+            imgUrl: "/assets/images/home/faqs-img.png",
+            isLarge: false
+        },
+        {
+            question: "Do you work internationally?",
+            answer: "Yes, we work with clients across Europe and other regions. Our remote-ready team is experienced in handling international projects with clear communication and reliable delivery.",
+            imgUrl: "/assets/images/home/faqs-img.png",
+            isLarge: true
+        },
+    ]
+}

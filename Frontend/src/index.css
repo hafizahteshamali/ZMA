@@ -2,13 +2,12 @@
 @import "tailwindcss";
 
 *{
-    overflow-x: hidden;
     box-sizing: border-box;
 }
 
-html{
-    scroll-behavior: smooth;
-}
+html, body {
+    overflow-x: hidden !important;
+  }
 
 a{
     text-decoration: none;
@@ -27,6 +26,10 @@ li{
 body{
     font-family: "Inter", sans-serif;
     
+}
+
+.box{
+    background: linear-gradient(to right, #cbe1ff 65%, #005AB1 100%);
 }
 
 /* .about{

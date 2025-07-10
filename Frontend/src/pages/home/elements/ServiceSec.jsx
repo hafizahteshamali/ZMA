@@ -37,7 +37,7 @@ const ServiceSec = ({SeviceContent}) => {
           </div>
 
 
-          <div className="my-[100px]">
+          <div className="mt-[100px]">
             <ProcessTabs tabs={tabs} />
           </div>
         </div>
