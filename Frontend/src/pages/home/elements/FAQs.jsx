@@ -1,24 +1,34 @@
-import React from "react";
+import Aos from "aos";
+import React, { useEffect } from "react";
 
 const FAQs = ({ FAQsHeadingData }) => {
   const { lgHeading, description, FAQsTabs } = FAQsHeadingData;
+
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: false, // repeat animation every time on scroll
+    });
+  }, []);
+
   return (
     <div
       className="bg-cover bg-no-repeat"
       style={{ backgroundImage: `url('/assets/images/home/service-bg.png')` }}
     >
       <div className="container mx-auto">
-        <div className="min-h-[700px] w-full flex justify-center items-center">
+        <div className="min-h-[100vh] w-full flex justify-center items-center">
           <div className="min-h-[600px] w-full p-5 flex flex-col gap-5 justify-center items-center">
-            <h1 className="text-4xl font-[500] overflow-hidden">{lgHeading}</h1>
-            <p className="lg:w-[40%] lg:text-center text-[var(--text-color)]">
+            <h1 data-aos="fade-up" className="text-4xl font-[500] overflow-hidden">{lgHeading}</h1>
+            <p data-aos="fade-up" className="lg:w-[40%] lg:text-center text-[var(--text-color)]">
               {description}
             </p>
 
             <div className="flex justify-center flex-wrap w-[100%] items-center gap-10">
               {FAQsTabs.map((item, index) => {
                 return (
-                  <div
+                  <div data-aos={item.fade}
                     className={
                       item.isLarge == true
                         ? "lg:h-[200px] w-[100%] rounded-4xl my-3 box relative"
