@@ -25,11 +25,19 @@ li{
 
 body{
     font-family: "Inter", sans-serif;
-    
+    overflow: hidden;
 }
 
 .box{
     background: linear-gradient(to right, #cbe1ff 65%, #005AB1 100%);
+}
+
+.btn{
+    background: linear-gradient(to right, #FFFFFF66 50%, #011d3b 90%);
+}
+
+.helpBox{
+    background: linear-gradient(to bottom left, #e0e7ef 5%, #011d3b 70%);
 }
 
 /* .about{

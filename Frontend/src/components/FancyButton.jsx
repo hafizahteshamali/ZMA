@@ -1,11 +1,9 @@
-
-
 const FancyButton = ({ onClick, type, className, text }) => {
   return (
     <button
       onClick={onClick}
       type={type}
-      className={`relative inline-flex items-center justify-center overflow-hidden text-[var(--text-color)] font-bold tracking-wider rounded-full border-2 border-white shadow-2xl hover:shadow-red-900/50 transition-all duration-300 h-16 px-12 text-[17px] min-w-[200px] ${className}`}
+      className={`relative inline-flex items-center justify-center overflow-hidden text-[var(--text-color)] font-bold tracking-wider rounded-full border-2 border-white shadow-2xl hover:shadow-red-900/50 transition-all duration-300 h-14 px-8 text-[17px] min-w-[200px] ${className}`}
     >
       {/* Hover overlay */}
       <div className="absolute inset-0 bg-red-400 opacity-0 transition-opacity duration-200 hover:opacity-20 rounded-full"></div>
@@ -26,20 +24,36 @@ const FancyButton = ({ onClick, type, className, text }) => {
 
       <style jsx>{`
         @keyframes animateTop {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(-100%); }
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
         }
         @keyframes animateRight {
-          0% { transform: translateY(100%); }
-          100% { transform: translateY(-100%); }
+          0% {
+            transform: translateY(100%);
+          }
+          100% {
+            transform: translateY(-100%);
+          }
         }
         @keyframes animateBottom {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
         }
         @keyframes animateLeft {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(100%); }
+          0% {
+            transform: translateY(-100%);
+          }
+          100% {
+            transform: translateY(100%);
+          }
         }
         .border-anim-top {
           animation: 2s animateTop linear infinite;
@@ -55,7 +69,7 @@ const FancyButton = ({ onClick, type, className, text }) => {
         }
       `}</style>
     </button>
-  )
-}
+  );
+};
 
-export default FancyButton
+export default FancyButton;
