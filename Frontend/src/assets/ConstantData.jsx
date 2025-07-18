@@ -43,26 +43,36 @@ export const experienceData = [
     vector: "/assets/images/home/exp-1.png",
     head: "Smarter Solutions, Powered by AI",
     pg: "Custom AI tools, document analyzers, chatbots & recommendation engines – tailored for real business needs. Fine-tuned and production-ready.",
+    fade: "fade-up",
+    delay: "500"
   },
   {
     vector: "/assets/images/home/exp-2.png",
     head: "Web Experiences Ready for the Future",
     pg: "From full-stack apps to e-commerce platforms – we build fast, responsive, and future-proof websites optimized for Web 4.0/5.0.",
+    fade: "fade-up",
+    delay: "1000"
   },
   {
     vector: "/assets/images/home/exp-3.png",
     head: "Scalable IT Teams, On-Demand",
     pg: "Hire dedicated developers, QA, or DevOps – hourly or monthly – aligned with European standards and tools you already use.",
+    fade: "fade-up",
+    delay: "1500"
   },
   {
     vector: "/assets/images/home/exp-4.png",
     head: "We Build. We Rescue. We Scale.",
     pg: "From idea to launch – or rescue mission – we take ownership of your tech project with PMF guidance, documentation, and scaling support.",
+    fade: "fade-up",
+    delay: "2000"
   },
   {
     vector: "/assets/images/home/exp-5.png",
     head: "Proven Results Across Europe",
     pg: "Explore how we built AI tools for law firms, scaled e-commerce backends, empowered education platforms, and rescued critical IT projects.",
+    fade: "fade-up",
+    delay: "2500"
   },
 ];
 
@@ -132,14 +142,16 @@ export const FAQsHeadingData = {
         "We offer AI tools, web development, IT outsourcing, and full project delivery.",
       imgUrl: "/assets/images/home/faqs-img.png",
       isLarge: false,
-      fade: "fade-right",
+      fade: "flip-left",
+      delay: "500"
     },
     {
       question: "How do we get started?",
       answer: "Book a call we’ll assess your needs and plan the next steps.",
       imgUrl: "/assets/images/home/faqs-img.png",
       isLarge: false,
-      fade: "fade-left",
+      fade: "flip-left",
+      delay: "1000"
     },
     {
       question: "Do you work internationally?",
@@ -147,7 +159,8 @@ export const FAQsHeadingData = {
         "Yes, we work with clients across Europe and other regions. Our remote-ready team is experienced in handling international projects with clear communication and reliable delivery.",
       imgUrl: "/assets/images/home/faqs-img.png",
       isLarge: true,
-      fade: "fade-up",
+      fade: "flip-left",
+      delay: "1300"
     },
   ],
 };

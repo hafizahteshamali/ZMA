@@ -9,11 +9,11 @@ import {
   SeviceContent,
 } from "../../assets/ConstantData";
 import Banner from "./elements/Banner";
-import AboutSec from "./elements/AboutSec";
 import ServiceSec from "./elements/ServiceSec";
 import FAQs from "./elements/FAQs";
 import BringIdeas from "./elements/BringIdeas";
 import HelpingSec from "./elements/HelpingSec";
+import AboutSec from "./elements/AboutSec"
 
 const Home = () => {
   return (

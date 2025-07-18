@@ -7,6 +7,7 @@
 
 html, body {
     overflow-x: hidden !important;
+    scroll-behavior: smooth;
   }
 
 a{
@@ -25,7 +26,8 @@ li{
 
 body{
     font-family: "Inter", sans-serif;
-    overflow: hidden;
+overflow-x: hidden; 
+background-color: #cbe1ff;
 }
 
 .box{

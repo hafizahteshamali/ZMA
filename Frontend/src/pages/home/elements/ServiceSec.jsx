@@ -1,58 +1,325 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import NormalButton from "../../../components/NormalButton";
 import ProcessTabs from "../../../components/Tabs";
 import { tabs } from "../../../assets/ConstantData";
-import Aos from "aos";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+} from "framer-motion";
+import Aos from "aos"; // optional, leave if used globally
 
-const ServiceSec = ({SeviceContent}) => {
-    const {lgHeading, smHeading, description, btnText, imgUrl} = SeviceContent;
+/* ------------------------------------------------------------------
+   AnimatedText: per-letter reveal (flip + slideUp + fade)
+------------------------------------------------------------------- */
+const AnimatedText = ({
+  text = "",
+  as = "span",
+  delay = 0,
+  stagger = 0.025,
+  duration = 0.45,
+  yFrom = 24,
+  flip = true,
+  className = "",
+}) => {
+  const Parent = motion[as] || motion.span;
 
+  const container = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: delay,
+        staggerChildren: stagger,
+      },
+    },
+  };
 
-    useEffect(() => {
-      Aos.init({
-        duration: 1000,
-        once: false, // repeat animation every time on scroll
-      });
-    }, []);
-    
+  const charVar = {
+    hidden: {
+      opacity: 0,
+      y: yFrom,
+      rotateX: flip ? -90 : 0,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      transition: {
+        duration,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const chars = Array.from(text || "");
+
+  return (
+    <Parent
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.6 }} // re-trigger
+      className={className}
+      style={{ display: "inline-block", perspective: 1000 }}
+    >
+      {chars.map((ch, i) => (
+        <motion.span
+          key={i}
+          variants={charVar}
+          style={{
+            display: "inline-block",
+            transformOrigin: "50% 100%",
+            willChange: "transform,opacity",
+          }}
+        >
+          {ch === " " ? "\u00A0" : ch}
+        </motion.span>
+      ))}
+    </Parent>
+  );
+};
+
+/* ------------------------------------------------------------------
+   ServiceSec
+------------------------------------------------------------------- */
+const ServiceSec = ({ SeviceContent }) => {
+  const { lgHeading, smHeading, description, btnText, imgUrl } = SeviceContent;
+
+  /* ---------------- HERO SECTION ---------------- */
+  const heroRef = useRef(null);
+  const { scrollYProgress: heroProgress } = useScroll({
+    target: heroRef,
+    offset: ["start 95%", "start 10%"],
+  });
+
+  // section transforms
+  const _heroRotate = useTransform(heroProgress, [0, 1], [120, 0]);
+  const _heroScale = useTransform(heroProgress, [0, 1], [0.9, 1]);
+  const _heroOpacity = useTransform(heroProgress, [0, 1], [0, 1]);
+  const _heroY = useTransform(heroProgress, [0, 1], [120, 0]);
+
+  const heroRotate = useSpring(_heroRotate, { stiffness: 60, damping: 20 });
+  const heroScale = useSpring(_heroScale, { stiffness: 80, damping: 15 });
+  const heroOpacity = useSpring(_heroOpacity, { stiffness: 100, damping: 20 });
+  const heroY = useSpring(_heroY, { stiffness: 70, damping: 18 });
+
+  // hero inner (delay ~35%)
+  const heroElemsProgress = useTransform(heroProgress, [0, 0.35, 1], [0, 0, 1]);
+  const heroElemRotateY = useTransform(heroElemsProgress, [0, 1], [45, 0]);
+  const heroElemOpacity = useTransform(heroElemsProgress, [0, 1], [0, 1]);
+  const heroElemY = useTransform(heroElemsProgress, [0, 1], [40, 0]);
+
+  /* ---------------- CONTENT SECTION ---------------- */
+  const contentRef = useRef(null);
+  const { scrollYProgress: contentProgress } = useScroll({
+    target: contentRef,
+    offset: ["start 100%", "start 20%"],
+  });
+
+  const _contentRotate = useTransform(contentProgress, [0, 1], [-120, 0]);
+  const _contentScale = useTransform(contentProgress, [0, 1], [0.9, 1]);
+  const _contentOpacity = useTransform(contentProgress, [0, 1], [0, 1]);
+  const _contentY = useTransform(contentProgress, [0, 1], [140, 0]);
+
+  const contentRotate = useSpring(_contentRotate, { stiffness: 60, damping: 20 });
+  const contentScale = useSpring(_contentScale, { stiffness: 80, damping: 15 });
+  const contentOpacity = useSpring(_contentOpacity, { stiffness: 100, damping: 20 });
+  const contentY = useSpring(_contentY, { stiffness: 70, damping: 18 });
+
+  // content inner (delay ~40%)
+  const contentElemsProgress = useTransform(contentProgress, [0, 0.4, 1], [0, 0, 1]);
+  const contentElemRotateY = useTransform(contentElemsProgress, [0, 1], [-45, 0]);
+  const contentElemOpacity = useTransform(contentElemsProgress, [0, 1], [0, 1]);
+  const contentElemY = useTransform(contentElemsProgress, [0, 1], [50, 0]);
+
+  // optional AOS init (if used globally elsewhere)
+  useEffect(() => {
+    Aos.init({ duration: 1000, once: false });
+  }, []);
 
   return (
     <>
-      <div className="lg:h-[900px] mt-[100px]">
-        <img
-          src="/assets/images/home/mobileBanner.png"
-          className="h-[100%] w-[100%] object-fill"
+      {/* ===== TOP HERO SECTION ===== */}
+      <motion.div
+        ref={heroRef}
+        style={{
+          rotate: heroRotate,
+          scale: heroScale,
+          opacity: heroOpacity,
+          y: heroY,
+          backgroundImage: "url('/assets/images/home/services-bg.png')",
+          transformPerspective: 1000,
+        }}
+        className="lg:h-[100vh] h-[500px] bg-[#F3F3FA] relative bg-cover bg-center bg-no-repeat overflow-hidden will-change-[transform,opacity]"
+      >
+        {/* Mobile Image */}
+        <motion.img
+          src="/assets/images/home/mobile.png"
           alt=""
+          style={{
+            rotateY: heroElemRotateY,
+            opacity: heroElemOpacity,
+            y: heroElemY,
+            transformStyle: "preserve-3d",
+          }}
+          className="object-contain lg:h-[650px] h-[400px] z-20 absolute bottom-0 left-1/2 -translate-x-1/2"
         />
-      </div>
 
-      <div
-        className="min-h-[800px] bg-cover bg-no-repeat py-[70px]  mt-10"
-        style={{ backgroundImage: `url('/assets/images/home/service-bg.png')` }}
+        {/* Scrolling marquee text */}
+        <motion.div
+          style={{
+            rotateY: heroElemRotateY,
+            opacity: heroElemOpacity,
+            y: heroElemY,
+            transformStyle: "preserve-3d",
+          }}
+          className="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          <marquee direction="right" scrollamount="40">
+            <h1 className="text-9xl text-[var(--text-hover-color)] font-[600] inline-block whitespace-nowrap">
+              LEVEL UP YOUR PROJECTS &nbsp;&nbsp;&nbsp; LEVEL UP YOUR PROJECTS &nbsp;&nbsp;&nbsp; LEVEL UP YOUR PROJECTS
+            </h1>
+          </marquee>
+        </motion.div>
+
+        {/* Floating Buttons (restored) */}
+        <motion.div
+          style={{
+            rotateY: heroElemRotateY,
+            opacity: heroElemOpacity,
+            y: heroElemY,
+            transformStyle: "preserve-3d",
+          }}
+          className="pointer-events-none lg:pointer-events-auto"
+        >
+          <NormalButton
+            text="IT SOLUTIONS"
+            className="h-[50px] w-[250px] hidden lg:flex justify-center items-center absolute top-[15%] left-[10%] bg-[#ffffff] text-[var(--text-hover-color)] font-[600]"
+          />
+          <NormalButton
+            text="AI Developers"
+            className="h-[50px] w-[250px] hidden lg:flex justify-center items-center absolute top-[20%] right-[10%] bg-[#ffffff] text-[var(--text-hover-color)] font-[600]"
+          />
+          <NormalButton
+            text="GRAPHICS DESINGING"
+            className="h-[50px] w-[250px] hidden lg:flex justify-center items-center absolute bottom-[25%] left-[10%] bg-[#ffffff] text-[var(--text-hover-color)] font-[600]"
+          />
+          <NormalButton
+            text="Web Developers"
+            className="h-[50px] w-[250px] hidden lg:flex justify-center items-center absolute bottom-[15%] right-[10%] bg-[#ffffff] text-[var(--text-hover-color)] font-[600]"
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* ===== CONTENT + TABS SECTION ===== */}
+      <motion.div
+        ref={contentRef}
+        style={{
+          rotate: contentRotate,
+          scale: contentScale,
+          opacity: contentOpacity,
+          y: contentY,
+          transformPerspective: 1000,
+        }}
+        className="bg-[#F3F3FA] py-[70px] will-change-[transform,opacity]"
       >
         <div className="container mx-auto lg:min-h-[700px]">
           <div className="h-full flex flex-col lg:flex-row justify-between items-center p-3">
-            <div data-aos="fade-right" className="w-[100%] lg:w-[50%] flex flex-col justify-center items-start gap-7">
-                <h1 className="text-4xl w-[100%] lg:w-[70%] overflow-hidden font-[600] leading-12">{lgHeading}</h1>
-                <h2 className="text-xl text-[var(--text-color)] font-[500]">{smHeading}</h2>
-                <p className="w-[100%] lg:w-[70%] text-[var(--text-color)]">{description}</p>
+            {/* Left Content */}
+            <motion.div
+              style={{
+                rotateY: contentElemRotateY,
+                opacity: contentElemOpacity,
+                y: contentElemY,
+                transformStyle: "preserve-3d",
+              }}
+              className="w-[100%] lg:w-[50%] flex flex-col justify-center items-start gap-7"
+            >
+              <AnimatedText
+                as="h1"
+                text={lgHeading}
+                delay={0.2}
+                stagger={0.02}
+                duration={0.45}
+                yFrom={24}
+                flip
+                className="text-4xl w-[100%] lg:w-[70%] font-[600] leading-12 overflow-hidden text-left"
+              />
+
+              <AnimatedText
+                as="h2"
+                text={smHeading}
+                delay={0.5}
+                stagger={0.02}
+                duration={0.4}
+                yFrom={20}
+                flip
+                className="text-xl text-[var(--text-color)] font-[500] text-left"
+              />
+
+              <AnimatedText
+                as="p"
+                text={description}
+                delay={0.8}
+                stagger={0.01}
+                duration={0.35}
+                yFrom={16}
+                flip={false}
+                className="w-[100%] lg:w-[70%] text-[var(--text-color)] text-left"
+              />
+
+              <motion.div
+              className="w-full"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ delay: 1.2, duration: 0.35, ease: "easeOut" }}
+              >
                 <NormalButton
                   text={btnText}
-                  className="h-[45px] w-[60%] lg:w-[30%] border border-[#CBE1FF] text-[var(--text-hover-color)] font-[600] bg-[var(--white-color)] shadow-2xl rounded-full"
+                  className="h-[45px] w-[100%] lg:w-[30%] border border-[#CBE1FF] text-[var(--text-hover-color)] font-[600] bg-[var(--white-color)] shadow-2xl rounded-full"
                 />
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div data-aos="fade-left" className="w-[100%] lg:w-[50%] my-7 lg:my-0">
-                <img src={imgUrl} className="h-[100%] w-[100%] object-contain" alt="" />
-            </div>
+            {/* Right Image */}
+            <motion.div
+              style={{
+                rotateY: contentElemRotateY,
+                opacity: contentElemOpacity,
+                y: contentElemY,
+                transformStyle: "preserve-3d",
+              }}
+              className="w-[100%] lg:w-[50%] my-7 lg:my-0"
+            >
+              <motion.img
+                src={imgUrl}
+                alt=""
+                initial={{ opacity: 0, rotateY: -30, y: 20 }}
+                whileInView={{ opacity: 1, rotateY: 0, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
+                className="h-[100%] w-[100%] object-contain"
+              />
+            </motion.div>
           </div>
 
-
-          <div className="mt-[100px]">
+          {/* Tabs Section */}
+          <motion.div
+            style={{
+              rotateY: contentElemRotateY,
+              opacity: contentElemOpacity,
+              y: contentElemY,
+              transformStyle: "preserve-3d",
+            }}
+            className="mt-[100px]"
+          >
             <ProcessTabs tabs={tabs} />
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

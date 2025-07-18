@@ -6,8 +6,8 @@ import NormalButton from "../components/NormalButton";
 const Footer = () => {
   const { logo, para, btnText, socialHead, socialIcons, bullets } = FooterData;
   return (
-    <div className="bg-[#cbe1ff]">
-      <div className="helpBox lg:rounded-tl-4xl">
+    <div className="bg-[#F3F3FA]">
+      <div className="helpBox lg:rounded-t-4xl">
         <div className="container mx-auto">
           <div className="lg:h-[500px] flex flex-row justify-center items-center">
             <div className="lg:h-[400px] w-full flex flex-col lg:flex-row items-center mt-[50px] lg:my-0">
