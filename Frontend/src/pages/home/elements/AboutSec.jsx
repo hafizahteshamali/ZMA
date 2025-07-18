@@ -85,12 +85,12 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
     <>
       <div
         data-aos="zoom-in"
-        className="bg-cover w-full bg-center bg-no-repeat about bg-[#F3F3FA] lg:min-h-screen h-[1000px] mt-[2000px] md:mt-[1500px] lg:mt-0"
+        className="bg-cover w-full bg-center bg-no-repeat about bg-[#F3F3FA] lg:min-h-screen h-[1000px] mt-[1700px] md:mt-[1500px] lg:mt-0"
         style={{ backgroundImage: `url('/assets/images/home/about-bg.png')` }}
       >
         <div className="container mx-auto p-2">
           <div className="flex flex-col lg:flex-row justify-center items-center">
-            <div className="lg:h-[200px] h-[400px] w-full flex flex-col justify-center items-center gap-4">
+            <div className="lg:h-[200px] h-[400px] w-full flex flex-col justify-center items-start gap-4">
               {/* Heading Animation */}
               <AnimatedText
                 as="h1"
@@ -100,7 +100,7 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
                 duration={0.5}
                 yFrom={30}
                 flip
-                className="text-5xl font-[700] text-center lg:text-left text-[var(--text-hover-color)]"
+                className="text-5xl font-[700] lg:text-left text-[var(--text-hover-color)]"
               />
               {/* Description Animation */}
               <AnimatedText
@@ -111,7 +111,7 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
                 duration={0.4}
                 yFrom={20}
                 flip={false} // paragraph ke liye no flip
-                className="lg:w-[40%] text-[var(--text-color)] text-center"
+                className="lg:w-[40%] text-[var(--text-color)] text-[18px]"
               />
             </div>
           </div>
@@ -122,7 +122,7 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
               <div
                 data-aos="zoom-in"
                 data-aos-delay="500"
-                className="w-[90%] lg:w-[60%] p-4 flex flex-col justify-center items-start gap-6"
+                className="w-[100%] lg:w-[60%] flex flex-col justify-center items-start gap-6"
               >
                 <AnimatedText
                   as="h5"
@@ -142,7 +142,7 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
                   duration={0.45}
                   yFrom={24}
                   flip
-                  className="text-[var(--text-hover-color)] text-3xl lg:text-[45px] leading-12"
+                  className="text-[var(--text-hover-color)] text-[38px] lg:text-[45px] leading-12"
                 />
                 <AnimatedText
                   as="p"
@@ -152,7 +152,7 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
                   duration={0.35}
                   yFrom={15}
                   flip={false}
-                  className="text-[var(--text-color)]"
+                  className="text-[var(--text-color)] w-full text-[17px] whitespace-nowrap"
                 />
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}

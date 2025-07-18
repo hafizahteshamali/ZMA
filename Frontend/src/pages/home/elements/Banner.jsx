@@ -66,50 +66,62 @@ const Section1 = ({ scrollYProgress, BannerData }) => {
 
   // GSAP: move the hero image (.img) and the floating .img2 (if present later)
   useGSAP(() => {
-    const isLargeScreen = window.innerWidth >= 1024;
+    const mm = gsap.matchMedia();
   
-    // Kill previous triggers
+    // Kill all previous triggers before re-creating
     ScrollTrigger.getAll().forEach((st) => st.kill());
   
-    // Animate main .img
-    gsap.to(".img", {
-      scrollTrigger: {
-        trigger: ".img",
-        start: "top 30%",
-        end: "+=1000",
-        scrub: 2,
-        markers: false,
+    mm.add(
+      {
+        isLarge: "(min-width: 1024px)",
+        isSmall: "(max-width: 1023px)",
       },
-      y: isLargeScreen ? 580 : 850,
-      x: isLargeScreen ? -870 : 0,
-      width: isLargeScreen ? "300px" : "380px",
-      ease: "power4.inOut",
-    });
+      (context) => {
+        let { isLarge } = context.conditions;
   
-    // Animate .img2
-    gsap.fromTo(
-      ".img2",
-      {
-        y: isLargeScreen ? -200 : -150,
-        x: 0,
-        width: isLargeScreen ? "300px" : "250px",
-      },
-      {
-        y: isLargeScreen ? 350 : 600, // Move down smoothly
-        x: isLargeScreen ? -180 : 50, // No horizontal move on mobile
-        width: isLargeScreen ? "300px" : "250px",
-        ease: "power4.inOut",
-        scrollTrigger: {
-          trigger: ".img2", // Use its own trigger
-          start: "top 80%", // Start when img2 enters viewport
-          end: "bottom top+=300", // Enough scroll distance
-          scrub: true,
-          markers: false,
-          invalidateOnRefresh: true,
-        },
+        // ✅ Image 1 Animation
+        gsap.to(".img", {
+          scrollTrigger: {
+            trigger: ".img",
+            start: "top 20%",
+            end: "+=800", // controlled scroll distance
+            scrub: 1.5, // smooth scrub
+            markers: false,
+            invalidateOnRefresh: true,
+          },
+          y: isLarge ? 580 : 850,
+          x: isLarge ? -870 : 0,
+          width: isLarge ? "300px" : "380px",
+          ease: "none", // natural scroll-based feel
+        });
+  
+        // ✅ Image 2 Animation
+        gsap.fromTo(
+          ".img2",
+          {
+            y: isLarge ? -200 : -150,
+            x: 0,
+            width: isLarge ? "300px" : "250px",
+          },
+          {
+            y: isLarge ? 350 : 400,
+            x: isLarge ? -180 : 50,
+            width: isLarge ? "300px" : "250px",
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".img2",
+              start: "top 85%",
+              end: "bottom top+=400",
+              scrub: 1.5,
+              markers: false,
+              invalidateOnRefresh: true,
+            },
+          }
+        );
       }
     );
   }, []);
+  
   
 
   return (
@@ -230,7 +242,7 @@ const Section2 = ({ scrollYProgress, experienceData }) => {
         rotate,
         backgroundImage: `url('/assets/images/home/bg-second.png')`,
       }}
-      className="relative lg:h-screen z-0 overflow-hidden bg-cover bg-no-repeat perspective-[1000px] py-10 lg:py-0"
+      className="relative lg:h-screen z-0 overflow-hidden bg-cover bg-no-repeat perspective-[1000px] py-5  lg:py-0"
     >
       {/* Decorative floating img2 (GSAP handles movement from Section1 useGSAP) */}
       <img
@@ -240,7 +252,7 @@ const Section2 = ({ scrollYProgress, experienceData }) => {
       />
 
       <div className="container mx-auto">
-        <div className="lg:h-screen h-[1800px] mt-[500px] lg:mt-0 flex justify-center items-center">
+        <div className="lg:h-screen h-[1800px] mt-[300px] lg:mt-0 flex justify-center items-center">
           <div className="flex flex-wrap justify-start lg:mt-0">
             <div className="w-[100%] lg:w-[30%]" />
             {cards.map((exp, index) => (
