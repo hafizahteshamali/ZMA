@@ -7,7 +7,7 @@ export const NavigationData = [
   },
   {
     text: "Service",
-    path: "/",
+    path: "/service",
   },
   {
     text: "About",
@@ -103,31 +103,31 @@ export const tabs = [
     number: "01",
     title: "We Understand Your Vision",
     description:
-      "Every great product starts with understanding your goals, your users, your market. We listen first, then plan.",
+      "Before any code is written we focus on understanding your business model your market and the expectations of your users. Our approach is inspired by the consulting style of Central Europe especially Austria and Germany. We ask the right questions and structure the right plan because great digital solutions begin with clarity.",
   },
   {
     number: "02",
     title: "We Design Smart Solutions",
     description:
-      "Every great product starts with understanding your goals, your users, your market. We listen first, then plan.",
+      "We develop digital products that are intuitive reliable and future proof. Our UX and system designs are based on European design logic and architecture principles ensuring compatibility with local laws usability standards and enterprise workflows. You will recognize the difference in how we think and how we structure.",
   },
   {
     number: "03",
     title: "We Build Scalable Systems",
     description:
-      "Every great product starts with understanding your goals, your users, your market. We listen first, then plan.",
+      "Our engineering team builds robust secure and scalable systems that comply with European standards including GDPR performance audits and security reviews. From modular backend services to integration with ERP and CRM platforms we deliver the foundation for sustainable digital growth.",
   },
   {
     number: "04",
     title: "We Deploy Expert Teams",
     description:
-      "Every great product starts with understanding your goals, your users, your market. We listen first, then plan.",
+      "Every project is executed by specialists who bring deep domain knowledge and professional delivery culture. We work with tools and practices commonly used in Austria and Germany including structured documentation testing processes and agile project boards that make progress visible and measurable.",
   },
   {
     number: "05",
     title: "We Deliver with Precision",
     description:
-      "Every great product starts with understanding your goals, your users, your market. We listen first, then plan.",
+      "Quality assurance is not an afterthought.",
   },
 ];
 
@@ -269,3 +269,74 @@ export const FooterData = {
     },
   ],
 };
+
+
+// Services Page
+
+export const ServiceBannerData = {
+  heading: "Your Full-Stack Partner for Scalable Web Solutions",
+  img1: "/assets/images/service/banner-img1.jpg",
+  img2: "/assets/images/service/banner-img2.jpg",
+  img3: "/assets/images/service/banner-img3.png",
+  buttons: [
+    {
+      text: "Velraa",
+      caseStudyText: "Case Study",
+      caseStudyUrl: "/service",
+      visitText: "Visit",
+      visitUrl: "/service"
+    },
+    {
+      text: "Velraa",
+      caseStudyText: "Case Study",
+      caseStudyUrl: "/service",
+      visitText: "Visit",
+      visitUrl: "/service"
+    },
+    {
+      text: "Velraa",
+      caseStudyText: "Case Study",
+      caseStudyUrl: "/service",
+      visitText: "Visit",
+      visitUrl: "/service"
+    },
+  ]
+}
+
+export const clientsName = [
+  "/assets/images/service/client.png",
+  "/assets/images/service/client.png",
+  "/assets/images/service/client.png",
+  "/assets/images/service/client.png",
+  "/assets/images/service/client.png"
+]
+
+export const CustomGlobalData = {
+  heading: "Custom and global, the brief is simple.",
+  text: "From frontend finesse to backend power we deliver full service web solutions.",
+  bulletText: "BUILD . RUN . IMPROVE",
+  imgUrl: "/assets/images/service/service-toos-img.png",
+  services: [
+    {
+      img: "/assets/images/service/service-1.png",
+      smHead: "Visualize What Works",
+      description: "Our UI/UX wireframes connect every touchpoint — from websites and mobile apps to backend systems — into a unified, user-centered structure that ensures clarity, usability, and consistency at every stage of the customer journey, empowering your digital presence to scale with confidence.",
+      btnText: "Learn more",
+      btnLink: "/"
+    },
+    {
+      img: "/assets/images/service/service-2.png",
+      smHead: "Custom & WordPress",
+      description: "ZMA builds modern, high-performance websites tailored to your needs from fully custom-coded platforms to flexible, SEO-optimized WordPress solutions. With seamless design, fast load times, and scalable architecture, we make sure your online presence stands out and grows with you.",
+      btnText: "Learn more",
+      btnLink: "/"
+    },
+    {
+      img: "/assets/images/service/service-3.png",
+      smHead: "Scroll. Animate. Impress.",
+      description: "At ZMA, we create smooth, high-impact animations that bring your website to life — from subtle micro-interactions to full scroll-based storytelling. Whether for branding, product showcases, or immersive UX, our animations enhance engagement, improve retention, and make every scroll memorable.",
+      btnText: "Learn more",
+      btnLink: "/"
+    },
+  ]
+}

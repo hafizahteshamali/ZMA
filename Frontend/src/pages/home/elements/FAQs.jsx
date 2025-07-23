@@ -15,7 +15,7 @@ const FAQs = ({ FAQsHeadingData }) => {
   return (
     <div
       data-aos="flip-left"
-      className="bg-cover bg-no-repeat"
+      className="bg-cover bg-no-repeat py-10"
       style={{ backgroundImage: `url('/assets/images/home/faq-bg.png')` }}
     >
       <div className="container mx-auto lg:min-h-[100vh] flex justify-center items-center">
@@ -41,7 +41,7 @@ const FAQs = ({ FAQsHeadingData }) => {
                     className={
                       item.isLarge
                         ? "lg:h-[200px] w-[100%] rounded-4xl my-3 box relative shadow-2xl"
-                        : "lg:h-[200px] w-[100%] md:w-[47%] lg:w-[45%] rounded-4xl my-3 box relative shadow-2xl"
+                        : "lg:h-[200px] h-[250px] w-[100%] md:w-[47%] lg:w-[45%] rounded-4xl my-3 box relative shadow-2xl"
                     }
                   >
                     {/* Floating Cube Left */}

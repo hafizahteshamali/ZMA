@@ -85,12 +85,12 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
     <>
       <div
         data-aos="zoom-in"
-        className="bg-cover w-full bg-center bg-no-repeat about bg-[#F3F3FA] lg:min-h-screen h-[1000px] mt-[1700px] md:mt-[1500px] lg:mt-0"
+        className="bg-cover w-full bg-center bg-no-repeat about bg-[#F3F3FA] lg:min-h-[1000px] h-[600px]  mt-[1400px] md:mt-[1500px] lg:mt-0 flex flex-col justify-center"
         style={{ backgroundImage: `url('/assets/images/home/about-bg.png')` }}
       >
         <div className="container mx-auto p-2">
           <div className="flex flex-col lg:flex-row justify-center items-center">
-            <div className="lg:h-[200px] h-[400px] w-full flex flex-col justify-center items-start gap-4">
+            <div className="lg:h-[200px] h-auto py-8 w-full flex flex-col justify-center items-center gap-4 text-center lg:text-left">
               {/* Heading Animation */}
               <AnimatedText
                 as="h1"
@@ -100,8 +100,9 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
                 duration={0.5}
                 yFrom={30}
                 flip
-                className="text-5xl font-[700] lg:text-left text-[var(--text-hover-color)]"
+                className="text-3xl sm:text-4xl md:text-5xl font-[700] text-[var(--text-hover-color)]"
               />
+
               {/* Description Animation */}
               <AnimatedText
                 as="p"
@@ -111,19 +112,20 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
                 duration={0.4}
                 yFrom={20}
                 flip={false} // paragraph ke liye no flip
-                className="lg:w-[40%] text-[var(--text-color)] text-[18px]"
+                className="w-[90%] sm:w-[70%] md:w-[60%] lg:w-[40%] text-[var(--text-color)] text-base sm:text-lg md:text-xl"
               />
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row lg:flex-row justify-between items-start lg:items-center">
+          <div className="flex flex-col md:flex-row lg:flex-row justify-between items-start lg:items-center mt-10 lg:mt-0">
             {/* Content Section */}
             <div className="w-full lg:w-[60%] flex justify-start lg:ml-[70px] order-2 md:order-1 lg:order-1 lg:min-h-[100vh]">
               <div
                 data-aos="zoom-in"
                 data-aos-delay="500"
-                className="w-[100%] lg:w-[60%] flex flex-col justify-center items-start gap-6"
+                className="w-full lg:w-[60%] flex flex-col justify-center items-start gap-6"
               >
+                {/* Small Heading */}
                 <AnimatedText
                   as="h5"
                   text={smHeading}
@@ -132,8 +134,10 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
                   duration={0.4}
                   yFrom={18}
                   flip
-                  className="text-[var(--text-color)] font-[500]"
+                  className="text-[var(--text-color)] text-base sm:text-lg md:text-xl font-[500]"
                 />
+
+                {/* Large Heading */}
                 <AnimatedText
                   as="h1"
                   text={lgHeading}
@@ -142,8 +146,10 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
                   duration={0.45}
                   yFrom={24}
                   flip
-                  className="text-[var(--text-hover-color)] text-[38px] lg:text-[45px] leading-12"
+                  className="text-[var(--text-hover-color)] text-2xl sm:text-3xl md:text-4xl lg:text-[45px] leading-tight"
                 />
+
+                {/* Paragraph */}
                 <AnimatedText
                   as="p"
                   text={para}
@@ -152,8 +158,10 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
                   duration={0.35}
                   yFrom={15}
                   flip={false}
-                  className="text-[var(--text-color)] w-full text-[17px] whitespace-nowrap"
+                  className="text-[var(--text-color)] w-full text-sm sm:text-base md:text-lg whitespace-normal"
                 />
+
+                {/* Button */}
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +171,7 @@ const AboutSec = ({ AboutHeadingData, AboutContentData }) => {
                 >
                   <NormalButton
                     text={btnText}
-                    className="h-[45px] w-[50%] border border-[#CBE1FF] text-[var(--text-hover-color)] font-[600] bg-[var(--white-color)] shadow-2xl rounded-full"
+                    className="h-[40px] sm:h-[45px] w-[70%] sm:w-[50%] border border-[#CBE1FF] text-[var(--text-hover-color)] text-sm sm:text-base md:text-lg font-[600] bg-[var(--white-color)] shadow-2xl rounded-full"
                   />
                 </motion.div>
               </div>

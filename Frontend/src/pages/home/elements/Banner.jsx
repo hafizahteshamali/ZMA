@@ -19,7 +19,10 @@ const Banner = ({ BannerData, experienceData }) => {
   const container = useRef(null);
 
   // Fallback if prop missing
-  const cards = experienceData && experienceData.length ? experienceData : EXPERIENCE_FALLBACK;
+  const cards =
+    experienceData && experienceData.length
+      ? experienceData
+      : EXPERIENCE_FALLBACK;
 
   // Whole banner scroll progress (used by Section1 + Section2 wrappers)
   const { scrollYProgress } = useScroll({
@@ -67,10 +70,10 @@ const Section1 = ({ scrollYProgress, BannerData }) => {
   // GSAP: move the hero image (.img) and the floating .img2 (if present later)
   useGSAP(() => {
     const mm = gsap.matchMedia();
-  
+
     // Kill all previous triggers before re-creating
     ScrollTrigger.getAll().forEach((st) => st.kill());
-  
+
     mm.add(
       {
         isLarge: "(min-width: 1024px)",
@@ -78,7 +81,7 @@ const Section1 = ({ scrollYProgress, BannerData }) => {
       },
       (context) => {
         let { isLarge } = context.conditions;
-  
+
         // ✅ Image 1 Animation
         gsap.to(".img", {
           scrollTrigger: {
@@ -94,7 +97,7 @@ const Section1 = ({ scrollYProgress, BannerData }) => {
           width: isLarge ? "300px" : "380px",
           ease: "none", // natural scroll-based feel
         });
-  
+
         // ✅ Image 2 Animation
         gsap.fromTo(
           ".img2",
@@ -121,8 +124,6 @@ const Section1 = ({ scrollYProgress, BannerData }) => {
       }
     );
   }, []);
-  
-  
 
   return (
     <motion.div
@@ -136,15 +137,15 @@ const Section1 = ({ scrollYProgress, BannerData }) => {
       <div className="w-full flex flex-col lg:flex-row justify-between items-center lg:mt-[150px] px-5 lg:min-h-[500px] relative">
         {/* Text */}
         <div className="lg:w-[45%] md:w-[70%] p-3 w-full h-max flex flex-col gap-7 justify-center items-start lg:ml-14 text-center lg:text-left">
-          <h1 className="text-4xl lg:text-5xl lg:w-[80%] font-semibold leading-[1.2] text-[var(--text-hover-color)]">
+          <h1 className="text-5xl sm:text-3xl md:text-4xl lg:text-5xl lg:w-[80%] font-semibold leading-[1.2] text-[var(--text-hover-color)]">
             {heading}
           </h1>
-          <p className="text-xl text-[var(--sm-heading)] lg:w-[85%] font-medium p-2">
+          <p className="text-base sm:text-lg md:text-xl text-[var(--sm-heading)] lg:w-[85%] font-medium p-2">
             {para}
           </p>
           <NormalButton
             text={btnText}
-            className="h-[55px] font-semibold w-full lg:w-[50%] bg-[#d5d5f1] shadow-2xl rounded-full text-[var(--text-hover-color)] text-xl"
+            className="h-[45px] sm:h-[50px] md:h-[55px] font-semibold w-full lg:w-[50%] bg-[#d5d5f1] shadow-2xl rounded-full text-[var(--text-hover-color)] text-lg sm:text-xl"
           />
         </div>
 
@@ -206,19 +207,24 @@ const SwivelCard = ({ exp, index }) => {
         willChange: "transform, opacity",
         backgroundImage: `url('/assets/images/home/card-bg.png')`,
       }}
-      className="min-h-[300px] w-[100%] lg:w-[30%] md:w-[70%] p-3 md:mx-auto m-2 rounded-2xl py-10 px-7 bg-cover shadow-2xl"
+      className="min-h-[260px] w-[100%] lg:w-[30%] md:w-[70%] p-3 md:mx-auto m-2 rounded-2xl py-10 px-7 bg-cover shadow-2xl"
     >
       <div className="h-full flex gap-2.5 justify-between">
         {/* Icon */}
         <div className="h-full flex flex-col justify-end items-start">
-          <img src={exp.vector} alt="" className="w-[100px] object-contain" />
+          <img
+            src={exp.vector}
+            alt=""
+            className="w-[60px] sm:w-[80px] md:w-[100px] object-contain"
+          />
         </div>
+
         {/* Text */}
         <div className="flex flex-col justify-between">
-          <h1 className="text-[var(--text-hover-color)] text-3xl font-bold rounded">
+          <h1 className="text-[var(--text-hover-color)] text-xl sm:text-2xl font-bold rounded">
             {exp.head}
           </h1>
-          <p className="text-[var(--text-color)] text-[16px] font-[600]">
+          <p className="text-[var(--text-color)] font-[600]">
             {exp.pg}
           </p>
         </div>
@@ -229,7 +235,10 @@ const SwivelCard = ({ exp, index }) => {
 
 const Section2 = ({ scrollYProgress, experienceData }) => {
   // If not passed, bail gracefully
-  const cards = experienceData && experienceData.length ? experienceData : EXPERIENCE_FALLBACK;
+  const cards =
+    experienceData && experienceData.length
+      ? experienceData
+      : EXPERIENCE_FALLBACK;
 
   // Section‑level macro transforms (like you had)
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
@@ -252,7 +261,7 @@ const Section2 = ({ scrollYProgress, experienceData }) => {
       />
 
       <div className="container mx-auto">
-        <div className="lg:h-screen h-[1800px] mt-[300px] lg:mt-0 flex justify-center items-center">
+        <div className="lg:h-screen h-[1550px] mt-[300px] lg:mt-0 flex justify-center items-center">
           <div className="flex flex-wrap justify-start lg:mt-0">
             <div className="w-[100%] lg:w-[30%]" />
             {cards.map((exp, index) => (

@@ -3,6 +3,9 @@
 
 *{
     box-sizing: border-box;
+    word-wrap: break-word;      /* Old property */
+  overflow-wrap: break-word;  /* Modern property */
+  word-break: normal;
 }
 
 html, body {
@@ -47,6 +50,10 @@ h1, h2, h3, h4, h5, h6, p, a {
     background: linear-gradient(to bottom left, #e0e7ef 5%, #011d3b 70%);
 }
 
-/* .about{
-  clip-path: path('M0 0 H300 V250 Q150 320 0 250 Z');
-} */
+.service_tool_box{
+    background: linear-gradient(#CBE1FF, #768FAF);
+}
+
+.service_tool_box_btn{
+    background: linear-gradient(#FFFFFF, #CBE1FF, #CBE1FF, #CBE1FF);
+}

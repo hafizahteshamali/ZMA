@@ -9,7 +9,7 @@ const Layout = () => {
     const location = useLocation();
 
     useEffect(()=>{
-        if(location.pathname === "/"){
+        if(location.pathname === "/" || location.pathname === "/service"){
             setIsHeader(true)
         }
     }, [])
