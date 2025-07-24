@@ -3,10 +3,10 @@ import NormalButton from "../../../components/NormalButton";
 import ProcessTabs from "../../../components/Tabs";
 import { tabs } from "../../../assets/ConstantData";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import Aos from "aos"; // optional, leave if used globally
+import Aos from "aos";
 
 /* ------------------------------------------------------------------
-   AnimatedText: per-letter reveal (flip + slideUp + fade)
+   AnimatedText: Word-Level Animation (Wrapping Fix)
 ------------------------------------------------------------------- */
 const AnimatedText = ({
   text = "",
@@ -31,6 +31,11 @@ const AnimatedText = ({
     },
   };
 
+  const wordContainer = {
+    hidden: {},
+    show: {},
+  };
+
   const charVar = {
     hidden: {
       opacity: 0,
@@ -48,28 +53,41 @@ const AnimatedText = ({
     },
   };
 
-  const chars = Array.from(text || "");
+  const words = text.split(" ");
 
   return (
     <Parent
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.6 }} // re-trigger
+      viewport={{ once: false, amount: 0.6 }}
       className={className}
-      style={{ display: "inline-block", perspective: 1000 }}
+      style={{
+        display: "block",
+        perspective: 1000,
+        whiteSpace: "normal",
+        wordBreak: "break-word",
+      }}
     >
-      {chars.map((ch, i) => (
+      {words.map((word, i) => (
         <motion.span
           key={i}
-          variants={charVar}
-          style={{
-            display: "inline-block",
-            transformOrigin: "50% 100%",
-            willChange: "transform,opacity",
-          }}
+          variants={wordContainer}
+          style={{ display: "inline-block", marginRight: "0.25em" }}
         >
-          {ch === " " ? "\u00A0" : ch}
+          {Array.from(word).map((ch, ci) => (
+            <motion.span
+              key={ci}
+              variants={charVar}
+              style={{
+                display: "inline-block",
+                transformOrigin: "50% 100%",
+                willChange: "transform,opacity",
+              }}
+            >
+              {ch}
+            </motion.span>
+          ))}
         </motion.span>
       ))}
     </Parent>
@@ -89,7 +107,6 @@ const ServiceSec = ({ SeviceContent }) => {
     offset: ["start 95%", "start 10%"],
   });
 
-  // section transforms
   const _heroRotate = useTransform(heroProgress, [0, 1], [120, 0]);
   const _heroScale = useTransform(heroProgress, [0, 1], [0.9, 1]);
   const _heroOpacity = useTransform(heroProgress, [0, 1], [0, 1]);
@@ -100,7 +117,6 @@ const ServiceSec = ({ SeviceContent }) => {
   const heroOpacity = useSpring(_heroOpacity, { stiffness: 100, damping: 20 });
   const heroY = useSpring(_heroY, { stiffness: 70, damping: 18 });
 
-  // hero inner (delay ~35%)
   const heroElemsProgress = useTransform(heroProgress, [0, 0.35, 1], [0, 0, 1]);
   const heroElemRotateY = useTransform(heroElemsProgress, [0, 1], [45, 0]);
   const heroElemOpacity = useTransform(heroElemsProgress, [0, 1], [0, 1]);
@@ -118,39 +134,23 @@ const ServiceSec = ({ SeviceContent }) => {
   const _contentOpacity = useTransform(contentProgress, [0, 1], [0, 1]);
   const _contentY = useTransform(contentProgress, [0, 1], [140, 0]);
 
-  const contentRotate = useSpring(_contentRotate, {
-    stiffness: 60,
-    damping: 20,
-  });
+  const contentRotate = useSpring(_contentRotate, { stiffness: 60, damping: 20 });
   const contentScale = useSpring(_contentScale, { stiffness: 80, damping: 15 });
-  const contentOpacity = useSpring(_contentOpacity, {
-    stiffness: 100,
-    damping: 20,
-  });
+  const contentOpacity = useSpring(_contentOpacity, { stiffness: 100, damping: 20 });
   const contentY = useSpring(_contentY, { stiffness: 70, damping: 18 });
 
-  // content inner (delay ~40%)
-  const contentElemsProgress = useTransform(
-    contentProgress,
-    [0, 0.4, 1],
-    [0, 0, 1]
-  );
-  const contentElemRotateY = useTransform(
-    contentElemsProgress,
-    [0, 1],
-    [-45, 0]
-  );
+  const contentElemsProgress = useTransform(contentProgress, [0, 0.4, 1], [0, 0, 1]);
+  const contentElemRotateY = useTransform(contentElemsProgress, [0, 1], [-45, 0]);
   const contentElemOpacity = useTransform(contentElemsProgress, [0, 1], [0, 1]);
   const contentElemY = useTransform(contentElemsProgress, [0, 1], [50, 0]);
 
-  // optional AOS init (if used globally elsewhere)
   useEffect(() => {
     Aos.init({ duration: 1000, once: false });
   }, []);
 
   return (
     <>
-      {/* ===== TOP HERO SECTION ===== */}
+      {/* ===== HERO SECTION ===== */}
       <motion.div
         ref={heroRef}
         style={{
@@ -161,9 +161,8 @@ const ServiceSec = ({ SeviceContent }) => {
           backgroundImage: "url('/assets/images/home/services-bg.png')",
           transformPerspective: 1000,
         }}
-        className="lg:h-[100vh] h-[500px] bg-[#F3F3FA] relative bg-cover bg-center bg-no-repeat overflow-hidden will-change-[transform,opacity]"
+        className="lg:h-[700px] h-[500px] bg-[#F3F3FA] relative bg-cover bg-center bg-no-repeat overflow-hidden will-change-[transform,opacity]"
       >
-        {/* Mobile Image */}
         <motion.img
           src="/assets/images/home/mobile.png"
           alt=""
@@ -176,7 +175,6 @@ const ServiceSec = ({ SeviceContent }) => {
           className="object-contain lg:h-[650px] h-[400px] z-20 absolute bottom-0 left-1/2 -translate-x-1/2"
         />
 
-        {/* Scrolling marquee text */}
         <motion.div
           style={{
             rotateY: heroElemRotateY,
@@ -186,18 +184,13 @@ const ServiceSec = ({ SeviceContent }) => {
           }}
           className="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
-          <marquee
-            direction="right"
-            scrollamount="20" /* Mobile ke liye slow */
-            className="w-full"
-          >
+          <marquee direction="right" scrollamount="20" className="w-full">
             <h1 className="text-[20px] sm:text-[40px] md:text-[70px] lg:text-[100px] text-[var(--text-hover-color)] font-[600] w-full whitespace-nowrap">
               LEVEL UP YOUR PROJECTS
             </h1>
           </marquee>
         </motion.div>
 
-        {/* Floating Buttons (Visible on all screens) */}
         <motion.div
           style={{
             rotateY: heroElemRotateY,
@@ -207,22 +200,10 @@ const ServiceSec = ({ SeviceContent }) => {
           }}
           className="absolute inset-0 flex flex-col lg:block items-center justify-center gap-4 lg:gap-0 z-30 px-4"
         >
-          <NormalButton
-            text="IT SOLUTIONS"
-            className="h-[45px] sm:h-[50px] hidden lg:block w-[200px] sm:w-[250px] bg-[#ffffff] text-[var(--text-hover-color)] font-[600] lg:absolute lg:top-[15%] lg:left-[10%]"
-          />
-          <NormalButton
-            text="AI Developers"
-            className="h-[45px] sm:h-[50px] hidden lg:block w-[200px] sm:w-[250px] bg-[#ffffff] text-[var(--text-hover-color)] font-[600] lg:absolute lg:top-[20%] lg:right-[10%]"
-          />
-          <NormalButton
-            text="GRAPHICS DESINGING"
-            className="h-[45px] sm:h-[50px] hidden lg:block w-[200px] sm:w-[250px] bg-[#ffffff] text-[var(--text-hover-color)] font-[600] lg:absolute lg:bottom-[25%] lg:left-[10%]"
-          />
-          <NormalButton
-            text="Web Developers"
-            className="h-[45px] sm:h-[50px] hidden lg:block w-[200px] sm:w-[250px] bg-[#ffffff] text-[var(--text-hover-color)] font-[600] lg:absolute lg:bottom-[15%] lg:right-[10%]"
-          />
+          <NormalButton text="IT SOLUTIONS" className="h-[45px] sm:h-[50px] hidden lg:block w-[200px] sm:w-[250px] bg-[#ffffff] text-[var(--text-hover-color)] font-[600] lg:absolute lg:top-[15%] lg:left-[10%]" />
+          <NormalButton text="AI Developers" className="h-[45px] sm:h-[50px] hidden lg:block w-[200px] sm:w-[250px] bg-[#ffffff] text-[var(--text-hover-color)] font-[600] lg:absolute lg:top-[20%] lg:right-[10%]" />
+          <NormalButton text="GRAPHICS DESINGING" className="h-[45px] sm:h-[50px] hidden lg:block w-[200px] sm:w-[250px] bg-[#ffffff] text-[var(--text-hover-color)] font-[600] lg:absolute lg:bottom-[25%] lg:left-[10%]" />
+          <NormalButton text="Web Developers" className="h-[45px] sm:h-[50px] hidden lg:block w-[200px] sm:w-[250px] bg-[#ffffff] text-[var(--text-hover-color)] font-[600] lg:absolute lg:bottom-[15%] lg:right-[10%]" />
         </motion.div>
       </motion.div>
 
@@ -258,7 +239,7 @@ const ServiceSec = ({ SeviceContent }) => {
                 duration={0.45}
                 yFrom={24}
                 flip
-                className="text-4xl sm:text-4xl lg:text-5xl w-[100%] lg:w-[75%] font-[600] leading-tight overflow-hidden text-left"
+                className="text-4xl sm:text-4xl lg:text-5xl w-[100%] lg:w-[75%] font-[600] leading-tight text-left"
               />
 
               <AnimatedText

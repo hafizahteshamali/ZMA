@@ -136,7 +136,7 @@ const Section1 = ({ scrollYProgress, BannerData }) => {
     >
       <div className="w-full flex flex-col lg:flex-row justify-between items-center lg:mt-[150px] px-5 lg:min-h-[500px] relative">
         {/* Text */}
-        <div className="lg:w-[45%] md:w-[70%] p-3 w-full h-max flex flex-col gap-7 justify-center items-start lg:ml-14 text-center lg:text-left">
+        <div className="lg:w-[45%] md:w-[70%] p-3 w-full wrap-break-word h-max flex flex-col gap-7 justify-center items-start lg:ml-14 text-center lg:text-left">
           <h1 className="text-5xl sm:text-3xl md:text-4xl lg:text-5xl lg:w-[80%] font-semibold leading-[1.2] text-[var(--text-hover-color)]">
             {heading}
           </h1>
@@ -220,7 +220,7 @@ const SwivelCard = ({ exp, index }) => {
         </div>
 
         {/* Text */}
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between wrap-break-word">
           <h1 className="text-[var(--text-hover-color)] text-xl sm:text-2xl font-bold rounded">
             {exp.head}
           </h1>

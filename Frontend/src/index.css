@@ -1,25 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
-*{
+* {
     box-sizing: border-box;
-    word-wrap: break-word;      /* Old property */
-  overflow-wrap: break-word;  /* Modern property */
-  word-break: normal;
 }
 
-html, body {
+html,
+body {
     overflow-x: hidden !important;
     scroll-behavior: smooth;
-  }
+    word-wrap: break-word !important;
+}
 
-a{
+a {
     text-decoration: none;
 }
-li{
+
+li {
     list-style-type: none;
 }
-:root{
+
+:root {
     --text-color: #3D4F60;
     --text-hover-color: #00264B;
     --sm-heading: #636363;
@@ -27,33 +28,28 @@ li{
     --black-color: #000000;
 }
 
-body{
+body {
     font-family: "Inter", sans-serif;
-overflow-x: hidden; 
-background-color: #cbe1ff;
+    overflow-x: hidden;
+    background-color: #cbe1ff;
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
-    white-space: normal; /* default */
-    word-break: keep-all; /* words intact rakhta hai */
-  }
-
-.box{
+.box {
     background: linear-gradient(to right, #cbe1ff 65%, #005AB1 100%);
 }
 
-.btn{
+.btn {
     background: linear-gradient(to right, #FFFFFF66 50%, #011d3b 90%);
 }
 
-.helpBox{
+.helpBox {
     background: linear-gradient(to bottom left, #e0e7ef 5%, #011d3b 70%);
 }
 
-.service_tool_box{
+.service_tool_box {
     background: linear-gradient(#CBE1FF, #768FAF);
 }
 
-.service_tool_box_btn{
+.service_tool_box_btn {
     background: linear-gradient(#FFFFFF, #CBE1FF, #CBE1FF, #CBE1FF);
 }

@@ -3,7 +3,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import NormalButton from "../../../components/NormalButton";
 import Aos from "aos";
 
-/* ---------- AnimatedText Component ---------- */
+/* ------------------------------------------------------------------
+   AnimatedText (Word containers + char animation = reliable wrapping)
+------------------------------------------------------------------- */
 const AnimatedText = ({
   text = "",
   as = "span",
@@ -16,17 +18,25 @@ const AnimatedText = ({
 }) => {
   const Parent = motion[as] || motion.span;
 
+  // parent animation: sequence words
   const container = {
     hidden: { opacity: 1 },
     show: {
       opacity: 1,
       transition: {
         delayChildren: delay,
-        staggerChildren: stagger,
+        staggerChildren: stagger, // stagger words
       },
     },
   };
 
+  // each word container (no transition needed here; handled by parent)
+  const wordContainer = {
+    hidden: {},
+    show: {},
+  };
+
+  // each character anim
   const charVar = {
     hidden: { opacity: 0, y: yFrom, rotateX: flip ? -90 : 0 },
     show: {
@@ -37,7 +47,7 @@ const AnimatedText = ({
     },
   };
 
-  const chars = Array.from(text || "");
+  const words = (text || "").split(" ");
 
   return (
     <Parent
@@ -46,26 +56,44 @@ const AnimatedText = ({
       whileInView="show"
       viewport={{ once: false, amount: 0.6 }}
       className={className}
-      style={{ display: "inline-block", perspective: 1000 }}
+      style={{
+        display: "block",          // allow wrap
+        perspective: 1000,
+        whiteSpace: "normal",      // allow line breaks
+        wordBreak: "break-word",   // break long tokens if needed
+      }}
     >
-      {chars.map((ch, i) => (
+      {words.map((word, wi) => (
         <motion.span
-          key={i}
-          variants={charVar}
+          key={wi}
+          variants={wordContainer}
           style={{
             display: "inline-block",
-            transformOrigin: "50% 100%",
-            willChange: "transform,opacity",
+            marginRight: "0.25em", // space between words
           }}
         >
-          {ch === " " ? "\u00A0" : ch}
+          {Array.from(word).map((ch, ci) => (
+            <motion.span
+              key={ci}
+              variants={charVar}
+              style={{
+                display: "inline-block",
+                transformOrigin: "50% 100%",
+                willChange: "transform,opacity",
+              }}
+            >
+              {ch}
+            </motion.span>
+          ))}
         </motion.span>
       ))}
     </Parent>
   );
 };
 
-/* ---------- HelpingSec Component ---------- */
+/* ------------------------------------------------------------------
+   HelpingSec
+------------------------------------------------------------------- */
 const HelpingSec = ({ HelpSecData }) => {
   const {
     imgUrl,
@@ -104,8 +132,16 @@ const HelpingSec = ({ HelpSecData }) => {
         <div className="min-h-[100vh] flex justify-center items-center p-5 lg:my-0">
           <div className="min-h-[600px] w-full flex flex-col lg:flex-row justify-between items-center">
             {/* Left Image Section */}
-            <div data-aos="fade-up" data-aos-delay="500" className="w-[90%] lg:w-[47%]">
-              <img src={imgUrl} className="h-[100%] w-[100%] object-contain" alt="" />
+            <div
+              data-aos="fade-up"
+              data-aos-delay="500"
+              className="w-[90%] lg:w-[47%]"
+            >
+              <img
+                src={imgUrl}
+                className="h-[100%] w-[100%] object-contain"
+                alt=""
+              />
             </div>
 
             {/* Right Content Section */}
@@ -123,7 +159,7 @@ const HelpingSec = ({ HelpSecData }) => {
                 duration={0.5}
                 yFrom={30}
                 flip
-                className="text-4xl lg:text-5xl font-[600]"
+                className="text-4xl lg:text-5xl font-[600] break-words whitespace-normal"
               />
 
               {/* Animated Sub Title */}
@@ -135,11 +171,11 @@ const HelpingSec = ({ HelpSecData }) => {
                 duration={0.4}
                 yFrom={25}
                 flip
-                className="text-2xl lg:text-3xl font-[500] text-[var(--text-color)]"
+                className="text-2xl lg:text-3xl font-[500] text-[var(--text-color)] break-words whitespace-normal"
               />
 
-              {/* Animated Description */}
-              <div>
+              {/* Animated Description Block */}
+              <div className="w-full">
                 <AnimatedText
                   as="p"
                   text={description}
@@ -148,7 +184,7 @@ const HelpingSec = ({ HelpSecData }) => {
                   duration={0.35}
                   yFrom={20}
                   flip={false}
-                  className="w-[100%] lg:w-[70%] text-[var(--text-color)]"
+                  className="w-[100%] lg:w-[70%] text-[var(--text-color)] break-words whitespace-normal"
                 />
                 <AnimatedText
                   as="p"
@@ -158,7 +194,7 @@ const HelpingSec = ({ HelpSecData }) => {
                   duration={0.35}
                   yFrom={20}
                   flip={false}
-                  className="w-[100%] lg:w-[70%] text-[var(--text-color)]"
+                  className="w-[100%] lg:w-[70%] text-[var(--text-color)] mt-4 break-words whitespace-normal"
                 />
               </div>
 
@@ -167,7 +203,7 @@ const HelpingSec = ({ HelpSecData }) => {
                 {bullets.map((item, index) => (
                   <li
                     key={index}
-                    className="flex text-[var(--text-color)] items-center gap-3"
+                    className="flex text-[var(--text-color)] items-center gap-3 break-words whitespace-normal"
                   >
                     <img src="/assets/images/home/tick.png" alt="" />
                     <AnimatedText
@@ -178,6 +214,7 @@ const HelpingSec = ({ HelpSecData }) => {
                       duration={0.3}
                       yFrom={10}
                       flip={false}
+                      className="break-words whitespace-normal"
                     />
                   </li>
                 ))}
@@ -188,7 +225,7 @@ const HelpingSec = ({ HelpSecData }) => {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.6 }}
-                transition={{ delay: 1.2, duration: 0.4 }} 
+                transition={{ delay: 1.2, duration: 0.4 }}
                 className="w-full"
               >
                 <NormalButton
