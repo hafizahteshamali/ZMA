@@ -340,3 +340,49 @@ export const CustomGlobalData = {
     },
   ]
 }
+
+
+export const DesignGlobalData = {
+  heading: "Custom and global, the brief is simple.",
+  text: "From frontend finesse to backend power we deliver full service web solutions.",
+  bulletText: "BUILD . RUN . IMPROVE",
+  services: [
+    {
+      img: "/assets/images/service/design-card1.png",
+      smHead: "Design & Launch",
+      description: "Through initial concept workshops and UX/UI sessions, we create detailed wireframes and interactive prototypes, then run agile development sprints. With ongoing user testing, performance tuning, and rigorous QA, we refine every element to deliver a polished, production‑ready website that exceeds your goals and ensures an exceptional launch experience.",
+      btnText: "Learn more",
+      btnLink: "/",
+      rightBorder: true,
+      pl: true,
+    },
+    {
+      img: "/assets/images/service/design-card2.png",
+      smHead: "Maintain & Optimize",
+      description: "Once your website is live, we proactively monitor uptime and performance, apply security patches and updates, and optimize server configurations for traffic spikes. We perform regular health checks, backups, and performance audits, and use analytics‑driven insights to implement iterative improvements—keeping your site fast, secure, and reliable as your business evolves.",
+      btnText: "Learn more",
+      btnLink: "/",
+      rightBorder: false,
+      pl: false,
+    }
+  ]
+}
+
+export const theriData = [
+  {
+    para1: "By far the best agency I’ve worked with.",
+    str: "Their professionalism, creativity,",
+    para2: "and communication have set a new standard for any future collaborations.",
+    name: "Georgia Millar",
+    designation: "Founder & CEO",
+    image: "/assets/images/service/velra.png"
+  },
+  {
+    para1: "“Professional, creative, and incredibly responsive",
+    str: "they turned our vision into a powerful website.",
+    para2: "The end result exceeded expectations.”",
+    name: "Sarah M",
+    designation: "Marketing Director",
+    image: "/assets/images/service/sclera.png"
+  },
+]

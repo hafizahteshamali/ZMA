@@ -53,3 +53,18 @@ body {
 .service_tool_box_btn {
     background: linear-gradient(#FFFFFF, #CBE1FF, #CBE1FF, #CBE1FF);
 }
+
+.serviceBtn {
+  font-size: 16px;
+  color: white;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.2), rgba(148, 122, 106, 0.4));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.serviceBtn:hover {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.3), rgba(148, 122, 106, 0.5));
+}

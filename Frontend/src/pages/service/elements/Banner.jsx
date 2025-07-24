@@ -281,7 +281,7 @@ const Banner = ({ ServiceBannerData }) => {
                     />
                     {buttons.map((btn, index) => {
                       return (
-                        <div className="w-[90%] lg:w-[50%] bg-[#ffffff33] absolute bottom-5 left-[50%] py-2 border-2 border-white transform -translate-x-[50%] rounded-full">
+                        <div key={index} className="w-[90%] lg:w-[50%] bg-[#ffffff33] absolute bottom-5 left-[50%] py-2 border-2 border-white transform -translate-x-[50%] rounded-full">
                           <div className="flex justify-between items-center">
                             <p className="text-[#3D4F60] text-[12px] lg:text-[16px] w-[32%] flex justify-center items-center border-r border-[#3D4F60]">{btn.text}</p>
                             <NavLink to={btn.caseStudyUrl} className="text-[#3D4F60] text-[12px] lg:text-[16px] w-[32%] flex justify-center items-center border-r border-[#3D4F60]">
