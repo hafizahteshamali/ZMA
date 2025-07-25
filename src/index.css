@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+    word-wrap: break-word !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+:root {
+    --text-color: #3D4F60;
+    --text-hover-color: #00264B;
+    --sm-heading: #636363;
+    --white-color: #ffffff;
+    --black-color: #000000;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+    background-color: #cbe1ff;
+}
+
+.box {
+    background: linear-gradient(to right, #cbe1ff 65%, #005AB1 100%);
+}
+
+.btn {
+    background: linear-gradient(to right, #FFFFFF66 50%, #011d3b 90%);
+}
+
+.helpBox {
+    background: linear-gradient(to bottom left, #e0e7ef 5%, #011d3b 70%);
+}
+
+.service_tool_box {
+    background: linear-gradient(#CBE1FF, #768FAF);
+}
+
+.service_tool_box_btn {
+    background: linear-gradient(#FFFFFF, #CBE1FF, #CBE1FF, #CBE1FF);
+}
+
+.serviceBtn {
+  font-size: 16px;
+  color: white;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.2), rgba(148, 122, 106, 0.4));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.serviceBtn:hover {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.3), rgba(148, 122, 106, 0.5));
+}
+<<<<<<< HEAD
+
+@keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  .blink-dot {
+    animation: blink 1.5s ease-in-out infinite;
+  }
+  
+=======
+>>>>>>> e7e13f9d0e83a44058d792b2e1f1aefa70fd8547
