@@ -68,3 +68,12 @@ body {
 .serviceBtn:hover {
   background: linear-gradient(to left, rgba(255, 255, 255, 0.3), rgba(148, 122, 106, 0.5));
 }
+
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  .blink-dot {
+    animation: blink 1.5s infinite;
+  }

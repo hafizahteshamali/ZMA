@@ -322,21 +322,24 @@ export const CustomGlobalData = {
       smHead: "Visualize What Works",
       description: "Our UI/UX wireframes connect every touchpoint — from websites and mobile apps to backend systems — into a unified, user-centered structure that ensures clarity, usability, and consistency at every stage of the customer journey, empowering your digital presence to scale with confidence.",
       btnText: "Learn more",
-      btnLink: "/"
+      btnLink: "/",
+      borderr: true
     },
     {
       img: "/assets/images/service/service-2.png",
       smHead: "Custom & WordPress",
       description: "ZMA builds modern, high-performance websites tailored to your needs from fully custom-coded platforms to flexible, SEO-optimized WordPress solutions. With seamless design, fast load times, and scalable architecture, we make sure your online presence stands out and grows with you.",
       btnText: "Learn more",
-      btnLink: "/"
+      btnLink: "/",
+      borderr: true
     },
     {
       img: "/assets/images/service/service-3.png",
       smHead: "Scroll. Animate. Impress.",
       description: "At ZMA, we create smooth, high-impact animations that bring your website to life — from subtle micro-interactions to full scroll-based storytelling. Whether for branding, product showcases, or immersive UX, our animations enhance engagement, improve retention, and make every scroll memorable.",
       btnText: "Learn more",
-      btnLink: "/"
+      btnLink: "/",
+      borderr: false
     },
   ]
 }
