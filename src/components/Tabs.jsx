@@ -20,11 +20,7 @@ const ProcessTabs = ({ tabs }) => {
   }, [isInView, tabs]);
 
   const handleTabClick = (index) => {
-<<<<<<< HEAD
-    setActiveTab(index); // Allow user to click and highlight
-=======
     setActiveTab(index);
->>>>>>> e7e13f9d0e83a44058d792b2e1f1aefa70fd8547
   };
 
   return (
@@ -46,20 +42,12 @@ const ProcessTabs = ({ tabs }) => {
           ))}
         </div>
 
-<<<<<<< HEAD
-        {/* Tabs */}
-=======
         {/* Tabs layout */}
->>>>>>> e7e13f9d0e83a44058d792b2e1f1aefa70fd8547
         <div className="flex flex-col lg:flex-row w-full justify-center items-center lg:items-start gap-4">
           {tabs.map((tab, index) => (
             <div
               key={index}
-<<<<<<< HEAD
-              className={`cursor-pointer w-full sm:w-[80%] lg:flex-1 p-4 rounded-md transition-all duration-500 ease-in-out`}
-=======
               className={`cursor-pointer w-full sm:w-[80%] lg:flex-1 p-4 rounded-md`}
->>>>>>> e7e13f9d0e83a44058d792b2e1f1aefa70fd8547
               onClick={() => handleTabClick(index)}
             >
               {/* Tab number */}
@@ -80,17 +68,10 @@ const ProcessTabs = ({ tabs }) => {
                 {tab.title}
               </h3>
 
-<<<<<<< HEAD
-              {/* Description */}
-              {openTabs.includes(index) && (
-                <div className="mt-4 p-4 rounded-lg shadow-sm text-center lg:text-left opacity-100 transition-opacity duration-700 ease-in-out">
-                  <p className="text-slate-600 text-sm leading-relaxed">
-=======
               {/* Tab description */}
               {activeTab === index && (
                 <div className="mt-4 p-4 rounded-lg shadow-sm text-center lg:text-left">
                   <p className="text-slate-600 text-sm leading-relaxed break-words whitespace-normal">
->>>>>>> e7e13f9d0e83a44058d792b2e1f1aefa70fd8547
                     {tab.description}
                   </p>
                 </div>

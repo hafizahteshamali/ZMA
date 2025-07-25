@@ -344,10 +344,6 @@ export const CustomGlobalData = {
   ]
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e7e13f9d0e83a44058d792b2e1f1aefa70fd8547
 export const DesignGlobalData = {
   heading: "Custom and global, the brief is simple.",
   text: "From frontend finesse to backend power we deliver full service web solutions.",
