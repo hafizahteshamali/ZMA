@@ -150,7 +150,7 @@ const CustomGlobal = ({ clientsName = [], CustomGlobalData }) => {
               <motion.div
                 key={index}
                 className={`min-h-[700px] w-[95%] md:w-[45%] lg:w-[33%] my-4 lg:my-0 p-3 flex justify-center items-center ${
-                  item.borderr ? "border-r border-gray-500" : ""
+                  item.borderr ? "lg:border-r border-gray-500" : ""
                 }`}
                 variants={container}
                 initial="hidden"
