@@ -7,27 +7,45 @@ export const NavigationData = [
   },
   {
     text: "Service",
-    path: "/service",
+    path: "", // ⛔ No route attached
+    children: [
+      {
+        text: "AI Development",
+        path: "/service/ai-development",
+      },
+      {
+        text: "Web Development",
+        path: "/service/web-development",
+      },
+      {
+        text: "IT Solutions",
+        path: "/service/it-solutions",
+      },
+      {
+        text: "Graphic Designing",
+        path: "/service/graphic-designing",
+      },
+    ],
   },
   {
     text: "About",
-    path: "/",
+    path: "/about",
   },
   {
     text: "Case Studies",
-    path: "/",
+    path: "/case-studies",
   },
   {
     text: "Team",
-    path: "/",
+    path: "/team",
   },
   {
     text: "Blog",
-    path: "/",
+    path: "/blog",
   },
   {
     text: "Contact",
-    path: "/",
+    path: "/contact",
   },
 ];
 
@@ -389,3 +407,48 @@ export const theriData = [
     image: "/assets/images/service/sclera.png"
   },
 ]
+
+// AI Development
+
+export const AiDevelopBannerData={
+  heading: "ZMA AI studio.",
+  subTitle: "We develop custom AI solutions for innovative companies.",
+  link1Text: "our services",
+  link1: "/service",
+  link2Text: "contact us",
+  link2: "/",
+  heading2: "We're ZMA-Solutions. We develop custom Al solutions for innovative companies.",
+  btn: "Get in touch"
+}
+
+
+// export const WhatWeDo1 = {
+//   lgHeading: "What we do?",
+//   servicesCards: [
+//     {
+//       imge: "/assets/images/ai-development/service-card1.png",
+//       smHeading: "Chatbot Development",
+//       para: "We develop intelligent chatbots that leverage advanced NLP to elevate customer interactions and streamline your business processes."
+//     },
+//     {
+//       imge: "/assets/images/ai-development/service-card2.png",
+//       smHeading: "Content Creation",
+//       para: "Our content creation solutions effortlessly generate high-quality, engaging content according to your brand's guidelines to captivate your audience."
+//     },
+//     {
+//       imge: "/assets/images/ai-development/service-card1.png",
+//       smHeading: "Chatbot Development",
+//       para: "We develop intelligent chatbots that leverage advanced NLP to elevate customer interactions and streamline your business processes."
+//     },
+//     {
+//       imge: "/assets/images/ai-development/service-card1.png",
+//       smHeading: "Chatbot Development",
+//       para: "We develop intelligent chatbots that leverage advanced NLP to elevate customer interactions and streamline your business processes."
+//     },
+//     {
+//       imge: "/assets/images/ai-development/service-card1.png",
+//       smHeading: "Chatbot Development",
+//       para: "We develop intelligent chatbots that leverage advanced NLP to elevate customer interactions and streamline your business processes."
+//     },
+//   ]
+// }

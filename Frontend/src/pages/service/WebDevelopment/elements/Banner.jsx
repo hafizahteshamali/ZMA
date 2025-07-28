@@ -1,8 +1,8 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
-import Header from "../../../navigation/Header";
 import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
+import Header from "../../../../navigation/Header";
 
 /* ----------------------------------------------------------
    Helper: Progress Bar
