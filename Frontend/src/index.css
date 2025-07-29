@@ -102,3 +102,20 @@ body {
 .ul{
   z-index: 10 !important;
 }
+
+
+/* tailwind.config.js should support these values or use inline Tailwind */
+.custom-slider-spacing .slick-slide > div {
+  margin-right: 10px; /* Adjust as needed for gap */
+}
+.custom-slider-spacing .slick-list {
+  margin-right: -10px; /* Negative to compensate right padding */
+}
+
+/* Add this in your global styles if needed */
+.direction-rtl {
+  direction: rtl;
+}
+.direction-ltr {
+  direction: ltr;
+}

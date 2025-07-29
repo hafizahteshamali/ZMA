@@ -1,8 +1,57 @@
-import React from "react";
+import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
+import { motion, useInView } from "framer-motion";
 import Header from "../../../../navigation/Header";
-import NormalButton from "../../../../components/NormalButton";
+
+// Improved AnimatedLetters component that preserves whole words
+const AnimatedLetters = ({ text, className = "" }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.5 });
+
+  const container = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.03 },
+    },
+  };
+
+  const letter = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3, ease: "easeOut" },
+    },
+  };
+
+  // Split text into words and spaces while preserving their integrity
+  const words = text.split(/(\s+)/).filter(word => word.length > 0);
+
+  return (
+    <motion.div
+      ref={ref}
+      className={`${className} flex flex-wrap justify-center text-center`}
+      variants={container}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+    >
+      {words.map((word, wordIndex) => (
+        <div key={wordIndex} className="inline-flex whitespace-pre-wrap">
+          {word.split("").map((char, charIndex) => (
+            <motion.span
+              key={charIndex}
+              variants={letter}
+              className="inline-block"
+            >
+              {char}
+            </motion.span>
+          ))}
+        </div>
+      ))}
+    </motion.div>
+  );
+};
 
 const Banner = ({ AiDevelopBannerData }) => {
   const {
@@ -27,16 +76,20 @@ const Banner = ({ AiDevelopBannerData }) => {
         <div className="h-screen container mx-auto flex flex-col justify-center lg:justify-end items-center">
           <Header />
 
-          <div className="h-[400px] lg:h-[500px] w-full flex flex-col justify-center lg:justify-start items-center gap-7">
-            <h1 className="text-4xl lg:text-8xl font-[600] gradient-text">
-              {heading}
-            </h1>
-            <p className="text-[var(--text-color)] text-center lg:text-left">
-              {subTitle}
-            </p>
-            <div className="w-[100%] lg:w-[40%] p-2 flex justify-between items-center">
+          <div className="h-[400px] lg:h-[500px] w-full flex flex-col justify-center lg:justify-start items-center gap-7 px-4 text-center">
+            <AnimatedLetters
+              text={heading}
+              className="text-4xl lg:text-7xl font-[600] gradient-text"
+            />
+
+            <AnimatedLetters
+              text={subTitle}
+              className="text-[var(--text-color)] text-base lg:text-xl max-w-4xl"
+            />
+
+            <div className="w-full lg:w-[40%] p-2 flex justify-center lg:justify-between items-center flex-wrap gap-4">
               <NavLink
-                className="relative h-[50px] w-[45%] rounded-sm flex justify-center items-center text-[var(--text-color)] transition-all duration-300 border-transparent border hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#006CFF] hover:to-[#00264B] hover:border hover:border-[#006CFF] gap-2 group"
+                className="relative h-[50px] w-[45%] min-w-[140px] rounded-sm flex justify-center items-center text-[var(--text-color)] transition-all duration-300 border hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#006CFF] hover:to-[#00264B] hover:border border-[#006CFF] gap-2 group"
                 to={link1}
               >
                 <span>{link1Text}</span>
@@ -44,7 +97,7 @@ const Banner = ({ AiDevelopBannerData }) => {
               </NavLink>
 
               <NavLink
-                className="relative h-[50px] w-[45%] rounded-sm flex justify-center items-center text-[var(--text-color)] transition-all duration-300 border-transparent border hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#006CFF] hover:to-[#00264B] hover:border hover:border-[#006CFF] gap-2 group"
+                className="relative h-[50px] w-[45%] min-w-[140px] rounded-sm flex justify-center items-center text-[var(--text-color)] transition-all duration-300 border hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#006CFF] hover:to-[#00264B] hover:border border-[#006CFF] gap-2 group"
                 to={link2}
               >
                 <span>{link2Text}</span>
@@ -56,10 +109,11 @@ const Banner = ({ AiDevelopBannerData }) => {
       </div>
 
       <div className="container mx-auto my-[100px]">
-        <div className="w-[80%] mx-auto flex flex-col justify-center items-center">
-          <h1 className="text-2xl lg:text-5xl font-[600] gradient-text text-center lg:leading-tight leading-relaxed">
-            {heading2}
-          </h1>
+        <div className="w-[80%] mx-auto flex flex-col justify-center items-center text-center">
+          <AnimatedLetters
+            text={heading2}
+            className="text-2xl lg:text-5xl font-[600] gradient-text lg:leading-tight leading-relaxed"
+          />
           <div className="w-[50%] lg:w-[20%] rounded-lg bg-gradient-to-r from-[#006CFF] to-[#00224F66] p-[2px] mt-5">
             <button className="w-full h-[40px] rounded-lg bg-[#cbe1ff] text-[#006CFF] font-semibold">
               {btn}

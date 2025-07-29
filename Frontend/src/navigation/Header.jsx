@@ -40,7 +40,7 @@ const Header = () => {
         </NavLink>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex justify-center items-center w-[50%] gap-10 bg-[#ffffffa2] backdrop:blur-xl rounded-4xl">
+        <ul className="hidden lg:flex justify-center items-center w-[60%] xl:w-[50%] xl:gap-10 gap-7 bg-[#ffffffa2] backdrop:blur-xl rounded-4xl">
           {NavigationData.map((nav, index) => (
             <li key={index} className="relative group z-50 li h-[50px] flex justify-center items-center">
               <NavLink
@@ -53,12 +53,12 @@ const Header = () => {
 
               {/* Dropdown Menu (only if children exist) */}
               {nav.children && (
-                <ul className="absolute top-full left-0 ul bg-white shadow-lg h-[200px] w-[200px]  pt-10 rounded-md hidden group-hover:block">
+                <ul className="absolute top-full left-0 ul bg-white shadow-lg w-[200px]  rounded-b-md hidden group-hover:block">
                   {nav.children.map((child, cIndex) => (
                     <li key={cIndex}>
                       <NavLink
                         to={child.path}
-                        className="block px-4 py-2 whitespace-nowrap text-gray-700 hover:bg-gray-100 text-[14px]"
+                        className="block px-4 py-2 whitespace-nowrap my-2 text-gray-700 hover:bg-gray-100 text-[14px]"
                       >
                         {child.text}
                       </NavLink>
