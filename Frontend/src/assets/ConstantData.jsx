@@ -452,3 +452,9 @@ export const AiDevelopBannerData={
 //     },
 //   ]
 // }
+
+
+export const ModalImages = {
+  img1: "/assets/images/graphic-designing/modal-img1.jpeg",
+  img2: ""
+}

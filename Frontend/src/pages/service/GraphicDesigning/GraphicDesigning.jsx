@@ -1,8 +1,13 @@
 import React from 'react'
+import Banner from './elements/Banner'
+import CreativeSec from './elements/CreativeSec'
 
 const GraphicDesigning = () => {
   return (
-    <div>GraphicDesigning</div>
+    <>
+     <Banner />
+     <CreativeSec /> 
+    </>
   )
 }
 

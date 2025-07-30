@@ -53,7 +53,7 @@ const Header = () => {
 
               {/* Dropdown Menu (only if children exist) */}
               {nav.children && (
-                <ul className="absolute top-full left-0 ul bg-white shadow-lg w-[200px]  rounded-b-md hidden group-hover:block">
+                <ul className="absolute top-full left-0 ul bg-white shadow-lg w-[200px] pt-8 rounded-b-md hidden group-hover:block">
                   {nav.children.map((child, cIndex) => (
                     <li key={cIndex}>
                       <NavLink
