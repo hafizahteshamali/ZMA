@@ -1,13 +1,12 @@
 import React, { useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import TheirWithBanner from "../../../../components/TheirWithBanner";
 
 // Enhanced Animated Text Component with continuous scroll detection
 const AnimatedText = ({ text, className, delay = 0 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.1 });
   const controls = useAnimation();
-  const words = text.split(/(\s+)/).filter(word => word.length > 0);
+  const words = text.split(/(\s+)/).filter((word) => word.length > 0);
 
   React.useEffect(() => {
     if (isInView) {
@@ -18,7 +17,7 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
   }, [isInView, controls]);
 
   return (
-    <motion.div 
+    <motion.div
       ref={ref}
       className={`${className} whitespace-normal`}
       initial="hidden"
@@ -27,8 +26,8 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
         hidden: { opacity: 0 },
         visible: {
           opacity: 1,
-          transition: { staggerChildren: 0.03, delayChildren: delay }
-        }
+          transition: { staggerChildren: 0.03, delayChildren: delay },
+        },
       }}
     >
       {words.map((word, wordIndex) => (
@@ -39,15 +38,15 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
               className="inline-block"
               variants={{
                 hidden: { opacity: 0, y: 20 },
-                visible: { 
-                  opacity: 1, 
+                visible: {
+                  opacity: 1,
                   y: 0,
                   transition: {
                     type: "spring",
                     stiffness: 100,
-                    damping: 10
-                  }
-                }
+                    damping: 10,
+                  },
+                },
               }}
             >
               {letter}
@@ -61,11 +60,7 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
 
 const ProcessSec = () => {
   const cardRefs = [useRef(null), useRef(null), useRef(null)];
-  const cardControls = [
-    useAnimation(),
-    useAnimation(),
-    useAnimation()
-  ];
+  const cardControls = [useAnimation(), useAnimation(), useAnimation()];
 
   // Track card visibility for continuous animation
   cardRefs.forEach((ref, index) => {
@@ -86,9 +81,9 @@ const ProcessSec = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -118,11 +113,11 @@ const ProcessSec = () => {
                   animate={cardControls[0]}
                   variants={{
                     hidden: { opacity: 0, scale: 0.8 },
-                    visible: { 
-                      opacity: 1, 
+                    visible: {
+                      opacity: 1,
                       scale: 1,
-                      transition: { duration: 0.6, delay: 0.2 }
-                    }
+                      transition: { duration: 0.6, delay: 0.2 },
+                    },
                   }}
                 />
                 <div className="break-words">
@@ -158,11 +153,11 @@ const ProcessSec = () => {
                   animate={cardControls[1]}
                   variants={{
                     hidden: { opacity: 0, scale: 0.8 },
-                    visible: { 
-                      opacity: 1, 
+                    visible: {
+                      opacity: 1,
                       scale: 1,
-                      transition: { duration: 0.6, delay: 0.4 }
-                    }
+                      transition: { duration: 0.6, delay: 0.4 },
+                    },
                   }}
                 />
                 <div className="break-words">
@@ -198,11 +193,11 @@ const ProcessSec = () => {
                   animate={cardControls[2]}
                   variants={{
                     hidden: { opacity: 0, scale: 0.8 },
-                    visible: { 
-                      opacity: 1, 
+                    visible: {
+                      opacity: 1,
                       scale: 1,
-                      transition: { duration: 0.6, delay: 0.6 }
-                    }
+                      transition: { duration: 0.6, delay: 0.6 },
+                    },
                   }}
                 />
                 <div className="break-words">
@@ -222,7 +217,7 @@ const ProcessSec = () => {
           </div>
         </div>
 
-        <TheirWithBanner />
+        {/* <TheirWithBanner /> */}
       </div>
     </div>
   );

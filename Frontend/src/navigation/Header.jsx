@@ -40,25 +40,31 @@ const Header = () => {
         </NavLink>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex justify-center items-center w-[60%] xl:w-[50%] xl:gap-10 gap-7 bg-[#ffffffa2] backdrop:blur-xl rounded-4xl">
+        <ul className="hidden lg:flex justify-center items-center w-[60%] xl:w-[50%] xl:gap-10 gap-7 bg-[#ffffff54] backdrop:blur-4xl rounded-4xl">
           {NavigationData.map((nav, index) => (
-            <li key={index} className="relative group z-50 li h-[50px] flex justify-center items-center">
+            <li
+              key={index}
+              className="relative group z-10 li h-[50px] flex justify-center items-center"
+            >
               <NavLink
                 to={nav.path}
-                className="flex items-center gap-1 text-[16px] font-[400] text-[var(--text-color)] cursor-pointer hover:text-xl hover:font-[700] hover:text-[var(--text-hover-color)] transition-all duration-300"
+                className={({ isActive }) =>
+                  `flex items-center gap-1 text-[16px] font-[400] cursor-pointer
+     transition-all duration-300 ease-in-out hover:text-xl hover:font-[700] hover:text-[var(--text-hover-color)]`
+                }
               >
-                {nav.text}
+                <span className="leading-none">{nav.text}</span>
                 {nav.children && <FiChevronDown className="mt-1 text-[16px]" />}
               </NavLink>
 
-              {/* Dropdown Menu (only if children exist) */}
+              {/* Dropdown Menu */}
               {nav.children && (
-                <ul className="absolute top-full left-0 ul bg-white shadow-lg w-[200px] pt-8 rounded-b-md hidden group-hover:block">
+                <ul className="absolute top-full left-0 bg-white shadow-md w-[200px] pt-5 rounded-b-md hidden group-hover:block z-20">
                   {nav.children.map((child, cIndex) => (
                     <li key={cIndex}>
                       <NavLink
                         to={child.path}
-                        className="block px-4 py-2 whitespace-nowrap my-2 text-gray-700 hover:bg-gray-100 text-[14px]"
+                        className="block px-4 py-2 whitespace-nowrap text-gray-700 hover:bg-gray-100 text-[14px]"
                       >
                         {child.text}
                       </NavLink>

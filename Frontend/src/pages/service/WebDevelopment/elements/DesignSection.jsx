@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
-import TheirWithBanner from '../../../../components/TheirWithBanner';
 
 // Animation Variants
 const textContainer = {
@@ -136,8 +135,6 @@ const DesignSection = ({ DesignGlobalData, theriData }) => {
               </motion.div>
             ))}
           </motion.div>
-
-          <TheirWithBanner />
 
         </div>
       </div>

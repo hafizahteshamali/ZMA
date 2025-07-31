@@ -454,7 +454,67 @@ export const AiDevelopBannerData={
 // }
 
 
-export const ModalImages = {
-  img1: "/assets/images/graphic-designing/modal-img1.jpeg",
-  img2: ""
+// Graphic Designing Page
+
+export const GraphicBannerData = {
+  smText: "Creative",
+  icon: "/assets/images/graphic-designing/start.svg",
+  text: "We build systems that look as good as they work.",
+  heading: "Designs that Work Like a System, Not Just a",
+  highlight: "Canvas"
 }
+
+export const Reviews1 = [
+  {
+    description: "Working with your team was seamless. You delivered our e-commerce site faster than expected and with better performance than we imagined.",
+    profileImg: "/assets/images/service/review1-img1.jpg",
+    name: "Sarah Klein",
+    designation: "CEO at GreenCart"
+  },
+  {
+    description: "The redesign completely changed how our users interact with the website. It's faster, cleaner, and mobile-friendly—exactly what we needed.",
+    profileImg: "/assets/images/service/review1-img2.jpg",
+    name: "David Meier",
+    designation: "Marketing Head at EventBuzz"
+  },
+  {
+    description: "From the first meeting to final deployment, your team communicated clearly and delivered everything exactly to our requirements.",
+    profileImg: "/assets/images/service/review1-img3.jpg",
+    name: "Ahmed Raza",
+    designation: "Founder of TechNova"
+  },
+  {
+    description: "We saw a 40% increase in conversions within a month after you launched our new landing pages. Thank you for the incredible work.",
+    profileImg: "/assets/images/service/review1-img4.jpg",
+    name: "Julia Weber",
+    designation: "Digital Strategist at WellNest"
+  },
+]
+
+
+export const Reviews2 = [
+  {
+    description: "Their ability to understand our business needs and turn them into a custom web solution was impressive.",
+    profileImg: "/assets/images/service/review2-img1.jpg",
+    name: "Mohsin Ali",
+    designation: "Operations Lead at FinEdge"
+  },
+  {
+    description: "I appreciated how your team combined technical skill with design thinking. Our site is not justfunctional—it’s beautiful.",
+    profileImg: "/assets/images/service/review2-img2.jpg",
+    name: "Elena Fischer",
+    designation: "Creative Director at Studio Bloom"
+  },
+  {
+    description: "The backend system you built helped automate 70% of our manual tasks. This is a total game-changer.",
+    profileImg: "/assets/images/service/review2-img3.jpg",
+    name: "Thomas Berger",
+    designation: "CTO at LogiLink"
+  },
+  {
+    description: "Fast support, clear communication, and top-notch code—this team knows what they’re doing.",
+    profileImg: "/assets/images/service/review2-img4.jpg",
+    name: "Lena Ahmad",
+    designation: "Co-Founder of EduTrail"
+  }
+]
