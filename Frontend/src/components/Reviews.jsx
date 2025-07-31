@@ -16,7 +16,7 @@ const Reviews = ({ Reviews1 }) => {
 
   return (
     <div className="container mx-auto px-4" style={{ background: "#cbe1ff" }}>
-      <div className="w-full mt-[200px]">
+      <div className="w-full">
         <div className="lg:w-[100%] mx-auto">
           <div
             ref={theirWordsRef}
@@ -24,7 +24,7 @@ const Reviews = ({ Reviews1 }) => {
               isTheirWordsInView ? "opacity-100" : "opacity-100"
             }`}
           >
-            <h1 className="text-left text-5xl text-[var(--text-hover-color)] font-[600] mb-[30px]">Reviews</h1>
+            <h1 className="text-5xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#006CFF] to-[#00224F]">Reviews</h1>
 
             {/* First Slider - Left to Right */}
             <div className="w-full my-10 relative overflow-hidden slider-container">

@@ -4,6 +4,7 @@ import { clientsName, CustomGlobalData, DesignGlobalData, Reviews1, ServiceBanne
 import CustomGlobal from './elements/CustomGlobal'
 import DesignSection from './elements/DesignSection'
 import Reviews from '../../../components/Reviews'
+import DiscoverBanner from '../../../components/DiscoverBanner'
 
 const WebDevelopment = () => {
   return (
@@ -12,6 +13,7 @@ const WebDevelopment = () => {
      <CustomGlobal clientsName={clientsName} CustomGlobalData={CustomGlobalData} />
      <DesignSection DesignGlobalData={DesignGlobalData} theriData={theriData} />
      <Reviews Reviews1={Reviews1} />
+     <DiscoverBanner />
     </>
   )
 }

@@ -1,11 +1,13 @@
 import React from 'react'
 import {motion} from "framer-motion";
+import { LuSquareArrowRight } from 'react-icons/lu';
 
 const DiscoverBanner = () => {
   return (
     <div className='container mx-auto'>
+        <div className='w-[100%] lg:w-[80%] mx-auto'>
         <motion.div
-            className="container mx-auto lg:w-[100%] my-[100px] bg-amber-800"
+            className="container mx-auto lg:w-[100%] my-[100px]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
@@ -65,6 +67,7 @@ const DiscoverBanner = () => {
               </motion.button>
             </motion.div>
           </motion.div>
+        </div>
     </div>
   )
 }

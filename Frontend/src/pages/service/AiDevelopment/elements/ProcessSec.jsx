@@ -87,7 +87,7 @@ const ProcessSec = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="">
       <div className="container mx-auto p-3">
         <div className="flex flex-col items-start">
           <AnimatedText
@@ -216,8 +216,7 @@ const ProcessSec = () => {
             </motion.div>
           </div>
         </div>
-
-        {/* <TheirWithBanner /> */}
+        
       </div>
     </div>
   );
