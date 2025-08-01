@@ -1,55 +1,66 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { NavLink } from "react-router-dom"
-import { FiChevronDown, FiMenu } from "react-icons/fi"
-import { FaRegWindowClose } from "react-icons/fa"
-import { NavigationData } from "../assets/ConstantData"
-import FancyButton from "../components/FancyButton"
+import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { FiChevronDown, FiMenu } from "react-icons/fi";
+import { FaRegWindowClose } from "react-icons/fa";
+import { NavigationData } from "../assets/ConstantData";
+import FancyButton from "../components/FancyButton";
 
 const Header = () => {
-  const [isMenu, setIsMenu] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState(null)
+  const [isMenu, setIsMenu] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setIsScrolled(true)
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false)
+        setIsScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       <div
-        className={`flex justify-between lg:justify-around px-4 items-center h-[100px] fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? "bg-[var(--white-color)] shadow-lg" : "bg-transparent"
+        className={`flex justify-between lg:justify-around px-4 items-center h-[90px] fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled ? "bg-[#cbe1ff]" : "bg-transparent"
         }`}
       >
         {/* Logo */}
         <NavLink to="/" className="flex items-center">
-          <img src="/assets/images/home/logo.png" className="object-contain h-[100px] w-[130px]" alt="Logo" />
+          <img
+            src="/assets/images/home/logo.png"
+            className="object-contain h-[100px] w-[130px]"
+            alt="Logo"
+          />
         </NavLink>
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex justify-center items-center w-[60%] xl:w-[50%] xl:gap-10 gap-7 bg-[#ffffff54] backdrop-blur-sm rounded-full px-6">
           {NavigationData.map((nav, index) => (
-            <li key={index} className="relative group z-10 h-[50px] flex justify-center items-center">
+            <li
+              key={index}
+              className="relative group z-10 h-[50px] flex justify-center items-center"
+            >
               <NavLink
                 to={nav.path}
                 className={({ isActive }) =>
                   `flex items-center gap-1 text-[16px] font-[400] cursor-pointer transition-all duration-300 ease-in-out hover:text-[18px] hover:font-[600] hover:text-[var(--text-hover-color)] ${
-                    isActive ? "text-[var(--text-hover-color)] font-[600]" : "text-[var(--text-color)]"
+                    isActive
+                      ? "text-[var(--text-hover-color)] font-[600]"
+                      : "text-[var(--text-color)]"
                   }`
                 }
               >
-                <span className="leading-none whitespace-nowrap">{nav.text}</span>
+                <span className="leading-none whitespace-nowrap">
+                  {nav.text}
+                </span>
                 {nav.children && (
                   <FiChevronDown className="mt-1 text-[14px] transition-transform duration-300 group-hover:rotate-180" />
                 )}
@@ -87,78 +98,70 @@ const Header = () => {
           />
         </div>
       </div>
-
       {/* Mobile Menu Overlay */}
       <div
-        className={`${
-          isMenu ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-        } h-[100vh] w-[100%] fixed bg-[#f0f6ff] top-0 right-0 bottom-0 z-30 transition-all duration-500 ease-in-out flex flex-col justify-center items-center gap-10`}
+        className={
+          isMenu
+            ? "h-[100vh] w-[100%] fixed bg-[#f0f6ff] top-0 right-[0%] bottom-0 z-30 transition-all duration-700 flex flex-col justify-center items-center gap-10"
+            : "h-[100vh] w-[100%] fixed bg-[#f0f6ff] top-0 -right-[100%] bottom-0 z-30 transition-all duration-700 flex flex-col justify-center items-center gap-10"
+        }
       >
-        {/* Close Button */}
-        <div className="absolute top-6 right-6">
-          <FaRegWindowClose
-            onClick={() => setIsMenu(false)}
-            className="text-3xl cursor-pointer text-gray-600 hover:text-red-500 transition-colors duration-300"
-          />
-        </div>
-
-        {/* Mobile Navigation */}
+                {/* Mobile Navigation */} 
         <div className="w-[70%] mx-auto flex flex-col justify-around items-start gap-5 mt-6">
           <ul className="flex flex-col justify-center items-start gap-6 w-[75%] px-5">
             {NavigationData.map((nav, index) => (
               <li key={index} className="w-full">
                 <div className="flex flex-col gap-2">
                   <div
-                    onClick={() => {
-                      if (nav.children) {
-                        setOpenDropdown(openDropdown === nav.text ? null : nav.text)
-                      } else {
-                        setIsMenu(false)
-                      }
-                    }}
-                    className="flex items-center gap-2 text-[18px] font-[400] text-[var(--text-color)] cursor-pointer hover:text-[20px] hover:font-[600] hover:text-[var(--text-hover-color)] transition-all duration-300 ease-in-out py-2"
+                    onClick={() =>
+                      nav.children
+                        ? setOpenDropdown(
+                            openDropdown === nav.text ? null : nav.text
+                          )
+                        : setIsMenu(false)
+                    }
+                    className="flex items-center gap-1 text-[16px] font-[400] text-[var(--text-color)] cursor-pointer hover:text-xl hover:font-[700] hover:text-[var(--text-hover-color)] transition-all duration-300"
                   >
-                    <span className="leading-none">{nav.text}</span>
+                    {nav.text}                   
                     {nav.children && (
-                      <FiChevronDown
-                        className={`text-[16px] transition-transform duration-300 ${
-                          openDropdown === nav.text ? "rotate-180" : ""
-                        }`}
-                      />
+                      <FiChevronDown className="mt-1 text-[16px]" />
                     )}
+                             
                   </div>
-
-                  {/* Toggleable Mobile Dropdown */}
-                  {nav.children && (
-                    <ul
-                      className={`ml-6 flex flex-col gap-2 overflow-hidden transition-all duration-300 ease-in-out ${
-                        openDropdown === nav.text ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                      }`}
-                    >
+                  {/* Toggleable Mobile Dropdown */}                 
+                  {nav.children && openDropdown === nav.text && (
+                    <ul className="ml-4 flex flex-col gap-1 mt-1">
+                      {" "}
+                                 
                       {nav.children.map((child, cIndex) => (
                         <li key={cIndex}>
+                          {" "}
+                                           
                           <NavLink
                             to={child.path}
-                            className="block text-[16px] text-gray-600 hover:text-[var(--text-hover-color)] hover:font-[500] transition-all duration-300 ease-in-out py-1"
+                            className="text-[14px] text-gray-600 hover:text-[var(--text-hover-color)] transition-all duration-300"
                             onClick={() => setIsMenu(false)}
                           >
-                            {child.text}
+                            {child.text}                     
                           </NavLink>
+                               
                         </li>
                       ))}
+                                 
                     </ul>
-                  )}
-                </div>
+                  )}{" "}
+                         
+                </div>{" "}
+                     
               </li>
             ))}
           </ul>
-          <div className="mt-4">
-            <FancyButton text="free consultation" />
-          </div>
+            <FancyButton text="free consultation" />       
         </div>
+             
       </div>
+         
     </>
-  )
-}
-
-export default Header
+  );
+};
+export default Header;

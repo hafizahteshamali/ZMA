@@ -121,11 +121,11 @@ const WhatWeDo = () => {
           What we do?
         </h1>
 
-        <div className="my-10 flex flex-wrap justify-between items-center gap-5 lg:gap-0">
+        <div className="my-10 flex flex-wrap justify-around items-center gap-5 lg:gap-0">
           {/* ----- Card 1 ----- */}
           <div
-          data-aos="flip-up"
-          data-aos-delay="300"
+            data-aos="flip-up"
+            data-aos-delay="300"
             className="h-[500px] w-full lg:w-[48%] rounded-2xl flex justify-center items-center border-t border-[var(--text-hover-color)] shadow group"
             onMouseEnter={handleHoverStartCard1}
             onMouseLeave={handleHoverEndCard1}
@@ -138,10 +138,10 @@ const WhatWeDo = () => {
                   initial={{ y: "0%" }}
                 >
                   <div className="flex gap-3">
-                    <div className="h-[60px] w-[60px] rounded-md flex justify-center items-center border">
+                    <div className="h-[40px] w-[40px] rounded-md flex justify-center items-center border">
                       <img
                         src="/assets/images/ai-development/face.svg"
-                        className="h-[40px] w-[40px] object-contain"
+                        className="h-[30px] w-[30px] object-contain"
                         alt=""
                       />
                     </div>
@@ -157,10 +157,10 @@ const WhatWeDo = () => {
                   </div>
 
                   <div className="flex gap-3">
-                    <div className="h-[60px] w-[60px] rounded-md flex justify-center items-center border">
+                    <div className="h-[40px] w-[40px] rounded-md flex justify-center items-center border">
                       <img
                         src="/assets/images/ai-development/AI.svg"
-                        className="h-[40px] w-[40px] object-contain"
+                        className="h-[20px] w-[20px] object-contain"
                         alt=""
                       />
                     </div>
@@ -228,8 +228,8 @@ const WhatWeDo = () => {
 
           {/* ----- Card 2 ----- */}
           <div
-          data-aos="flip-up"
-          data-aos-delay="500"
+            data-aos="flip-up"
+            data-aos-delay="500"
             className="h-[500px] w-full lg:w-[48%] rounded-2xl flex justify-center items-center border-t border-[var(--text-hover-color)] shadow group"
             onMouseEnter={handleHoverStartCard2}
             onMouseLeave={handleHoverEndCard2}
@@ -277,7 +277,11 @@ const WhatWeDo = () => {
           </div>
 
           {/* ----- Row 2 Card 1: Dual Slider ----- */}
-          <div data-aos="flip-up" data-aos-delay="700" className="h-[400px] w-full lg:w-[31%] relative rounded-2xl flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8">
+          <div
+            data-aos="flip-up"
+            data-aos-delay="700"
+            className="h-[400px] w-full lg:w-[32%] relative rounded-2xl flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
+          >
             <div className="w-full absolute top-[10%]">
               {/* First Slider - Left to Right */}
               {/* First Row */}
@@ -321,9 +325,9 @@ const WhatWeDo = () => {
 
           {/* ----- Row 2 Card 2: Dual Slider ----- */}
           <div
-          data-aos="flip-up"
-          data-aos-delay="900"
-            className="h-[400px] w-full lg:w-[31%] relative rounded-2xl flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
+            data-aos="flip-up"
+            data-aos-delay="900"
+            className="h-[400px] w-full lg:w-[32%] relative rounded-2xl flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
             onMouseEnter={handleHoverStartCard3}
             onMouseLeave={handleHoverEndCard3}
           >
@@ -369,10 +373,10 @@ const WhatWeDo = () => {
           </div>
 
           {/* ----- Last Card with Animation ----- */}
-          <div 
-          data-aos="flip-up"
-          data-aos-delay="1100"
-            className="h-[400px] w-full lg:w-[31%] rounded-2xl px-5 py-3 flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
+          <div
+            data-aos="flip-up"
+            data-aos-delay="1100"
+            className="h-[400px] w-full lg:w-[32%] rounded-2xl px-5 py-3 flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
             onMouseEnter={handleHoverStartLastCard}
             onMouseLeave={handleHoverEndLastCard}
           >
@@ -382,7 +386,7 @@ const WhatWeDo = () => {
                 className="w-full"
                 alt=""
               />
-              <motion.div 
+              <motion.div
                 className="w-max h-auto rounded bg-gradient-to-r from-[#006CFF] to-[#00224F66] p-[1px] absolute top-[20px] left-[50px]"
                 animate={efficiencyControls}
                 initial={{ x: 0 }}
@@ -392,7 +396,7 @@ const WhatWeDo = () => {
                 </button>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="w-max h-auto rounded bg-gradient-to-r from-[#006CFF] to-[#00224F66] p-[1px] absolute top-[45px] right-[50px]"
                 animate={costControls}
                 initial={{ rotate: 0, y: 0 }}
@@ -403,10 +407,11 @@ const WhatWeDo = () => {
               </motion.div>
 
               <h1 className="text-2xl lg:text-3xl text-[var(--text-hover-color)] font-[600] my-6">
-              AI Consulting
+                AI Consulting
               </h1>
               <p className="text-[16px] text-[var(--text-color)] mt-4">
-              Our experts provide strategic guidance, enabling your business to implement AI solutions that drive transformative growth.
+                Our experts provide strategic guidance, enabling your business
+                to implement AI solutions that drive transformative growth.
               </p>
             </div>
           </div>

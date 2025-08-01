@@ -95,11 +95,11 @@ const ProcessSec = () => {
             className="text-5xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#006CFF] to-[#00224F]"
           />
 
-          <div className="my-10 w-full flex flex-wrap justify-between items-center gap-5 lg:gap-0">
+          <div className="my-10 w-full flex flex-wrap justify-around items-center gap-5 lg:gap-0">
             {/* ----- Card 1 ----- */}
             <motion.div
               ref={cardRefs[0]}
-              className="h-[400px] w-full lg:w-[31%] rounded-2xl flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
+              className="h-[400px] w-full lg:w-[32%] rounded-2xl flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
               initial="hidden"
               animate={cardControls[0]}
               variants={cardVariants}
@@ -138,7 +138,7 @@ const ProcessSec = () => {
             {/* ----- Card 2 ----- */}
             <motion.div
               ref={cardRefs[1]}
-              className="h-[400px] w-full lg:w-[31%] rounded-2xl flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
+              className="h-[400px] w-full lg:w-[32%] rounded-2xl flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
               initial="hidden"
               animate={cardControls[1]}
               variants={cardVariants}
@@ -178,7 +178,7 @@ const ProcessSec = () => {
             {/* ----- Card 3 ----- */}
             <motion.div
               ref={cardRefs[2]}
-              className="h-[400px] w-full lg:w-[31%] rounded-2xl flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
+              className="h-[400px] w-full lg:w-[32%] rounded-2xl flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
               initial="hidden"
               animate={cardControls[2]}
               variants={cardVariants}

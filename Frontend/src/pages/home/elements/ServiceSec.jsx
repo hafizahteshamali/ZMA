@@ -161,7 +161,7 @@ const ServiceSec = ({ SeviceContent }) => {
           backgroundImage: "url('/assets/images/home/services-bg.png')",
           transformPerspective: 1000,
         }}
-        className="lg:h-[700px] h-[500px] bg-[#F3F3FA] relative bg-cover bg-center bg-no-repeat overflow-hidden will-change-[transform,opacity]"
+        className="lg:h-screen h-[500px] bg-[#F3F3FA] relative bg-cover bg-center bg-no-repeat overflow-hidden will-change-[transform,opacity]"
       >
         <motion.img
           src="/assets/images/home/mobile.png"
