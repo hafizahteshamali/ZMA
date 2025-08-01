@@ -32,7 +32,37 @@ body {
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
   background-color: #cbe1ff;
+  cursor: none !important;
 }
+
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+}
+
+div {
+  cursor: auto; /* default behavior */
+}
+
+
+.custom-cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle at 30% 30%, #75e6ff, #0f62fe);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 102, 255, 0.4);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: lighten;
+  transition: transform 0.08s ease;
+  backdrop-filter: blur(2px);
+}
+
 
 .box {
   background: linear-gradient(to right, #cbe1ff 65%, #005ab1 100%);

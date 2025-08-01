@@ -3,7 +3,7 @@ const FancyButton = ({ onClick, type, className, text }) => {
     <button
       onClick={onClick}
       type={type}
-      className={`relative inline-flex items-center justify-center overflow-hidden text-[var(--text-color)] font-bold tracking-wider rounded-full border-2 border-white transition-all duration-300 h-14 px-8 text-[17px] min-w-[200px] ${className}`}
+      className={`relative inline-flex items-center justify-center overflow-hidden text-[var(--text-color)] font-bold tracking-wider rounded-full border-2 border-white transition-all duration-300 h-14 lg:h-[50px] px-8 lg:px-0 text-[17px] min-w-[200px] ${className}`}
     >
 
       {/* Top border */}
