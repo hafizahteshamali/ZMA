@@ -95,7 +95,7 @@ const WhatWeDo = () => {
     });
     costControls.start({
       rotate: 0,
-      y: 70,
+      y: 85,
       x: -80,
       transition: { duration: 0.6, ease: "easeInOut" },
     });
@@ -376,7 +376,7 @@ const WhatWeDo = () => {
           <div
             data-aos="flip-up"
             data-aos-delay="1100"
-            className="h-[400px] w-full lg:w-[32%] rounded-2xl px-5 py-3 flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
+            className="h-[400px] w-full lg:w-[32%] overflow-hidden rounded-2xl px-5 py-3 flex justify-center items-center border-t border-[var(--text-hover-color)] shadow my-8"
             onMouseEnter={handleHoverStartLastCard}
             onMouseLeave={handleHoverEndLastCard}
           >

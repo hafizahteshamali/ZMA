@@ -6,6 +6,7 @@ import AIDevelopment from '../pages/service/AiDevelopment/AIDevelopment';
 import WebDevelopment from '../pages/service/WebDevelopment/WebDevelopment';
 import ITSolutions from '../pages/service/ItSolutions/ITSolutions';
 import GraphicDesigning from '../pages/service/GraphicDesigning/GraphicDesigning';
+import Error from '../pages/Error/Error';
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
         <Route path="service/web-development" element={<WebDevelopment />} />
         <Route path="service/it-solutions" element={<ITSolutions />} />
         <Route path="service/graphic-designing" element={<GraphicDesigning />} />
+        <Route path="*" element={<Error />} />
       </Route>
     </Routes>
   );
