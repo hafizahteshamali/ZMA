@@ -114,26 +114,6 @@ const Banner = ({ clientsName = [] }) => {
                 </div>
               ))}
             </div>
-            
-            {/* Second set for seamless looping */}
-            <div className="flex animate-slide-left-smooth-second">
-              {duplicatedClients.map((src, index) => (
-                <div
-                  key={`second-${index}`}
-                  className="px-4 flex-shrink-0"
-                  style={{ width: "250px" }}
-                >
-                  <div className="h-20 sm:h-24 md:h-28 flex justify-center items-center">
-                    <img
-                      src={src}
-                      alt={`Client logo ${index + 1}`}
-                      className="max-h-full max-w-full object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Fade overlays */}

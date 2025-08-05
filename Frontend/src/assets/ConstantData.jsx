@@ -518,3 +518,9 @@ export const Reviews2 = [
     designation: "Co-Founder of EduTrail"
   }
 ]
+
+
+export const FutureWorkData = {
+  heading: "Access to the Future of Work",
+  para: "Empowering your business with cutting-edge IT infrastructure, smart automation, and next-gen support so you’re always ready for what’s next.",
+}
