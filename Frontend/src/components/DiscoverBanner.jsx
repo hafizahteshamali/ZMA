@@ -2,7 +2,7 @@ import React from 'react'
 import {motion} from "framer-motion";
 import { LuSquareArrowRight } from 'react-icons/lu';
 
-const DiscoverBanner = () => {
+const DiscoverBanner = ({image, className, spanClass, btnClass, iconClass, text1, text2}) => {
   return (
     <div className='container mx-auto'>
         <div className='w-[100%] lg:w-[80%] mx-auto'>
@@ -14,10 +14,10 @@ const DiscoverBanner = () => {
             transition={{ staggerChildren: 0.3 }}
           >
             {/* Top Banner */}
-            <motion.div
-              className="h-[400px] bg-cover rounded-3xl flex justify-center items-center"
+            <motion.div 
+              className={`h-[400px] bg-cover bg-no-repeat rounded-3xl flex justify-center items-center ${className}`}
               style={{
-                backgroundImage: `url('/assets/images/service/bottom-banner.jpg')`,
+                backgroundImage: `url(${image})`,
               }}
               variants={{
                 hidden: { opacity: 0, rotateX: -90 },
@@ -29,12 +29,12 @@ const DiscoverBanner = () => {
               }}
             >
               <motion.button
-                className="text-[var(--white-color)] flex justify-center items-center gap-4 h-[45px] w-[80%] lg:w-[25%] serviceBtn"
+                className={`flex justify-center items-center gap-4 h-[45px] w-[80%] lg:w-[25%] serviceBtn ${btnClass}`}
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <span>Discover our projects</span>
-                <LuSquareArrowRight className="text-3xl" />
+                <span className={`${spanClass}`}>Discover our projects</span>
+                <LuSquareArrowRight className={`text-3xl ${iconClass}`} />
               </motion.button>
             </motion.div>
 
@@ -52,9 +52,9 @@ const DiscoverBanner = () => {
               }}
             >
               <h1 className="text-3xl lg:text-5xl text-center lg:leading-normal text-[#3D4F60] font-[500]">
-                Development shouldn’t be complicated. <br />{" "}
+                {text1} <br />{" "}
                 <span className="text-[var(--text-hover-color)]">
-                  We simplify every step.
+                  {text2}
                 </span>
               </h1>
               <motion.button

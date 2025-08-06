@@ -2,9 +2,8 @@
 
 import { useRef } from "react"
 import { useInView } from "framer-motion"
-import { Reviews2 } from "../assets/ConstantData" // Update as needed
 
-const Reviews = ({ Reviews1 }) => {
+const Reviews = ({ Reviews1, Reviews2 }) => {
   const theirWordsRef = useRef(null)
   const isTheirWordsInView = useInView(theirWordsRef, {
     once: false,

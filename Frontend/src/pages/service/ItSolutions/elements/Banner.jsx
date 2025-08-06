@@ -123,7 +123,7 @@ const Banner = ({ clientsName = [] }) => {
 
         <style jsx>{`
           :root {
-            --bg: #00264b;
+            --bg: #00264b !important;
           }
 
           @keyframes slide-left-smooth-first {

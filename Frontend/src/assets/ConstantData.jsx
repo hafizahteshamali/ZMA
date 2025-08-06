@@ -464,7 +464,7 @@ export const GraphicBannerData = {
   highlight: "Canvas"
 }
 
-export const Reviews1 = [
+export const WebReviews1 = [
   {
     description: "Working with your team was seamless. You delivered our e-commerce site faster than expected and with better performance than we imagined.",
     profileImg: "/assets/images/service/review1-img1.jpg",
@@ -492,7 +492,7 @@ export const Reviews1 = [
 ]
 
 
-export const Reviews2 = [
+export const WebReviews2 = [
   {
     description: "Their ability to understand our business needs and turn them into a custom web solution was impressive.",
     profileImg: "/assets/images/service/review2-img1.jpg",
@@ -524,3 +524,173 @@ export const FutureWorkData = {
   heading: "Access to the Future of Work",
   para: "Empowering your business with cutting-edge IT infrastructure, smart automation, and next-gen support so you’re always ready for what’s next.",
 }
+
+export const FeaturesData ={
+  title: "Our Features",
+  heading: "Power. Protection. Precision.",
+  para: "Empower your business with cutting-edge IT services that combine high-performance systems, continuous security, and expert precision—built to scale with your growth."
+}
+
+
+export const AIReviews1 = [
+  {
+    description: "We partnered with them for a custom AI chatbot, ‘and the results were impressive. It now handles 70% of our support queries without human intervention. A game-changer for our team!",
+    profileImg: "/assets/images/ai-development/ai-review-1-1.jpg",
+    name: "Isabella Meier",
+    designation: "CX Lead, Talkify"
+  },
+  {
+    description: "Their team developed a machine learning model that helped us detect fraudulent transactions in real-time. The accuracy has been phenomenal highly recommend them.",
+    profileImg: "/assets/images/ai-development/ai-review-1-2.jpg",
+    name: "Rahul Sharma",
+    designation: "Product Manager, ByteCore"
+  },
+  {
+    description: "We had a massive dataset we couldn’t interpret. Their AI solution gave us instant, actionable insights. Their approach was fast, focused, and result-oriented.",
+    profileImg: "/assets/images/ai-development/ai-review-1-3.jpg",
+    name: "Jonas Klein",
+    designation: "Data Lead, Meditrack"
+  },
+  {
+    description: "From the very first call, their understanding of AI implementation was solid. They helped us automate repetitive design tasks with ease.",
+    profileImg: "/assets/images/ai-development/ai-review-1-4.jpg",
+    name: "Felix Dubois",
+    designation: "Innovation Manager, RetailSync"
+  }
+]
+
+export const AIReviews2 = [
+  {
+    description: "The computer vision model they created for our quality control process reduced errors by over 80%. Excellent execution and delivery!",
+    profileImg: "/assets/images/ai-development/ai-review-2-1.jpg",
+    name: "Sara Khan",
+    designation: "Head of Ops, AutoLens"
+  },
+  {
+    description: "They transformed our static product listing into an intelligent recommendation system. User engagement increased drastically!",
+    profileImg: "/assets/images/ai-development/ai-review-2-2.jpg",
+    name: "Michael Tran",
+    designation: "Growth Marketer, NewsCraft"
+  },
+  {
+    description: "Our e-learning platform now offers personalized learning paths—all thanks to their AI integration. The UX is next level!",
+    profileImg: "/assets/images/ai-development/ai-review-2-3.jpg",
+    name: "Ayesha Noor",
+    designation: "Support Systems Lead, LearnSpace"
+  },
+  {
+    description: "They built a custom NLP model for our internal tools. It understands commands in natural language, which saved us hours of manual tasks.",
+    profileImg: "/assets/images/ai-development/ai-review-2-4.jpg",
+    name: "Emily Novak",
+    designation: "Risk Analyst, FinWatch"
+  }
+]
+
+export const GraphicReviews1 = [
+  {
+    description: "ZMA-Solutions completely transformed my boutique’s branding. Every design feels graceful and intentional. A perfect blend of creativity and professionalism.",
+    profileImg: "/assets/images/graphic-designing/review-1-1.jpg",
+    name: "Sarah Malik",
+    designation: "Boutique Owner"
+  },
+  {
+    description: "Every campaign graphic is flawless. They always deliver beyond expectations – and ahead of schedule.",
+    profileImg: "/assets/images/graphic-designing/review-1-2.jpg",
+    name: "Ethan Brooks",
+    designation: "Tech Startup Co-founder"
+  },
+  {
+    description: "From the logo to typography, everything felt so aligned. My brand identity came to life instantly. A truly game-changing experience.",
+    profileImg: "/assets/images/graphic-designing/review-1-3.jpg",
+    name: "Liam Carter",
+    designation: "Startup Founder"
+  },
+  {
+    description: "Their design language speaks volumes. It’s rare to find a team that understands both vision and detail so well",
+    profileImg: "/assets/images/graphic-designing/review-1-4.jpg",
+    name: "Nina Alvarez",
+    designation: "Creative Director"
+  }
+]
+
+export const GraphicReviews2 = [
+  {
+    description: "User interface design is on point. My app now looks and feels ten times more polished.",
+    profileImg: "/assets/images/graphic-designing/review-2-1.jpg",
+    name: "Noah Kim",
+    designation: "App Developer"
+  },
+  {
+    description: "Packaging, product visuals, banners everything feels premium and cohesive. Excellent creative direction.",
+    profileImg: "/assets/images/graphic-designing/review-2-2.jpg",
+    name: "Chloe Dubois",
+    designation: "Social Media Consultant"
+  },
+  {
+    description: "Every visual element they touched from menus to signage now feels modern and memorable.",
+    profileImg: "/assets/images/graphic-designing/review-2-3.jpg",
+    name: "Bilal Khan",
+    designation: "Restaurant Owner"
+  },
+  {
+    description: "Packaging, product visuals, banners everything feels premium and cohesive. Excellent creative direction.",
+    profileImg: "/assets/images/graphic-designing/review-2-4.jpg",
+    name: "Farhan Qureshi",
+    designation: "E-commerce Brand Owner"
+  }
+]
+
+
+export const ITSolutionReviews1 = [
+  {
+    description: "ZMA-Solutions delivered a secure and scalable IT infrastructure for our growing needs. Their support has been exceptional.",
+    profileImg: "/assets/images/it-solutions/review-1-1.jpg",
+    name: "Emily Chen",
+    designation: "CEO, FinTech Solutions"
+  },
+  {
+    description: "Their real-time system monitoring helped us catch issues before they became problems. Reliable and proactive.",
+    profileImg: "/assets/images/it-solutions/review-1-2.jpg",
+    name: "James O’Connor",
+    designation: "Operations Manager, HealthTrack"
+  },
+  {
+    description: "From cloud migration to 24/7 support, their service is top-notch. Our downtime dropped to nearly zero.",
+    profileImg: "/assets/images/it-solutions/review-1-3.jpg",
+    name: "Carlos Mendes",
+    designation: "Co-Founder, EduWave"
+  },
+  {
+    description: "ZMA-Solutions’ technical support is fast, clear, and always helpful. We never feel left in the dark.",
+    profileImg: "/assets/images/it-solutions/review-1-4.jpg",
+    name: "Yuki Nakamura",
+    designation: "IT Lead, RetailConnect"
+  }
+]
+
+export const ITSolutionReviews2 = [
+  {
+    description: "They brought structure and security to our scattered data systems. Now everything just works.",
+    profileImg: "/assets/images/it-solutions/review-2-1.jpg",
+    name: "Anastasia Petrova",
+    designation: "CTO, Eventrix"
+  },
+  {
+    description: "They simplified our complex IT setup and made everything user-friendly. Incredible transformation.",
+    profileImg: "/assets/images/it-solutions/review-2-2.jpg",
+    name: "David Smith",
+    designation: "Managing Director, MedGear"
+  },
+  {
+    description: "Their data management approach keeps us compliant and confident. Truly professional service.",
+    profileImg: "/assets/images/it-solutions/review-2-3.jpg",
+    name: "Fatima El Amrani",
+    designation: "Digital Project Manager"
+  },
+  {
+    description: "Their monitoring dashboard gives us peace of mind. Smooth systems, better performance.",
+    profileImg: "/assets/images/it-solutions/review-2-4.jpg",
+    name: "Jonas Bergström",
+    designation: "Co-Founder, WorkNest"
+  }
+]

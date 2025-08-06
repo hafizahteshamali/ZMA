@@ -88,7 +88,6 @@ div {
 .serviceBtn {
   font-size: 16px;
   color: white;
-  border: 2px solid #ffffff;
   border-radius: 8px;
   background: linear-gradient(
     to left,
@@ -184,4 +183,9 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card5{
+  background: linear-gradient(to right bottom,#005AB1, #00264B);
+
 }
