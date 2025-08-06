@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import { useInView } from "framer-motion"
 
-const Reviews = ({ Reviews1, Reviews2 }) => {
+const Reviews = ({ Reviews1, Reviews2, bgColor }) => {
   const theirWordsRef = useRef(null)
   const isTheirWordsInView = useInView(theirWordsRef, {
     once: false,
@@ -14,7 +14,7 @@ const Reviews = ({ Reviews1, Reviews2 }) => {
   const duplicatedReviews2 = [...Reviews2, ...Reviews2, ...Reviews2]
 
   return (
-    <div className="container mx-auto px-4" style={{ background: "#cbe1ff" }}>
+    <div className="container mx-auto px-4" style={{ background: {bgColor} }}>
       <div className="w-full">
         <div className="lg:w-[100%] mx-auto">
           <div
@@ -103,7 +103,7 @@ const Reviews = ({ Reviews1, Reviews2 }) => {
 
       <style jsx>{`
         :root {
-          --bg: #cbe1ff;
+          --bg: ${bgColor} !important;
         }
 
         @keyframes slide-left-smooth {

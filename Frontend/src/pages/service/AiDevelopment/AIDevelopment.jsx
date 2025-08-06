@@ -16,7 +16,7 @@ const AIDevelopment = () => {
       <Banner AiDevelopBannerData={AiDevelopBannerData} />
       <WhatWeDo />
       <ProcessSec />
-      <Reviews Reviews1={AIReviews1} Reviews2={AIReviews2} />
+      <Reviews Reviews1={AIReviews1} Reviews2={AIReviews2} bgColor="#cbe1ff" />
       <DiscoverBanner
         image="/assets/images/ai-development/bottom-banner.png"
         className="bg-center"

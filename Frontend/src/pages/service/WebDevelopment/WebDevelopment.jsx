@@ -26,7 +26,7 @@ const WebDevelopment = () => {
         DesignGlobalData={DesignGlobalData}
         theriData={theriData}
       />
-      <Reviews Reviews1={WebReviews1} Reviews2={WebReviews2} />
+      <Reviews Reviews1={WebReviews1} Reviews2={WebReviews2} bgColor="#cbe1ff" />
       <DiscoverBanner
         image="/assets/images/service/bottom-banner.jpg"
         className="bg-center"

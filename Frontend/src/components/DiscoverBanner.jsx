@@ -4,7 +4,7 @@ import { LuSquareArrowRight } from 'react-icons/lu';
 
 const DiscoverBanner = ({image, className, spanClass, btnClass, iconClass, text1, text2}) => {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto p-3'>
         <div className='w-[100%] lg:w-[80%] mx-auto'>
         <motion.div
             className="container mx-auto lg:w-[100%] my-[100px]"
@@ -15,7 +15,7 @@ const DiscoverBanner = ({image, className, spanClass, btnClass, iconClass, text1
           >
             {/* Top Banner */}
             <motion.div 
-              className={`h-[400px] bg-cover bg-no-repeat rounded-3xl flex justify-center items-center ${className}`}
+              className={`h-[400px] bg-cover bg-no-repeat rounded-2xl flex justify-center items-center ${className}`}
               style={{
                 backgroundImage: `url(${image})`,
               }}

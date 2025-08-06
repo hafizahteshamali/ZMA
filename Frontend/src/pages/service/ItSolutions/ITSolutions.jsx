@@ -12,7 +12,7 @@ const ITSolutions = () => {
      <Banner clientsName={clientsName} /> 
      <FutureWork FutureWorkData={FutureWorkData} />
      <FeatureSection FeaturesData={FeaturesData} />
-     <Reviews Reviews1={ITSolutionReviews1} Reviews2={ITSolutionReviews2} />
+     <Reviews Reviews1={ITSolutionReviews1} Reviews2={ITSolutionReviews2} bgColor="#cbe1ff" />
      <DiscoverBanner
         image="/assets/images/it-solutions/bottom-banner.jpg"
         className="bg-bottom"

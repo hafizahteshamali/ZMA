@@ -91,98 +91,62 @@ const Banner = ({ clientsName = [] }) => {
         </div>
       </div>
 
-      {/* Logo slider section */}
-      <div className="h-[150px] bg-[var(--text-hover-color)] w-full flex justify-center items-center">
-        <div className="w-[80%] mx-auto relative overflow-hidden">
-          <div className="flex items-center">
-            {/* First set for seamless looping */}
-            <div className="flex animate-slide-left-smooth-first">
-              {duplicatedClients.map((src, index) => (
-                <div
-                  key={`first-${index}`}
-                  className="px-4 flex-shrink-0"
-                  style={{ width: "250px" }}
-                >
-                  <div className="h-20 sm:h-24 md:h-28 flex justify-center items-center">
-                    <img
-                      src={src}
-                      alt={`Client logo ${index + 1}`}
-                      className="max-h-full max-w-full object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              ))}
+      {/* Logo slider section with container */}
+<div className="w-full bg-[#00264b] py-8"> {/* Container with padding */}
+  <div className="h-[100px] max-w-6xl mx-auto relative overflow-hidden"> {/* Centered container with max-width */}
+    <div className="w-full h-full absolute inset-0 flex items-center">
+      {/* Logo slider content */}
+      <div className="flex animate-slide-left-smooth">
+        {[...duplicatedClients, ...duplicatedClients].map((src, index) => (
+          <div
+            key={`logo-${index}`}
+            className="px-4 flex-shrink-0"
+            style={{ width: "250px" }}
+          >
+            <div className="h-20 sm:h-24 md:h-28 flex justify-center items-center">
+              <img
+                src={src}
+                alt={`Client logo ${index + 1}`}
+                className="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
+                loading="lazy"
+              />
             </div>
           </div>
-
-          {/* Fade overlays */}
-          <div className="fade-left"></div>
-          <div className="fade-right"></div>
-        </div>
-
-        <style jsx>{`
-          :root {
-            --bg: #00264b !important;
-          }
-
-          @keyframes slide-left-smooth-first {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-100%);
-            }
-          }
-
-          @keyframes slide-left-smooth-second {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-100%);
-            }
-          }
-
-          .animate-slide-left-smooth-first {
-            animation: slide-left-smooth-first 30s linear infinite;
-          }
-
-          .animate-slide-left-smooth-second {
-            animation: slide-left-smooth-second 30s linear infinite;
-            animation-delay: -15s; /* Half of the animation duration for seamless looping */
-          }
-
-          .fade-left {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100px;
-            height: 100%;
-            background: linear-gradient(to right, var(--bg) 0%, transparent 100%);
-            pointer-events: none;
-            z-index: 10;
-          }
-
-          .fade-right {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100%;
-            background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
-            pointer-events: none;
-            z-index: 10;
-          }
-
-          @media (max-width: 768px) {
-            .fade-left,
-            .fade-right {
-              width: 50px;
-            }
-          }
-        `}</style>
+        ))}
       </div>
+    </div>
+
+    {/* Gradient fade overlays */}
+    <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#00264b] to-transparent z-10"></div>
+    <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#00264b] to-transparent z-10"></div>
+
+    <style jsx>{`
+      @keyframes slide-left-smooth {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .animate-slide-left-smooth {
+        animation: slide-left-smooth 40s linear infinite;
+        will-change: transform;
+      }
+
+      @media (max-width: 768px) {
+        .animate-slide-left-smooth {
+          animation-duration: 30s;
+        }
+        .max-w-7xl {
+          max-width: 100%;
+          padding: 0 1rem;
+        }
+      }
+    `}</style>
+  </div>
+</div>
     </div>
   );
 };

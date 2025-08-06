@@ -16,7 +16,7 @@ const GraphicDesigning = () => {
       <Banner GraphicBannerData={GraphicBannerData} />
       <CreativeSec />
       <ProcessSec />
-      <Reviews Reviews1={GraphicReviews1} Reviews2={GraphicReviews2} />
+      <Reviews Reviews1={GraphicReviews1} Reviews2={GraphicReviews2} bgColor="#cbe1ff" />
       <DiscoverBanner
         image="/assets/images/graphic-designing/bottom-banner.jpg"
         className="bg-bottom"
