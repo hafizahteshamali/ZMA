@@ -21,7 +21,7 @@ const AIDevelopment = () => {
         image="/assets/images/ai-development/bottom-banner.png"
         className="bg-center"
         spanClass="text-[var(--text-hover-color)]"
-        btnClass="border-2 border-[var(--text-hover-color)]"
+        btnClass="border-2 border-[#CBE1FF]"
         iconClass="text-[var(--text-hover-color)]"
         text1="AI shouldn’t be complex."
         text2="We streamline every step."
