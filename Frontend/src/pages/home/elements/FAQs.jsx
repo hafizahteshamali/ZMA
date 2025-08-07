@@ -16,7 +16,7 @@ const FAQs = ({ FAQsHeadingData }) => {
     <div
       data-aos="flip-left"
       className="bg-cover bg-no-repeat py-10"
-      style={{ backgroundImage: `url('/assets/images/home/faq-bg.png')` }}
+      // style={{ backgroundImage: `url('/assets/images/home/faq-bg.png')` }}
     >
       <div className="container mx-auto lg:min-h-[100vh] flex justify-center items-center">
         <div className="w-full flex justify-center items-center">

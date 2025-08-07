@@ -14,7 +14,8 @@ const DiscoverBanner = ({image, className, spanClass, btnClass, iconClass, text1
             transition={{ staggerChildren: 0.3 }}
           >
             {/* Top Banner */}
-            <motion.div 
+            {image && (
+              <motion.div 
               className={`h-[400px] bg-cover bg-no-repeat rounded-2xl flex justify-center items-center ${className}`}
               style={{
                 backgroundImage: `url(${image})`,
@@ -37,6 +38,7 @@ const DiscoverBanner = ({image, className, spanClass, btnClass, iconClass, text1
                 <LuSquareArrowRight className={`text-3xl ${iconClass}`} />
               </motion.button>
             </motion.div>
+            )}
 
             {/* Bottom Text Section */}
             <motion.div

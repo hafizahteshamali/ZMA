@@ -29,7 +29,7 @@ export const NavigationData = [
   },
   {
     text: "About",
-    path: "/about",
+    path: "/about-us",
   },
   {
     text: "Case Studies",
@@ -694,3 +694,40 @@ export const ITSolutionReviews2 = [
     designation: "Co-Founder, WorkNest"
   }
 ]
+
+
+// About Page
+export const TailoredSectionData = {
+  img: "/assets/images/about/tailored-img.jpg",
+  heading: "Tailored Solutions",
+  description: "At ZMA, our remote-first team brings together world-class web development, AI innovation, graphic design, and IT services—united by integrity, respect, and a passion for excellence. We meet regularly in person to collaborate, iterate, and ensure every solution exceeds expectations. Failure is not an option—only growth through bold execution.",
+  btnText: "Learn more"
+}
+
+export const TrustedWorldWideData = {
+  head: "Trusted Worldwide",
+  NumberList: [
+    {
+      num: "500+",
+      text: "Digital Elements Processed",
+      linkText: "View all",
+      textLink: "/about-us"
+    },
+    {
+      num: "25+",
+      text: "Time Zones Covered",
+      linkText: "View all",
+      textLink: "/about-us"
+    },
+    {
+      num: "86%+",
+      text: "Automation Achieved",
+      linkText: "View all",
+      textLink: "/about-us"
+    },
+  ],
+  lgText: "We help businesses reduce manual workload, enhance visibility, and accelerate growth across Web Development, AI Services, Graphic Design, and IT Solutions.",
+  serviceText: "Our Services",
+  serviceLink: "/about-us",
+  image: "/assets/images/about/trust-sec-img.jpg"
+}

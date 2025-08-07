@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Header from "../../../../navigation/Header";
 import NormalButton from "../../../../components/NormalButton";
 
@@ -18,6 +18,53 @@ const Banner = ({ clientsName = [] }) => {
         ease: "easeOut",
       },
     }),
+  };
+
+  const AnimatedLetters = ({ text, className = "" }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false, amount: 0.1 }); // Changed amount to 0.1 and once to false
+
+    const container = {
+      hidden: {},
+      visible: {
+        transition: { staggerChildren: 0.03 },
+      },
+    };
+
+    const letter = {
+      hidden: { opacity: 0, y: 20 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.3, ease: "easeOut" },
+      },
+    };
+
+    const words = text.split(/(\s+)/).filter((word) => word.length > 0);
+
+    return (
+      <motion.div
+        ref={ref}
+        className={`${className} flex flex-wrap justify-center text-center`}
+        variants={container}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
+        {words.map((word, wordIndex) => (
+          <div key={wordIndex} className="inline-flex whitespace-pre-wrap">
+            {word.split("").map((char, charIndex) => (
+              <motion.span
+                key={charIndex}
+                variants={letter}
+                className="inline-block"
+              >
+                {char}
+              </motion.span>
+            ))}
+          </div>
+        ))}
+      </motion.div>
+    );
   };
 
   return (
@@ -92,61 +139,74 @@ const Banner = ({ clientsName = [] }) => {
       </div>
 
       {/* Logo slider section with container */}
-<div className="w-full bg-[#00264b] py-8"> {/* Container with padding */}
-  <div className="h-[100px] max-w-6xl mx-auto relative overflow-hidden"> {/* Centered container with max-width */}
-    <div className="w-full h-full absolute inset-0 flex items-center">
-      {/* Logo slider content */}
-      <div className="flex animate-slide-left-smooth">
-        {[...duplicatedClients, ...duplicatedClients].map((src, index) => (
-          <div
-            key={`logo-${index}`}
-            className="px-4 flex-shrink-0"
-            style={{ width: "250px" }}
-          >
-            <div className="h-20 sm:h-24 md:h-28 flex justify-center items-center">
-              <img
-                src={src}
-                alt={`Client logo ${index + 1}`}
-                className="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-                loading="lazy"
-              />
+      <div className="w-full bg-[#00264b] py-8">
+        {" "}
+        {/* Container with padding */}
+        <div className="h-[100px] max-w-6xl mx-auto relative overflow-hidden">
+          {" "}
+          {/* Centered container with max-width */}
+          <div className="w-full h-full absolute inset-0 flex items-center">
+            {/* Logo slider content */}
+            <div className="flex animate-slide-left-smooth">
+              {[...duplicatedClients, ...duplicatedClients].map(
+                (src, index) => (
+                  <div
+                    key={`logo-${index}`}
+                    className="px-4 flex-shrink-0"
+                    style={{ width: "250px" }}
+                  >
+                    <div className="h-20 sm:h-24 md:h-28 flex justify-center items-center">
+                      <img
+                        src={src}
+                        alt={`Client logo ${index + 1}`}
+                        className="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                )
+              )}
             </div>
           </div>
-        ))}
+          {/* Gradient fade overlays */}
+          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#00264b] to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#00264b] to-transparent z-10"></div>
+          <style jsx>{`
+            @keyframes slide-left-smooth {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+
+            .animate-slide-left-smooth {
+              animation: slide-left-smooth 40s linear infinite;
+              will-change: transform;
+            }
+
+            @media (max-width: 768px) {
+              .animate-slide-left-smooth {
+                animation-duration: 30s;
+              }
+              .max-w-7xl {
+                max-width: 100%;
+                padding: 0 1rem;
+              }
+            }
+          `}</style>
+        </div>
       </div>
-    </div>
 
-    {/* Gradient fade overlays */}
-    <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#00264b] to-transparent z-10"></div>
-    <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#00264b] to-transparent z-10"></div>
-
-    <style jsx>{`
-      @keyframes slide-left-smooth {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-
-      .animate-slide-left-smooth {
-        animation: slide-left-smooth 40s linear infinite;
-        will-change: transform;
-      }
-
-      @media (max-width: 768px) {
-        .animate-slide-left-smooth {
-          animation-duration: 30s;
-        }
-        .max-w-7xl {
-          max-width: 100%;
-          padding: 0 1rem;
-        }
-      }
-    `}</style>
-  </div>
-</div>
+      <div className="container mx-auto mt-[100px]">
+        <div className="w-[90%] mx-auto flex flex-col justify-center items-center text-center">
+          <AnimatedLetters
+            text="We’re ZMA-Solutions. We build tailored IT solutions that empower modern businesses."
+            className="text-2xl lg:text-5xl font-[600] gradient-text lg:leading-tight leading-relaxed"
+          />
+        </div>
+      </div>
     </div>
   );
 };

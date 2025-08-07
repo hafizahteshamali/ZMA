@@ -131,7 +131,7 @@ const WhatWeDo = () => {
             onMouseLeave={handleHoverEndCard1}
           >
             <div className="h-[400px] w-[90%] flex flex-col justify-center items-start gap-4">
-              <div className="h-[220px] lg:h-[180px] w-full overflow-hidden rounded-lg p-3 bg-[#bcd1ee] border border-gray-500">
+              <div className="h-[160px] lg:h-[150px] w-full overflow-hidden rounded-lg p-3 bg-[#bcd1ee] border border-gray-500">
                 <motion.div
                   className="flex flex-col gap-4"
                   animate={cardMessageControls}
