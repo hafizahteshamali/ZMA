@@ -112,7 +112,7 @@ const Header = () => {
             {NavigationData.map((nav, index) => (
               <li key={index} className="w-full">
                 <div className="flex flex-col gap-2">
-                  <div
+                  <NavLink to={nav.path}
                     onClick={() =>
                       nav.children
                         ? setOpenDropdown(
@@ -127,7 +127,7 @@ const Header = () => {
                       <FiChevronDown className="mt-1 text-[16px]" />
                     )}
                              
-                  </div>
+                  </NavLink>
                   {/* Toggleable Mobile Dropdown */}                 
                   {nav.children && openDropdown === nav.text && (
                     <ul className="ml-4 flex flex-col gap-1 mt-1">
