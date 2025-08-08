@@ -1,13 +1,16 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Layout from '../Layout/Layout';
-import Home from '../pages/home/Home';
-import AIDevelopment from '../pages/service/AiDevelopment/AIDevelopment';
-import WebDevelopment from '../pages/service/WebDevelopment/WebDevelopment';
-import ITSolutions from '../pages/service/ItSolutions/ITSolutions';
-import GraphicDesigning from '../pages/service/GraphicDesigning/GraphicDesigning';
-import Error from '../pages/Error/Error';
-import About from '../pages/about/About';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Layout from "../Layout/Layout";
+import Home from "../pages/home/Home";
+import AIDevelopment from "../pages/service/AiDevelopment/AIDevelopment";
+import WebDevelopment from "../pages/service/WebDevelopment/WebDevelopment";
+import ITSolutions from "../pages/service/ItSolutions/ITSolutions";
+import GraphicDesigning from "../pages/service/GraphicDesigning/GraphicDesigning";
+import Error from "../pages/Error/Error";
+import About from "../pages/about/About";
+import BlogLayout from "../Layout/BlogLayout";
+import Blog from "../pages/Blog/Blog";
+import BlogDetail from "../pages/Blog/BlogDetail";
 
 const AppRoutes = () => {
   return (
@@ -17,9 +20,18 @@ const AppRoutes = () => {
         <Route path="service/ai-development" element={<AIDevelopment />} />
         <Route path="service/web-development" element={<WebDevelopment />} />
         <Route path="service/it-solutions" element={<ITSolutions />} />
-        <Route path="service/graphic-designing" element={<GraphicDesigning />} />
-        <Route path='/about-us' element={<About />} />
+        <Route
+          path="service/graphic-designing"
+          element={<GraphicDesigning />}
+        />
+        <Route path="/about-us" element={<About />} />
         <Route path="*" element={<Error />} />
+      </Route>
+
+      {/* Blog Routes */}
+      <Route path="/blog" element={<BlogLayout />}>
+        <Route index element={<Blog />} /> {/* Blog list page */}
+        <Route path=":slug" element={<BlogDetail />} /> {/* Blog detail page */}
       </Route>
     </Routes>
   );

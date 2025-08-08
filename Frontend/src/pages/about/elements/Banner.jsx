@@ -102,7 +102,7 @@ const Banner = () => {
           initial={{ x: "30%", opacity: 0 }}
           animate={{ x: "0%", opacity: 1 }}
           transition={{ 
-            duration: 1.5, 
+            duration: 3.5, 
             ease: [0.16, 0.77, 0.47, 0.97],
             delay: 0.2
           }}

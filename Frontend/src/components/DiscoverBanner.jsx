@@ -5,7 +5,7 @@ import { LuSquareArrowRight } from 'react-icons/lu';
 const DiscoverBanner = ({image, className, spanClass, btnClass, iconClass, text1, text2}) => {
   return (
     <div className='container mx-auto p-3'>
-        <div className='w-[100%] lg:w-[80%] mx-auto'>
+        <div className='w-[100%] lg:w-[100%] mx-auto'>
         <motion.div
             className="container mx-auto lg:w-[100%] my-[100px]"
             initial="hidden"
