@@ -1,8 +1,9 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Header from "../../../../navigation/Header";
+import CaseStudyModal from "../../../../components/CaseStudyModal";
 
 /* ----------------------------------------------------------
    Helper: Progress Bar
@@ -87,41 +88,23 @@ const SlideVideoOverlay = ({
    Main Banner
 ---------------------------------------------------------- */
 const Banner = ({ ServiceBannerData }) => {
-  const {
-    heading,
-    img1,
-    img2,
-    img3,
-    buttons,
-    slides: incomingSlides,
-  } = ServiceBannerData;
+  const { heading, buttons, slides: incomingSlides } = ServiceBannerData;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   // If caller didn't pass slides array, build a basic one
   const slides = incomingSlides?.length
     ? incomingSlides
-    : [
-        {
-          img: img1,
-          label: "Mobile Guru",
-          video1: "/assets/images/service/mobile-guru1.mp4",
-          video2: "/assets/images/service/mobile-guru2.mp4",
-          labelMs: 3000,
-        },
-        {
-          img: img2,
-          label: "Mobile Guru",
-          video1: "/assets/images/service/mobile-guru1.mp4",
-          video2: "/assets/images/service/mobile-guru2.mp4",
-          labelMs: 3000,
-        },
-        {
-          img: img3,
-          label: "Mobile Guru",
-          video1: "/assets/images/service/mobile-guru1.mp4",
-          video2: "/assets/images/service/mobile-guru2.mp4",
-          labelMs: 3000,
-        },
-      ];
+    : ServiceBannerData.buttons.map((btn) => ({
+        img: btn.img,
+        label: btn.text,
+        video1: btn.video1,
+        video2: btn.video2,
+        labelMs: 3000,
+      }));
 
   /* ---------- Slider Ref ---------- */
   const sliderRef = useRef(null);
@@ -237,71 +220,104 @@ const Banner = ({ ServiceBannerData }) => {
   };
 
   const slide = slides[current] || {};
+  const currentButton =
+    Array.isArray(buttons) && buttons.length
+      ? buttons[current % buttons.length]
+      : null;
 
   return (
-    <div className="p-1">
-      <div className="container mx-auto">
-        <Header />
-      </div>
+    <>
+      <div className="p-1">
+        <div className="container mx-auto">
+          <Header />
+        </div>
 
-      <div className="lg:min-h-[1000px] flex flex-col justify-start lg:justify-center mt-[100px] py-[50px]">
-        {/* Heading */}
-        <h1 className="text-4xl sm:text-[40px] md:text-5xl lg:leading-16 text-[var(--text-hover-color)] leading-12 font-[600] text-center mt-10 lg:w-[60%] mx-auto">
-          {heading}
-        </h1>
+        <div className="lg:min-h-[1000px] flex flex-col justify-start lg:justify-center mt-[100px] py-[50px]">
+          {/* Heading */}
+          <h1 className="text-4xl sm:text-[40px] md:text-5xl lg:leading-16 text-[var(--text-hover-color)] leading-12 font-[600] text-center mt-10 lg:w-[60%] mx-auto">
+            {heading}
+          </h1>
 
-        {/* Slider wrapper (relative for overlay) */}
-        <div className="mt-10 relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
-          <SlideVideoOverlay
-            label={slide.label}
-            video1={slide.video1}
-            video2={slide.video2}
-            phase={phase}
-            progress={progress}
-            onVid1Ready={onVid1Ready}
-            onVid2Ready={onVid2Ready}
-            onVid1Ended={onVid1Ended}
-            onVid2Ended={onVid2Ended}
-          />
+          {/* Slider wrapper (relative for overlay) */}
+          <div className="mt-10 relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+            <SlideVideoOverlay
+              label={slide.label}
+              video1={slide.video1}
+              video2={slide.video2}
+              phase={phase}
+              progress={progress}
+              onVid1Ready={onVid1Ready}
+              onVid2Ready={onVid2Ready}
+              onVid1Ended={onVid1Ended}
+              onVid2Ended={onVid2Ended}
+            />
 
-          {/* Slick Slider */}
-          <Slider ref={sliderRef} {...settings} className="custom-slick">
-            {slides.map((s, i) => (
-              <div key={i} className="px-3">
-                <div
-                  className={`h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden ${
-                    i === current ? "opacity-100" : "opacity-40"
-                  } transition-opacity duration-500`}
-                >
-                  <div className="relative h-[100%] w-[100%]">
-                    <img
-                      src={s.img || "/placeholder.svg"}
-                      className="h-full w-full object-cover absolute"
-                      alt={`slide-${i}`}
-                    />
-                    {buttons.map((btn, index) => {
-                      return (
-                        <div key={index} className="w-[90%] lg:w-[50%] bg-[#ffffff33] absolute bottom-5 left-[50%] py-2 border-2 border-white transform -translate-x-[50%] rounded-full">
+            {/* Slick Slider */}
+            <Slider ref={sliderRef} {...settings} className="custom-slick">
+              {slides.map((s, i) => (
+                <div key={i} className="px-3">
+                  <div
+                    className={`h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden ${
+                      i === current ? "opacity-100" : "opacity-40"
+                    } transition-opacity duration-500`}
+                  >
+                    <div className="relative h-[100%] w-[100%]">
+                      <img
+                        src={s.img || "/placeholder.svg"}
+                        className="h-full w-full object-cover absolute"
+                        alt={`slide-${i}`}
+                      />
+                      {i === current && currentButton && (
+                        <div
+                          key={currentButton.slug}
+                          className="w-[90%] lg:w-[50%] absolute bottom-5 left-1/2 py-2 border-2 border-white transform -translate-x-1/2 rounded-full backdrop-blur-sm"
+                        >
                           <div className="flex justify-between items-center">
-                            <p className="text-[#3D4F60] text-[12px] lg:text-[16px] w-[32%] flex justify-center items-center border-r border-[#3D4F60]">{btn.text}</p>
-                            <NavLink to={btn.caseStudyUrl} className="text-[#3D4F60] text-[12px] lg:text-[16px] w-[32%] flex justify-center items-center border-r border-[#3D4F60]">
-                              {btn.caseStudyText}
-                            </NavLink>
-                            <NavLink to={btn.visitUrl} className="text-[#3D4F60] text-[12px] lg:text-[16px] w-[32%] flex justify-center items-center">
-                              {btn.visitText}
-                              </NavLink>
+                            {/* Text */}
+                            <p className="text-[#3D4F60] text-[12px] lg:text-[16px] flex-1 text-center border-r border-[#3D4F60] px-2 overflow-hidden whitespace-nowrap">
+                              <span className="block truncate">
+                                {currentButton.text}
+                              </span>
+                            </p>
+
+                            {/* Case Study Link - Fixed navigation */}
+                            <button
+                              onClick={openModal}
+                              className="text-[#3D4F60] text-[12px] lg:text-[16px] flex-1 text-center border-r border-[#3D4F60] px-2 overflow-hidden whitespace-nowrap flex items-center justify-center hover:bg-white/20 transition-colors"
+                              title={currentButton.caseStudyText}
+                            >
+                              <span className="block truncate">
+                                {currentButton.caseStudyText}
+                              </span>
+                            </button>
+
+                            {/* Visit Link - Changed to <a> for external links */}
+                            <a
+                              href={currentButton.visitUrl}
+                              className="text-[#3D4F60] text-[12px] lg:text-[16px] flex-1 text-center px-2 overflow-hidden whitespace-nowrap hover:bg-white/20 transition-colors"
+                              title={currentButton.visitText}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <span className="block truncate">
+                                {currentButton.visitText}
+                              </span>
+                            </a>
                           </div>
                         </div>
-                      );
-                    })}
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* CaseStudyModal component with isOpen and onClose props */}
+      <CaseStudyModal isOpen={isModalOpen} onClose={closeModal} />
+    </>
   );
 };
 

@@ -33,7 +33,7 @@ export const NavigationData = [
   },
   {
     text: "Case Studies",
-    path: "/case-studies",
+    path: "/case-study",
   },
   {
     text: "Team",
@@ -291,35 +291,43 @@ export const FooterData = {
 
 // Services Page
 
+// ✅ Single source of truth
 export const ServiceBannerData = {
   heading: "Your Full-Stack Partner for Scalable Web Solutions",
-  img1: "/assets/images/service/banner-img1.jpg",
-  img2: "/assets/images/service/banner-img2.jpg",
-  img3: "/assets/images/service/banner-img3.png",
   buttons: [
     {
       text: "Velraa",
       caseStudyText: "Case Study",
-      caseStudyUrl: "/service",
+      slug: "velraa",
       visitText: "Visit",
-      visitUrl: "/service"
+      visitUrl: "https://velraa.com/",
+      img: "/assets/images/service/banner-img1.jpg",
+      video1: "/assets/images/service/mobile-guru1.mp4",
+      video2: "/assets/images/service/mobile-guru2.mp4",
     },
     {
-      text: "Velraa",
+      text: "Mobile Guru",
       caseStudyText: "Case Study",
-      caseStudyUrl: "/service",
+      slug: "mobile-guru",
       visitText: "Visit",
-      visitUrl: "/service"
+      visitUrl: "https://mobileguru.at/",
+      img: "/assets/images/service/mobile-guru.png",
+      video1: "/assets/images/service/mobile-guru1.mp4",
+      video2: "/assets/images/service/mobile-guru2.mp4",
     },
     {
-      text: "Velraa",
+      text: "ElectroTechNik",
       caseStudyText: "Case Study",
-      caseStudyUrl: "/service",
+      slug: "electro-technik",
       visitText: "Visit",
-      visitUrl: "/service"
+      visitUrl: "https://www.s-s-elektro.at/",
+      img: "/assets/images/service/electro-tecknik.jpg",
+      video1: "/assets/images/service/mobile-guru1.mp4",
+      video2: "/assets/images/service/mobile-guru2.mp4",
     },
-  ]
-}
+  ],
+};
+
 
 export const clientsName = [
   "/assets/images/service/client.png",
@@ -850,5 +858,260 @@ export const SidebarBlogsData = [
     title: "DevOps for Designers: Bridging the Gap",
     slug: "devops-for-designers-bridging-the-gap",
     btnText: "Read more",
+  },
+]
+
+
+// Case Study Data
+export const ProjectData = [
+  {
+    id: 1,
+    imgUrl: "/assets/images/case-study/velra-project.png",
+    caseText: "Case Study",
+    isCaseStudy: true,
+    websiteUrl: "https://velraa.com/",
+    projectName: "Velraa",
+    runningOn: "2024 – Today",
+    tech: "Replatforming, UI/UX & E-Commerce",
+    phases: ["DESIGN", "CONSULTING", "BUILD"],
+    category: "JEWELRY & APPAREL",
+    aboutPara: "At ZMA-Solutions, we partnered with Velraa to elevate their handcrafted jewelry e-commerce experience. We began by crafting a robust design system in Figma—complete with pixel-perfect layouts, “As Seen In” galleries, and dynamic product detail components—then brought it to life in WordPress with a custom Gutenberg theme. Our implementation seamlessly integrates free-shipping thresholds, 14-day returns, newsletter sign-ups, and real-time inventory updates, all while optimizing for performance, SEO, and mobile-first shopping.",
+    services: [
+      {
+        heading: "DESIGN",
+        taggs: ["FIGMA DESIGN SYSTEM", "RESPONSIVE PROTOTYPING", "INTERACTIVE WIREFRAMES", "DESIGN TOKENS", "STYLE GUIDES"]
+      },
+      {
+        heading: "DEVELOPMENT",
+        taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
+      },
+    ],
+    integration: [
+      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", " Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
+    ],
+    keyFeatures: [
+      "Responsive, mobile-first design",
+      "Custom WordPress theme using Gutenberg",
+      "WooCommerce integration",
+      "Product categories with filtering",
+      "As Seen In” gallery module",
+      "Multilingual support via WPML",
+      "SEO optimization using Yoast SEO",
+      "Custom product detail pages",
+      "Gift card product setup",
+      "Newsletter popup with Mailchimp integration",
+      "Newsletter discount automation (10% off)",
+      "Free shipping threshold logic (€35+)",
+      "14-day return policy integration",
+      "Instagram feed widget",
+      "Ring-size & chain-length guides",
+      "WhatsApp support button",
+      "Live chat integration",
+      "Styling tips & blog section",
+      "Secure payments via Stripe, Klarna & PayPal",
+      "Performance optimization (Cloudflare CDN, caching)",
+      "Basic security setup (SSL, anti-spam)",
+    ]
+  },
+  {
+    id: 2,
+    imgUrl: "/assets/images/case-study/sclera-project.png",
+    caseText: "Case Study",
+    isCaseStudy: false,
+    websiteUrl: "https://velraa.com/",
+    projectName: "Sclera",
+    runningOn: "2024 – Today",
+    tech: "Replatforming, UI/UX & E-Commerce",
+    phases: ["DESIGN", "CONSULTING", "BUILD"],
+    category: "JEWELRY & APPAREL",
+    aboutPara: "At ZMA-Solutions, we partnered with Velraa to elevate their handcrafted jewelry e-commerce experience. We began by crafting a robust design system in Figma—complete with pixel-perfect layouts, “As Seen In” galleries, and dynamic product detail components—then brought it to life in WordPress with a custom Gutenberg theme. Our implementation seamlessly integrates free-shipping thresholds, 14-day returns, newsletter sign-ups, and real-time inventory updates, all while optimizing for performance, SEO, and mobile-first shopping.",
+    services: [
+      {
+        heading: "DESIGN",
+        taggs: ["FIGMA DESIGN SYSTEM", "RESPONSIVE PROTOTYPING", "INTERACTIVE WIREFRAMES", "DESIGN TOKENS", "STYLE GUIDES"]
+      },
+      {
+        heading: "DEVELOPMENT",
+        taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
+      },
+    ],
+    integration: [
+      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", " Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
+    ],
+    keyFeatures: [
+      "Responsive, mobile-first design",
+      "Custom WordPress theme using Gutenberg",
+      "WooCommerce integration",
+      "Product categories with filtering",
+      "As Seen In” gallery module",
+      "Multilingual support via WPML",
+      "SEO optimization using Yoast SEO",
+      "Custom product detail pages",
+      "Gift card product setup",
+      "Newsletter popup with Mailchimp integration",
+      "Newsletter discount automation (10% off)",
+      "Free shipping threshold logic (€35+)",
+      "14-day return policy integration",
+      "Instagram feed widget",
+      "Ring-size & chain-length guides",
+      "WhatsApp support button",
+      "Live chat integration",
+      "Styling tips & blog section",
+      "Secure payments via Stripe, Klarna & PayPal",
+      "Performance optimization (Cloudflare CDN, caching)",
+      "Basic security setup (SSL, anti-spam)",
+    ]
+  },
+  {
+    id: 3,
+    imgUrl: "/assets/images/case-study/cabo-verde-project.png",
+    caseText: "Case Study",
+    isCaseStudy: true,
+    websiteUrl: "https://velraa.com/",
+    projectName: "Cabo Verde Hair Trade",
+    runningOn: "2024 – Today",
+    tech: "Replatforming, UI/UX & E-Commerce",
+    phases: ["DESIGN", "CONSULTING", "BUILD"],
+    category: "JEWELRY & APPAREL",
+    aboutPara: "At ZMA-Solutions, we partnered with Velraa to elevate their handcrafted jewelry e-commerce experience. We began by crafting a robust design system in Figma—complete with pixel-perfect layouts, “As Seen In” galleries, and dynamic product detail components—then brought it to life in WordPress with a custom Gutenberg theme. Our implementation seamlessly integrates free-shipping thresholds, 14-day returns, newsletter sign-ups, and real-time inventory updates, all while optimizing for performance, SEO, and mobile-first shopping.",
+    services: [
+      {
+        heading: "DESIGN",
+        taggs: ["FIGMA DESIGN SYSTEM", "RESPONSIVE PROTOTYPING", "INTERACTIVE WIREFRAMES", "DESIGN TOKENS", "STYLE GUIDES"]
+      },
+      {
+        heading: "DEVELOPMENT",
+        taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
+      },
+    ],
+    integration: [
+      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", " Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
+    ],
+    keyFeatures: [
+      "Responsive, mobile-first design",
+      "Custom WordPress theme using Gutenberg",
+      "WooCommerce integration",
+      "Product categories with filtering",
+      "As Seen In” gallery module",
+      "Multilingual support via WPML",
+      "SEO optimization using Yoast SEO",
+      "Custom product detail pages",
+      "Gift card product setup",
+      "Newsletter popup with Mailchimp integration",
+      "Newsletter discount automation (10% off)",
+      "Free shipping threshold logic (€35+)",
+      "14-day return policy integration",
+      "Instagram feed widget",
+      "Ring-size & chain-length guides",
+      "WhatsApp support button",
+      "Live chat integration",
+      "Styling tips & blog section",
+      "Secure payments via Stripe, Klarna & PayPal",
+      "Performance optimization (Cloudflare CDN, caching)",
+      "Basic security setup (SSL, anti-spam)",
+    ]
+  },
+  {
+    id: 4,
+    imgUrl: "/assets/images/case-study/it-meister-project.png",
+    caseText: "Case Study",
+    isCaseStudy: true,
+    websiteUrl: "https://velraa.com/",
+    projectName: "IT Meister",
+    runningOn: "2024 – Today",
+    tech: "Replatforming, UI/UX & E-Commerce",
+    phases: ["DESIGN", "CONSULTING", "BUILD"],
+    category: "JEWELRY & APPAREL",
+    aboutPara: "At ZMA-Solutions, we partnered with Velraa to elevate their handcrafted jewelry e-commerce experience. We began by crafting a robust design system in Figma—complete with pixel-perfect layouts, “As Seen In” galleries, and dynamic product detail components—then brought it to life in WordPress with a custom Gutenberg theme. Our implementation seamlessly integrates free-shipping thresholds, 14-day returns, newsletter sign-ups, and real-time inventory updates, all while optimizing for performance, SEO, and mobile-first shopping.",
+    services: [
+      {
+        heading: "DESIGN",
+        taggs: ["FIGMA DESIGN SYSTEM", "RESPONSIVE PROTOTYPING", "INTERACTIVE WIREFRAMES", "DESIGN TOKENS", "STYLE GUIDES"]
+      },
+      {
+        heading: "DEVELOPMENT",
+        taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
+      },
+    ],
+    integration: [
+      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", " Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
+    ],
+    keyFeatures: [
+      "Responsive, mobile-first design",
+      "Custom WordPress theme using Gutenberg",
+      "WooCommerce integration",
+      "Product categories with filtering",
+      "As Seen In” gallery module",
+      "Multilingual support via WPML",
+      "SEO optimization using Yoast SEO",
+      "Custom product detail pages",
+      "Gift card product setup",
+      "Newsletter popup with Mailchimp integration",
+      "Newsletter discount automation (10% off)",
+      "Free shipping threshold logic (€35+)",
+      "14-day return policy integration",
+      "Instagram feed widget",
+      "Ring-size & chain-length guides",
+      "WhatsApp support button",
+      "Live chat integration",
+      "Styling tips & blog section",
+      "Secure payments via Stripe, Klarna & PayPal",
+      "Performance optimization (Cloudflare CDN, caching)",
+      "Basic security setup (SSL, anti-spam)",
+    ]
+  },
+]
+
+export const CaseStudyReview1 = [
+  {
+    description: "ZMA-Solutions delivered a secure and scalable IT infrastructure for our growing needs. Their support has been exceptional.",
+    profileImg: "/assets/images/case-study/review-1-1.jpg",
+    name: "Emily Chen",
+    designation: "CEO, FinTech Solutions"
+  },
+  {
+    description: "Their real-time system monitoring helped us catch issues before they became problems. Reliable and proactive.",
+    profileImg: "/assets/images/case-study/review-1-2.jpg",
+    name: "James O’Connor",
+    designation: "Operations Manager, HealthTrack"
+  },
+  {
+    description: "From cloud migration to 24/7 support, their service is top-notch. Our downtime dropped to nearly zero.",
+    profileImg: "/assets/images/case-study/review-1-3.jpg",
+    name: "Carlos Mendes",
+    designation: "Co-Founder, EduWave"
+  },
+  {
+    description: "ZMA-Solutions’ technical support is fast, clear, and always helpful. We never feel left in the dark.",
+    profileImg: "/assets/images/case-study/review-1-3.jpg",
+    name: "Yuki Nakamura",
+    designation: "IT Lead, RetailConnect"
+  },
+]
+
+export const CaseStudyReview2 = [
+  {
+    description: "They brought structure and security to our scattered data systems. Now everything just works.",
+    profileImg: "/assets/images/case-study/review-2-1.jpg",
+    name: "Anastasia Petrova",
+    designation: "CTO, Eventrix"
+  },
+  {
+    description: "They simplified our complex IT setup and made everything user-friendly. Incredible transformation.",
+    profileImg: "/assets/images/case-study/review-2-2.jpg",
+    name: "David Smith",
+    designation: "Managing Director, MedGear"
+  },
+  {
+    description: "Their data management approach keeps us compliant and confident. Truly professional service.",
+    profileImg: "/assets/images/case-study/review-2-3.jpg",
+    name: "Fatima El Amrani",
+    designation: "Digital Project Manager"
+  },
+  {
+    description: "Their monitoring dashboard gives us peace of mind. Smooth systems, better performance.",
+    profileImg: "/assets/images/case-study/review-2-4.jpg",
+    name: "Jonas Bergström",
+    designation: "Co-Founder, WorkNest"
   },
 ]

@@ -11,27 +11,31 @@ import About from "../pages/about/About";
 import BlogLayout from "../Layout/BlogLayout";
 import Blog from "../pages/Blog/Blog";
 import BlogDetail from "../pages/Blog/BlogDetail";
+import CaseStudy from "../pages/case_study/CaseStudy";
 
 const AppRoutes = () => {
   return (
     <Routes>
+      {/* Main Layout Routes */}
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="service/ai-development" element={<AIDevelopment />} />
         <Route path="service/web-development" element={<WebDevelopment />} />
         <Route path="service/it-solutions" element={<ITSolutions />} />
-        <Route
-          path="service/graphic-designing"
-          element={<GraphicDesigning />}
-        />
-        <Route path="/about-us" element={<About />} />
+        <Route path="service/graphic-designing" element={<GraphicDesigning />} />
+        <Route path="about-us" element={<About />} />
+
+        {/* Case Study Dynamic Route */}
+        <Route path="case-study" element={<CaseStudy />} />
+
+        {/* Error Page */}
         <Route path="*" element={<Error />} />
       </Route>
 
       {/* Blog Routes */}
       <Route path="/blog" element={<BlogLayout />}>
-        <Route index element={<Blog />} /> {/* Blog list page */}
-        <Route path=":slug" element={<BlogDetail />} /> {/* Blog detail page */}
+        <Route index element={<Blog />} />
+        <Route path=":slug" element={<BlogDetail />} />
       </Route>
     </Routes>
   );
