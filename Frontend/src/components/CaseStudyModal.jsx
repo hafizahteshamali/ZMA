@@ -100,7 +100,7 @@ const CaseStudyModal = ({ isOpen, onClose, children }) => {
           aria-label="Close modal"
         >
           <svg
-            className="w-5 h-5 text-gray-600 transition-colors duration-200"
+            className="w-5 h-5 text-[var(--text-hover-color)] transition-colors duration-200"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

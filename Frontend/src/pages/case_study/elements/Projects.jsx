@@ -264,11 +264,11 @@ const Projects = () => {
 
             {/* Video/Image Section */}
             <div
-              className="min-h-[300px] lg:h-[800px] relative w-full lg:w-[50%] flex bg-green-600 flex-col items-center justify-center bg-cover bg-center bg-no-repeat"
+              className="min-h-[400px] lg:h-[800px] relative w-full lg:w-[50%] flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${selectedCase.img2Url})` }}
             >
               {/* Video Container */}
-              <div className="h-[60%] absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[60%] vide p-3 w-[90%] flex flex-col items-center justify-center z-10">
+              <div className="lg:h-[60%] md:h-[70%] absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] lg:-translate-y-[60%] vide p-3 w-[90%] flex flex-col items-center justify-center z-10">
                 <video
                   key={activeDevice}
                   className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
