@@ -866,7 +866,10 @@ export const SidebarBlogsData = [
 export const ProjectData = [
   {
     id: 1,
-    imgUrl: "/assets/images/case-study/velra-project.png",
+    img1Url: "/assets/images/case-study/velra-project.png",
+    img2Url: "/assets/images/service/banner-img1.jpg",
+    video1: "/assets/images/service/mobile-guru1.mp4",
+    video2: "/assets/images/service/mobile-guru2.mp4",
     caseText: "Case Study",
     isCaseStudy: true,
     websiteUrl: "https://velraa.com/",
@@ -915,7 +918,10 @@ export const ProjectData = [
   },
   {
     id: 2,
-    imgUrl: "/assets/images/case-study/sclera-project.png",
+    img1Url: "/assets/images/case-study/sclera-project.png",
+    img2Url: "/assets/images/service/banner-img1.jpg",
+    video1: "/assets/images/service/mobile-guru1.mp4",
+    video2: "/assets/images/service/mobile-guru2.mp4",
     caseText: "Case Study",
     isCaseStudy: false,
     websiteUrl: "https://velraa.com/",
@@ -964,7 +970,10 @@ export const ProjectData = [
   },
   {
     id: 3,
-    imgUrl: "/assets/images/case-study/cabo-verde-project.png",
+    img1Url: "/assets/images/case-study/cabo-verde-project.png",
+    img2Url: "/assets/images/service/banner-img1.jpg",
+    video1: "/assets/images/service/mobile-guru1.mp4",
+    video2: "/assets/images/service/mobile-guru2.mp4",
     caseText: "Case Study",
     isCaseStudy: true,
     websiteUrl: "https://velraa.com/",
@@ -1013,7 +1022,10 @@ export const ProjectData = [
   },
   {
     id: 4,
-    imgUrl: "/assets/images/case-study/it-meister-project.png",
+    img1Url: "/assets/images/case-study/it-meister-project.png",
+    img2Url: "/assets/images/service/banner-img1.jpg",
+    video1: "/assets/images/service/mobile-guru1.mp4",
+    video2: "/assets/images/service/mobile-guru2.mp4",
     caseText: "Case Study",
     isCaseStudy: true,
     websiteUrl: "https://velraa.com/",
