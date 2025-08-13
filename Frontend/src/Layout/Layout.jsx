@@ -1,26 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import Header from '../navigation/Header'
-import { Outlet, useLocation } from 'react-router-dom'
-import Footer from '../navigation/Footer'
+import React, { useEffect, useState } from "react";
+import Header from "../navigation/Header";
+import { Outlet, useLocation } from "react-router-dom";
+import Footer from "../navigation/Footer";
 
 const Layout = () => {
-    const [isHeader, setIsHeader] = useState(false);
+  const [isHeader, setIsHeader] = useState(false);
 
-    const location = useLocation();
+  const location = useLocation();
 
-    useEffect(()=>{
-        if(location.pathname === "/" || location.pathname === "/service/web-development" || location.pathname === "/service/ai-development"){
-            setIsHeader(true)
-        }
-    }, [])
+  useEffect(() => {
+    if (
+      location.pathname === "/" ||
+      location.pathname === "/service/web-development" ||
+      location.pathname === "/service/ai-development" ||
+      location.pathname === "/contact" ||
+      location.pathname === "privacy-policy"
+    ) {
+      setIsHeader(true);
+    }
+  }, []);
 
   return (
     <>
-        {!isHeader && <Header /> }
-        <Outlet />
-        <Footer />
+      {!isHeader && <Header />}
+      <Outlet />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

@@ -36,10 +36,6 @@ export const NavigationData = [
     path: "/case-study",
   },
   {
-    text: "Team",
-    path: "/team",
-  },
-  {
     text: "Blog",
     path: "/blog",
   },
@@ -227,19 +223,15 @@ export const FooterData = {
       links: [
         {
           text: "Case Studies",
-          url: "/",
-        },
-        {
-          text: "Team",
-          url: "/",
+          url: "/case-study",
         },
         {
           text: "Blog",
-          url: "/",
+          url: "/blog",
         },
         {
           text: "Contact",
-          url: "/",
+          url: "/contact",
         },
       ],
     },
@@ -248,41 +240,33 @@ export const FooterData = {
       links: [
         {
           text: "AI Development",
-          url: "/",
+          url: "/service/ai-development",
         },
         {
           text: "Web Development",
-          url: "/",
+          url: "/service/web-development",
         },
         {
           text: "Graphic Designing",
-          url: "/",
+          url: "/service/graphic-designing",
         },
         {
           text: "IT Outsourcing",
-          url: "/",
+          url: "/service/it-solutions",
         },
       ],
     },
     {
-      subHead: "About Us",
+      subHead: "Legal",
       links: [
         {
-          text: "Partners & Clients",
-          url: "/",
+          text: "Privacy Policy",
+          url: "privacy-policy",
         },
         {
-          text: "Who We Are?",
+          text: "Imprint",
           url: "/",
-        },
-        {
-          text: "How We Work?",
-          url: "/",
-        },
-        {
-          text: "Our Mission",
-          url: "/",
-        },
+        }
       ],
     },
   ],
@@ -1127,3 +1111,107 @@ export const CaseStudyReview2 = [
     designation: "Co-Founder, WorkNest"
   },
 ]
+
+// Contact Page
+export const GetInTouchData = {
+  lgHeading: "Get in touch",
+  smHeading: "Send a Message",
+  para: "Fill out the form below, and we’ll get back to you as soon as possible. Let us know what you’re interested in, and we’ll connect you with the right expert.",
+  contactWay: [
+    {
+      heading: "Call Us",
+      descrip: "Got a quick question or need immediate help? Give us a call and speak directly with our friendly support team.",
+      icon: "/assets/images/contact/phone.svg",
+      text: "(+92) 312 0288551",
+    },
+    {
+      heading: "Visit Us",
+      descrip: "Stop by our office for a face-to-face chat — we’d be happy to welcome you.",
+      icon: "/assets/images/contact/location.svg",
+      text: "Banglow 9c P.E.C.H.S Block 6 Karachi, 75400",
+    },
+    {
+      heading: "Live Chat",
+      descrip: "Need answers right now? Start a live chat with our team and get real-time support.",
+      icon: "/assets/images/contact/chat.svg",
+      text: "Start Chat",
+    }
+  ]
+}
+
+// Privacy Policy
+
+export const privacySections = [
+  {
+    title: "Information we collect",
+    content:
+      "Information you give us contact details (name, email, phone, company), project briefs, files, credentials (when you provide them for work), billing details, and communications.Information we collect automatically usage data (pages visited, device, IP, referrer), cookies, and performance logs.Project & AI data documents, datasets, and model inputs you submit for development or model training (treated as confidential unless you instruct otherwise).",
+    borderr: true,
+  },
+  {
+    title: "How we use your information",
+    content:
+      "We use data to deliver and improve services, communicate with you, process payments, run analytics, and secure our systems. With your explicit authorization, we may use submitted data to build or train models for your project only.",
+    borderr: true,
+  },
+  {
+    title: "Information sharing & third parties",
+    content:
+      "We share data only with: trusted service providers (hosting, analytics, payments), subcontractors working on your projects, and when legally required. All third parties act on our instructions and are contractually bound to protect your data. We do not sell personal data.",
+    borderr: true,
+  },
+  {
+    title: "Cookies & tracking",
+    content:
+      "We use cookies for essential site functions, analytics, and (with consent) marketing. You can manage cookie preferences in your browser.",
+    borderr: true,
+  },
+  {
+    title: "Data security",
+    content:
+      "We use industry standard safeguards — TLS in transit, role-based access, backups, and regular security reviews. While we take strong measures, no system is infallible; please notify us immediately if you suspect a breach.",
+    borderr: true,
+  },
+  {
+    title: "Data retention",
+    content:
+      "We retain project and client data for as long as necessary to provide services and meet legal/accounting needs. You may request deletion, subject to legal or contractual retention requirements.",
+    borderr: true,
+  },
+  {
+    title: "Your rights",
+    content:
+      "Depending on your location, you may access, correct, export, or request deletion of your personal data. You can also object to processing or withdraw consent for marketing at any time contact us below to exercise these rights.",
+    borderr: true,
+  },
+  {
+    title: "AI & model use (important)",
+    content:
+      "Client data used for model training remains your property. We will only reuse or generalize your training data with explicit written permission. AI outputs should be validated before use in critical applications.",
+    borderr: true,
+  },
+  {
+    title: "International transfers",
+    content:
+      "We operate and store data globally. When data crosses borders we apply appropriate safeguards (e.g., contractual protections) as required by law.",
+    borderr: true,
+  },
+  {
+    title: "Children",
+    content:
+      "Our services are not intended for children under 16. If you believe we have collected data of a minor, contact us and we will promptly remove it.",
+    borderr: true,
+  },
+  {
+    title: "Changes to this policy",
+    content:
+      "We may update this policy occasionally. We'll post the revised version on our site with a new effective date.",
+    borderr: true,
+  },
+  {
+    title: "Contact us",
+    content:
+      "If you have questions, requests, or concerns, contact:ZMAEmail: office@zma-solutions.com",
+    borderr: false,
+  },
+];

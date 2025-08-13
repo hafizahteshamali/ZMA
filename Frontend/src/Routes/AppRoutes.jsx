@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop"; // ⬅️ yahan import
 import Layout from "../Layout/Layout";
 import Home from "../pages/home/Home";
 import AIDevelopment from "../pages/service/AiDevelopment/AIDevelopment";
@@ -12,32 +13,35 @@ import BlogLayout from "../Layout/BlogLayout";
 import Blog from "../pages/Blog/Blog";
 import BlogDetail from "../pages/Blog/BlogDetail";
 import CaseStudy from "../pages/case_study/CaseStudy";
+import Contact from "../pages/contact/Contact";
+import Privacy_Policy from "../pages/privacy_policy/Privacy_Policy";
 
 const AppRoutes = () => {
   return (
-    <Routes>
-      {/* Main Layout Routes */}
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="service/ai-development" element={<AIDevelopment />} />
-        <Route path="service/web-development" element={<WebDevelopment />} />
-        <Route path="service/it-solutions" element={<ITSolutions />} />
-        <Route path="service/graphic-designing" element={<GraphicDesigning />} />
-        <Route path="about-us" element={<About />} />
+    <>
+      <ScrollToTop /> {/* 👈 Ye har route change par scroll reset karega */}
+      <Routes>
+        {/* Main Layout Routes */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="service/ai-development" element={<AIDevelopment />} />
+          <Route path="service/web-development" element={<WebDevelopment />} />
+          <Route path="service/it-solutions" element={<ITSolutions />} />
+          <Route path="service/graphic-designing" element={<GraphicDesigning />} />
+          <Route path="about-us" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="privacy-policy" element={<Privacy_Policy />} />
+          <Route path="case-study" element={<CaseStudy />} />
+          <Route path="*" element={<Error />} />
+        </Route>
 
-        {/* Case Study Dynamic Route */}
-        <Route path="case-study" element={<CaseStudy />} />
-
-        {/* Error Page */}
-        <Route path="*" element={<Error />} />
-      </Route>
-
-      {/* Blog Routes */}
-      <Route path="/blog" element={<BlogLayout />}>
-        <Route index element={<Blog />} />
-        <Route path=":slug" element={<BlogDetail />} />
-      </Route>
-    </Routes>
+        {/* Blog Routes */}
+        <Route path="/blog" element={<BlogLayout />}>
+          <Route index element={<Blog />} />
+          <Route path=":slug" element={<BlogDetail />} />
+        </Route>
+      </Routes>
+    </>
   );
 };
 
