@@ -115,7 +115,7 @@ const WhatWeDo = () => {
   };
 
   return (
-    <div className="w-full">
+    <div id="service" className="w-full">
       <div className="container min-h-screen mx-auto p-3">
         <h1 className="text-5xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#006CFF] to-[#00224F]">
           What we do?

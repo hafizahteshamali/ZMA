@@ -120,30 +120,31 @@ const Header = () => {
             {NavigationData.map((nav, index) => (
               <li key={index} className="w-full">
                 <div className="flex flex-col gap-2">
-                  <NavLink 
-                    to={nav.path}
-                    onClick={() =>
-                      nav.children
-                        ? setOpenDropdown(
-                            openDropdown === nav.text ? null : nav.text
-                          )
-                        : setIsMenu(false)
-                    }
-                    className={({ isActive }) =>
-                      `flex items-center gap-1 text-[16px] font-[400] cursor-pointer transition-all duration-300
-                      ${
-                        (nav.path === "/" && isActive) || 
-                        (nav.path !== "/" && isActive && location.pathname === nav.path)
-                          ? "text-[var(--text-hover-color)] font-[700] text-xl"
-                          : "text-[var(--text-color)] hover:text-xl hover:font-[700] hover:text-[var(--text-hover-color)]"
-                      }`
-                    }
-                  >
-                    {nav.text}
-                    {nav.children && (
-                      <FiChevronDown className="mt-1 text-[16px]" />
-                    )}
-                  </NavLink>
+<NavLink 
+  to={nav.path}
+  onClick={(e) => {
+    if (nav.children) {
+      e.preventDefault(); // Prevent navigation for parent items with dropdown
+      setOpenDropdown(openDropdown === nav.text ? null : nav.text);
+    } else {
+      setIsMenu(false); // Close menu only when clicking actual links
+    }
+  }}
+  className={({ isActive }) =>
+    `flex items-center gap-1 text-[16px] font-[400] cursor-pointer transition-all duration-300
+    ${
+      (nav.path === "/" && isActive) || 
+      (nav.path !== "/" && isActive && location.pathname === nav.path)
+        ? "text-[var(--text-hover-color)] font-[700] text-xl"
+        : "text-[var(--text-color)] hover:text-xl hover:font-[700] hover:text-[var(--text-hover-color)]"
+    }`
+  }
+>
+  {nav.text}
+  {nav.children && (
+    <FiChevronDown className="mt-1 text-[16px]" />
+  )}
+</NavLink>
                   
                   {/* Toggleable Mobile Dropdown */}
                   {nav.children && openDropdown === nav.text && (

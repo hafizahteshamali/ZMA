@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import { motion, useInView } from "framer-motion";
 import Header from "../../../../navigation/Header";
+import { HashLink } from 'react-router-hash-link';
 
 // Improved AnimatedLetters component that preserves whole words
 const AnimatedLetters = ({ text, className = "" }) => {
@@ -88,14 +89,10 @@ const Banner = ({ AiDevelopBannerData }) => {
             />
 
             <div className="w-full lg:w-[40%] p-2 flex justify-center lg:justify-between items-center flex-wrap gap-4">
-              <NavLink
-                className="relative h-[50px] w-[45%] min-w-[140px] rounded-sm flex justify-center items-center text-[var(--text-color)] transition-all duration-300 border hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#006CFF] hover:to-[#00264B] hover:border border-[#006CFF] gap-2 group"
-                to={link1}
-              >
+              <HashLink smooth to={AiDevelopBannerData.link1} className="relative h-[50px] w-[45%] min-w-[140px] rounded-sm flex justify-center items-center text-[var(--text-color)] transition-all duration-300 border hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#006CFF] hover:to-[#00264B] hover:border border-[#006CFF] gap-2 group">
                 <span>{link1Text}</span>
                 <FiArrowRight className="text-2xl text-[var(--text-color)] group-hover:text-[#006CFF]" />
-              </NavLink>
-
+              </HashLink>
               <NavLink
                 className="relative h-[50px] w-[45%] min-w-[140px] rounded-sm flex justify-center items-center text-[var(--text-color)] transition-all duration-300 border hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#006CFF] hover:to-[#00264B] hover:border border-[#006CFF] gap-2 group"
                 to={link2}

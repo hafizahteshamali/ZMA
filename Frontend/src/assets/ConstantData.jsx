@@ -369,9 +369,9 @@ export const AiDevelopBannerData={
   heading: "ZMA AI studio.",
   subTitle: "We develop custom AI solutions for innovative companies.",
   link1Text: "our services",
-  link1: "/service",
+  link1: "#service",
   link2Text: "contact us",
-  link2: "/",
+  link2: "/contact",
   heading2: "We're ZMA-Solutions. We develop custom Al solutions for innovative companies.",
   btn: "Get in touch"
 }
