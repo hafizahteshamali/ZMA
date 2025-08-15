@@ -265,7 +265,7 @@ export const FooterData = {
         },
         {
           text: "Imprint",
-          url: "/",
+          url: "imprint",
         }
       ],
     },
@@ -274,43 +274,6 @@ export const FooterData = {
 
 
 // Services Page
-
-// ✅ Single source of truth
-export const ServiceBannerData = {
-  heading: "Your Full-Stack Partner for Scalable Web Solutions",
-  buttons: [
-    {
-      text: "Velraa",
-      caseStudyText: "Case Study",
-      slug: "velraa",
-      visitText: "Visit",
-      visitUrl: "https://velraa.com/",
-      img: "/assets/images/service/banner-img1.jpg",
-      video1: "/assets/images/service/mobile-guru1.mp4",
-      video2: "/assets/images/service/mobile-guru2.mp4",
-    },
-    {
-      text: "Mobile Guru",
-      caseStudyText: "Case Study",
-      slug: "mobile-guru",
-      visitText: "Visit",
-      visitUrl: "https://mobileguru.at/",
-      img: "/assets/images/service/mobile-guru.png",
-      video1: "/assets/images/service/mobile-guru1.mp4",
-      video2: "/assets/images/service/mobile-guru2.mp4",
-    },
-    {
-      text: "ElectroTechNik",
-      caseStudyText: "Case Study",
-      slug: "electro-technik",
-      visitText: "Visit",
-      visitUrl: "https://www.s-s-elektro.at/",
-      img: "/assets/images/service/electro-tecknik.jpg",
-      video1: "/assets/images/service/mobile-guru1.mp4",
-      video2: "/assets/images/service/mobile-guru2.mp4",
-    },
-  ],
-};
 
 
 export const clientsName = [
@@ -846,14 +809,22 @@ export const SidebarBlogsData = [
 ]
 
 
-// Case Study Data
-export const ProjectData = [
+// ✅ Single source of truth
+export const ServiceBannerData = {
+  heading: "Your Full-Stack Partner for Scalable Web Solutions",
+  buttons: [
   {
     id: 1,
-    img1Url: "/assets/images/case-study/velra-project.png",
-    img2Url: "/assets/images/service/banner-img1.jpg",
+    text: "Velraa",
+    caseStudyText: "Case Study",
+    slug: "velraa",
+    visitText: "Visit",
+    visitUrl: "https://velraa.com/",
+    img: "/assets/images/service/banner-img1.jpg",
     video1: "/assets/images/service/mobile-guru1.mp4",
     video2: "/assets/images/service/mobile-guru2.mp4",
+    img1Url: "/assets/images/case-study/velra-project.png",
+    img2Url: "/assets/images/service/banner-img1.jpg",
     caseText: "Case Study",
     isCaseStudy: true,
     websiteUrl: "https://velraa.com/",
@@ -871,10 +842,10 @@ export const ProjectData = [
       {
         heading: "DEVELOPMENT",
         taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
-      },
+      }
     ],
     integration: [
-      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", " Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
+      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", "Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
     ],
     keyFeatures: [
       "Responsive, mobile-first design",
@@ -897,19 +868,25 @@ export const ProjectData = [
       "Styling tips & blog section",
       "Secure payments via Stripe, Klarna & PayPal",
       "Performance optimization (Cloudflare CDN, caching)",
-      "Basic security setup (SSL, anti-spam)",
+      "Basic security setup (SSL, anti-spam)"
     ]
   },
   {
     id: 2,
-    img1Url: "/assets/images/case-study/sclera-project.png",
-    img2Url: "/assets/images/service/banner-img1.jpg",
+    text: "Mobile Guru",
+    caseStudyText: "Case Study",
+    slug: "mobile-guru",
+    visitText: "Visit",
+    visitUrl: "https://mobileguru.at/",
+    img: "/assets/images/service/mobile-guru.png",
     video1: "/assets/images/service/mobile-guru1.mp4",
     video2: "/assets/images/service/mobile-guru2.mp4",
+    img1Url: "/assets/images/case-study/velra-project.png",
+    img2Url: "/assets/images/service/banner-img1.jpg",
     caseText: "Case Study",
-    isCaseStudy: false,
+    isCaseStudy: true,
     websiteUrl: "https://velraa.com/",
-    projectName: "Sclera",
+    projectName: "Velraa",
     runningOn: "2024 – Today",
     tech: "Replatforming, UI/UX & E-Commerce",
     phases: ["DESIGN", "CONSULTING", "BUILD"],
@@ -923,10 +900,10 @@ export const ProjectData = [
       {
         heading: "DEVELOPMENT",
         taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
-      },
+      }
     ],
     integration: [
-      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", " Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
+      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", "Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
     ],
     keyFeatures: [
       "Responsive, mobile-first design",
@@ -949,19 +926,25 @@ export const ProjectData = [
       "Styling tips & blog section",
       "Secure payments via Stripe, Klarna & PayPal",
       "Performance optimization (Cloudflare CDN, caching)",
-      "Basic security setup (SSL, anti-spam)",
+      "Basic security setup (SSL, anti-spam)"
     ]
   },
   {
     id: 3,
-    img1Url: "/assets/images/case-study/cabo-verde-project.png",
-    img2Url: "/assets/images/service/banner-img1.jpg",
+    text: "ElectroTechNik",
+    caseStudyText: "Case Study",
+    slug: "electro-technik",
+    visitText: "Visit",
+    visitUrl: "https://www.s-s-elektro.at/",
+    img: "/assets/images/service/electro-tecknik.jpg",
     video1: "/assets/images/service/mobile-guru1.mp4",
     video2: "/assets/images/service/mobile-guru2.mp4",
+    img1Url: "/assets/images/case-study/velra-project.png",
+    img2Url: "/assets/images/service/banner-img1.jpg",
     caseText: "Case Study",
     isCaseStudy: true,
     websiteUrl: "https://velraa.com/",
-    projectName: "Cabo Verde Hair Trade",
+    projectName: "Velraa",
     runningOn: "2024 – Today",
     tech: "Replatforming, UI/UX & E-Commerce",
     phases: ["DESIGN", "CONSULTING", "BUILD"],
@@ -975,10 +958,10 @@ export const ProjectData = [
       {
         heading: "DEVELOPMENT",
         taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
-      },
+      }
     ],
     integration: [
-      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", " Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
+      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", "Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
     ],
     keyFeatures: [
       "Responsive, mobile-first design",
@@ -1001,19 +984,88 @@ export const ProjectData = [
       "Styling tips & blog section",
       "Secure payments via Stripe, Klarna & PayPal",
       "Performance optimization (Cloudflare CDN, caching)",
-      "Basic security setup (SSL, anti-spam)",
+      "Basic security setup (SSL, anti-spam)"
+    ]
+  }
+]
+};
+
+// Case Study Data
+export const ProjectData = [
+  {
+    id: 4,
+    text: "Velraa",
+    caseStudyText: "Case Study",
+    slug: "velraa",
+    visitText: "Visit",
+    visitUrl: "https://velraa.com/",
+    img: "/assets/images/service/banner-img1.jpg",
+    video1: "/assets/images/service/mobile-guru1.mp4",
+    video2: "/assets/images/service/mobile-guru2.mp4",
+    img1Url: "/assets/images/case-study/velra-project.png",
+    img2Url: "/assets/images/service/banner-img1.jpg",
+    caseText: "Case Study",
+    isCaseStudy: true,
+    websiteUrl: "https://velraa.com/",
+    projectName: "Velraa",
+    runningOn: "2024 – Today",
+    tech: "Replatforming, UI/UX & E-Commerce",
+    phases: ["DESIGN", "CONSULTING", "BUILD"],
+    category: "JEWELRY & APPAREL",
+    aboutPara: "At ZMA-Solutions, we partnered with Velraa to elevate their handcrafted jewelry e-commerce experience. We began by crafting a robust design system in Figma—complete with pixel-perfect layouts, “As Seen In” galleries, and dynamic product detail components—then brought it to life in WordPress with a custom Gutenberg theme. Our implementation seamlessly integrates free-shipping thresholds, 14-day returns, newsletter sign-ups, and real-time inventory updates, all while optimizing for performance, SEO, and mobile-first shopping.",
+    services: [
+      {
+        heading: "DESIGN",
+        taggs: ["FIGMA DESIGN SYSTEM", "RESPONSIVE PROTOTYPING", "INTERACTIVE WIREFRAMES", "DESIGN TOKENS", "STYLE GUIDES"]
+      },
+      {
+        heading: "DEVELOPMENT",
+        taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
+      }
+    ],
+    integration: [
+      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", "Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
+    ],
+    keyFeatures: [
+      "Responsive, mobile-first design",
+      "Custom WordPress theme using Gutenberg",
+      "WooCommerce integration",
+      "Product categories with filtering",
+      "As Seen In” gallery module",
+      "Multilingual support via WPML",
+      "SEO optimization using Yoast SEO",
+      "Custom product detail pages",
+      "Gift card product setup",
+      "Newsletter popup with Mailchimp integration",
+      "Newsletter discount automation (10% off)",
+      "Free shipping threshold logic (€35+)",
+      "14-day return policy integration",
+      "Instagram feed widget",
+      "Ring-size & chain-length guides",
+      "WhatsApp support button",
+      "Live chat integration",
+      "Styling tips & blog section",
+      "Secure payments via Stripe, Klarna & PayPal",
+      "Performance optimization (Cloudflare CDN, caching)",
+      "Basic security setup (SSL, anti-spam)"
     ]
   },
   {
-    id: 4,
-    img1Url: "/assets/images/case-study/it-meister-project.png",
-    img2Url: "/assets/images/service/banner-img1.jpg",
+    id: 5,
+    text: "Velraa",
+    caseStudyText: "Case Study",
+    slug: "velraa",
+    visitText: "Visit",
+    visitUrl: "https://velraa.com/",
+    img: "/assets/images/service/banner-img1.jpg",
     video1: "/assets/images/service/mobile-guru1.mp4",
     video2: "/assets/images/service/mobile-guru2.mp4",
+    img1Url: "/assets/images/case-study/sclera-project.png",
+    img2Url: "/assets/images/service/banner-img1.jpg",
     caseText: "Case Study",
-    isCaseStudy: true,
+    isCaseStudy: false,
     websiteUrl: "https://velraa.com/",
-    projectName: "IT Meister",
+    projectName: "Velraa",
     runningOn: "2024 – Today",
     tech: "Replatforming, UI/UX & E-Commerce",
     phases: ["DESIGN", "CONSULTING", "BUILD"],
@@ -1027,10 +1079,10 @@ export const ProjectData = [
       {
         heading: "DEVELOPMENT",
         taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
-      },
+      }
     ],
     integration: [
-      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", " Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
+      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", "Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
     ],
     keyFeatures: [
       "Responsive, mobile-first design",
@@ -1053,7 +1105,123 @@ export const ProjectData = [
       "Styling tips & blog section",
       "Secure payments via Stripe, Klarna & PayPal",
       "Performance optimization (Cloudflare CDN, caching)",
-      "Basic security setup (SSL, anti-spam)",
+      "Basic security setup (SSL, anti-spam)"
+    ]
+  },
+  {
+    id: 6,
+    text: "Velraa",
+    caseStudyText: "Case Study",
+    slug: "velraa",
+    visitText: "Visit",
+    visitUrl: "https://velraa.com/",
+    img: "/assets/images/service/banner-img1.jpg",
+    video1: "/assets/images/service/mobile-guru1.mp4",
+    video2: "/assets/images/service/mobile-guru2.mp4",
+    img1Url: "/assets/images/case-study/cabo-verde-project.png",
+    img2Url: "/assets/images/service/banner-img1.jpg",
+    caseText: "Case Study",
+    isCaseStudy: true,
+    websiteUrl: "https://velraa.com/",
+    projectName: "Velraa",
+    runningOn: "2024 – Today",
+    tech: "Replatforming, UI/UX & E-Commerce",
+    phases: ["DESIGN", "CONSULTING", "BUILD"],
+    category: "JEWELRY & APPAREL",
+    aboutPara: "At ZMA-Solutions, we partnered with Velraa to elevate their handcrafted jewelry e-commerce experience. We began by crafting a robust design system in Figma—complete with pixel-perfect layouts, “As Seen In” galleries, and dynamic product detail components—then brought it to life in WordPress with a custom Gutenberg theme. Our implementation seamlessly integrates free-shipping thresholds, 14-day returns, newsletter sign-ups, and real-time inventory updates, all while optimizing for performance, SEO, and mobile-first shopping.",
+    services: [
+      {
+        heading: "DESIGN",
+        taggs: ["FIGMA DESIGN SYSTEM", "RESPONSIVE PROTOTYPING", "INTERACTIVE WIREFRAMES", "DESIGN TOKENS", "STYLE GUIDES"]
+      },
+      {
+        heading: "DEVELOPMENT",
+        taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
+      }
+    ],
+    integration: [
+      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", "Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
+    ],
+    keyFeatures: [
+      "Responsive, mobile-first design",
+      "Custom WordPress theme using Gutenberg",
+      "WooCommerce integration",
+      "Product categories with filtering",
+      "As Seen In” gallery module",
+      "Multilingual support via WPML",
+      "SEO optimization using Yoast SEO",
+      "Custom product detail pages",
+      "Gift card product setup",
+      "Newsletter popup with Mailchimp integration",
+      "Newsletter discount automation (10% off)",
+      "Free shipping threshold logic (€35+)",
+      "14-day return policy integration",
+      "Instagram feed widget",
+      "Ring-size & chain-length guides",
+      "WhatsApp support button",
+      "Live chat integration",
+      "Styling tips & blog section",
+      "Secure payments via Stripe, Klarna & PayPal",
+      "Performance optimization (Cloudflare CDN, caching)",
+      "Basic security setup (SSL, anti-spam)"
+    ]
+  },
+  {
+    id: 7,
+    text: "Velraa",
+    caseStudyText: "Case Study",
+    slug: "velraa",
+    visitText: "Visit",
+    visitUrl: "https://velraa.com/",
+    img: "/assets/images/service/banner-img1.jpg",
+    video1: "/assets/images/service/mobile-guru1.mp4",
+    video2: "/assets/images/service/mobile-guru2.mp4",
+    img1Url: "/assets/images/case-study/it-meister-project.png",
+    img2Url: "/assets/images/service/banner-img1.jpg",
+    caseText: "Case Study",
+    isCaseStudy: true,
+    websiteUrl: "https://velraa.com/",
+    projectName: "Velraa",
+    runningOn: "2024 – Today",
+    tech: "Replatforming, UI/UX & E-Commerce",
+    phases: ["DESIGN", "CONSULTING", "BUILD"],
+    category: "JEWELRY & APPAREL",
+    aboutPara: "At ZMA-Solutions, we partnered with Velraa to elevate their handcrafted jewelry e-commerce experience. We began by crafting a robust design system in Figma—complete with pixel-perfect layouts, “As Seen In” galleries, and dynamic product detail components—then brought it to life in WordPress with a custom Gutenberg theme. Our implementation seamlessly integrates free-shipping thresholds, 14-day returns, newsletter sign-ups, and real-time inventory updates, all while optimizing for performance, SEO, and mobile-first shopping.",
+    services: [
+      {
+        heading: "DESIGN",
+        taggs: ["FIGMA DESIGN SYSTEM", "RESPONSIVE PROTOTYPING", "INTERACTIVE WIREFRAMES", "DESIGN TOKENS", "STYLE GUIDES"]
+      },
+      {
+        heading: "DEVELOPMENT",
+        taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
+      }
+    ],
+    integration: [
+      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", "Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
+    ],
+    keyFeatures: [
+      "Responsive, mobile-first design",
+      "Custom WordPress theme using Gutenberg",
+      "WooCommerce integration",
+      "Product categories with filtering",
+      "As Seen In” gallery module",
+      "Multilingual support via WPML",
+      "SEO optimization using Yoast SEO",
+      "Custom product detail pages",
+      "Gift card product setup",
+      "Newsletter popup with Mailchimp integration",
+      "Newsletter discount automation (10% off)",
+      "Free shipping threshold logic (€35+)",
+      "14-day return policy integration",
+      "Instagram feed widget",
+      "Ring-size & chain-length guides",
+      "WhatsApp support button",
+      "Live chat integration",
+      "Styling tips & blog section",
+      "Secure payments via Stripe, Klarna & PayPal",
+      "Performance optimization (Cloudflare CDN, caching)",
+      "Basic security setup (SSL, anti-spam)"
     ]
   },
 ]
@@ -1215,3 +1383,9 @@ export const privacySections = [
     borderr: false,
   },
 ];
+
+export const ImPrintsData = {
+  topHeading: "Imprint – Legal Information",
+  description: "This Imprint provides essential legal details about ZMA, including ownership, contact, and business information in compliance with applicable laws. By visiting our website or using our services (web development, AI development, graphic design, and IT services), you acknowledge the information provided below.",
+
+}

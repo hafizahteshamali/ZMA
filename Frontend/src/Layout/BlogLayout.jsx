@@ -1,6 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
 import BlogSidebar from "../components/BlogSidebar";
-import Footer from "../navigation/Footer";
 import Header from "../navigation/Header";
 import { FAQsHeadingData, SidebarBlogsData } from "../assets/ConstantData";
 import FAQs from "../pages/home/elements/FAQs";
@@ -30,7 +29,6 @@ const BlogLayout = () => {
           </>
         )}
       </div>
-      <Footer />
     </div>
   );
 };

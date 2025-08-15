@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { FiChevronDown, FiMenu } from "react-icons/fi";
 import { FaRegWindowClose } from "react-icons/fa";
 import { NavigationData } from "../assets/ConstantData";
@@ -11,6 +11,7 @@ const Header = () => {
   const [isMenu, setIsMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +24,12 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location]);
+
+  // Close mobile menu when location changes
+  useEffect(() => {
+    setIsMenu(false);
+  }, [location]);
 
   return (
     <>
@@ -42,7 +48,7 @@ const Header = () => {
         </NavLink>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex justify-center items-center w-[60%] xl:w-[50%] xl:gap-10 gap-7 bg-[#ffffff54] backdrop-blur-sm rounded-full px-6">
+        <ul className="hidden lg:flex justify-center items-center w-[60%] xl:w-[50%] xl:gap-10 gap-7 bg-[#ffffff54] backdrop-blur-lg rounded-full px-6">
           {NavigationData.map((nav, index) => (
             <li
               key={index}
@@ -51,10 +57,12 @@ const Header = () => {
               <NavLink
                 to={nav.path}
                 className={({ isActive }) =>
-                  `flex items-center gap-1 text-[16px] font-[400] cursor-pointer transition-all duration-300 ease-in-out hover:text-[18px] hover:font-[600] hover:text-[var(--text-hover-color)] ${
-                    isActive
-                      ? "text-[var(--text-hover-color)] font-[600]"
-                      : "text-[var(--text-color)]"
+                  `flex items-center gap-1 text-[16px] font-[400] cursor-pointer transition-all duration-300 ease-in-out bg-transparent 
+                  ${
+                    (nav.path === "/" && isActive) || 
+                    (nav.path !== "/" && isActive && location.pathname === nav.path)
+                      ? "text-[var(--text-hover-color)] font-[700]"
+                      : "text-[var(--text-color)] hover:text-[var(--text-hover-color)] hover:font-[600] hover:text-[18px]"
                   }`
                 }
               >
@@ -68,7 +76,7 @@ const Header = () => {
 
               {/* Dropdown Menu */}
               {nav.children && (
-                <ul className="absolute top-full left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-lg w-[220px] pt-2 pb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20 mt-2">
+                <ul className="absolute top-full left-1/2 transform -translate-x-1/2 bg-white shadow rounded-lg w-[220px] pt-2 pb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20 mt-2">
                   {nav.children.map((child, cIndex) => (
                     <li key={cIndex}>
                       <NavLink
@@ -98,6 +106,7 @@ const Header = () => {
           />
         </div>
       </div>
+
       {/* Mobile Menu Overlay */}
       <div
         className={
@@ -106,13 +115,13 @@ const Header = () => {
             : "h-[100vh] w-[100%] fixed bg-[#f0f6ff] top-0 -right-[100%] bottom-0 z-30 transition-all duration-700 flex flex-col justify-center items-center gap-10"
         }
       >
-                {/* Mobile Navigation */} 
         <div className="w-[70%] mx-auto flex flex-col justify-around items-start gap-5 mt-6">
           <ul className="flex flex-col justify-center items-start gap-6 w-[75%] px-5">
             {NavigationData.map((nav, index) => (
               <li key={index} className="w-full">
                 <div className="flex flex-col gap-2">
-                  <NavLink to={nav.path}
+                  <NavLink 
+                    to={nav.path}
                     onClick={() =>
                       nav.children
                         ? setOpenDropdown(
@@ -120,48 +129,54 @@ const Header = () => {
                           )
                         : setIsMenu(false)
                     }
-                    className="flex items-center gap-1 text-[16px] font-[400] text-[var(--text-color)] cursor-pointer hover:text-xl hover:font-[700] hover:text-[var(--text-hover-color)] transition-all duration-300"
+                    className={({ isActive }) =>
+                      `flex items-center gap-1 text-[16px] font-[400] cursor-pointer transition-all duration-300
+                      ${
+                        (nav.path === "/" && isActive) || 
+                        (nav.path !== "/" && isActive && location.pathname === nav.path)
+                          ? "text-[var(--text-hover-color)] font-[700] text-xl"
+                          : "text-[var(--text-color)] hover:text-xl hover:font-[700] hover:text-[var(--text-hover-color)]"
+                      }`
+                    }
                   >
-                    {nav.text}                   
+                    {nav.text}
                     {nav.children && (
                       <FiChevronDown className="mt-1 text-[16px]" />
                     )}
-                             
                   </NavLink>
-                  {/* Toggleable Mobile Dropdown */}                 
+                  
+                  {/* Toggleable Mobile Dropdown */}
                   {nav.children && openDropdown === nav.text && (
                     <ul className="ml-4 flex flex-col gap-1 mt-1">
-                      {" "}
-                                 
                       {nav.children.map((child, cIndex) => (
                         <li key={cIndex}>
-                          {" "}
-                                           
                           <NavLink
                             to={child.path}
-                            className="text-[14px] text-gray-600 hover:text-[var(--text-hover-color)] transition-all duration-300"
+                            className={({ isActive }) =>
+                              `text-[14px] transition-all duration-300
+                              ${
+                                isActive
+                                  ? "text-[var(--text-hover-color)] font-[500]"
+                                  : "text-gray-600 hover:text-[var(--text-hover-color)]"
+                              }`
+                            }
                             onClick={() => setIsMenu(false)}
                           >
-                            {child.text}                     
+                            {child.text}
                           </NavLink>
-                               
                         </li>
                       ))}
-                                 
                     </ul>
-                  )}{" "}
-                         
-                </div>{" "}
-                     
+                  )}
+                </div>
               </li>
             ))}
           </ul>
-            <FancyButton text="free consultation" />       
+          <FancyButton text="free consultation" />
         </div>
-             
       </div>
-         
     </>
   );
 };
+
 export default Header;

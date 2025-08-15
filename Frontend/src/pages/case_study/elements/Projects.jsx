@@ -4,6 +4,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ProjectData } from "../../../assets/ConstantData";
 import CaseStudyModal from "../../../components/CaseStudyModal";
+import Header from "../../../navigation/Header";
 
 const Projects = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,6 +37,7 @@ const Projects = () => {
 
   return (
     <div className="flex flex-col justify-end items-center">
+      <Header />
       <div className="w-full mt-[150px]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col justify-start items-center gap-5 py-10">

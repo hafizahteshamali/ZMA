@@ -3,6 +3,7 @@
 import { useInView, motion } from "framer-motion"
 import { useRef, useState, useEffect } from "react"
 import { privacySections } from "../../../assets/ConstantData"
+import Header from "../../../navigation/Header" // <- apne project ke header ka path yahan sahi lagao
 
 // Animated heading letters
 const AnimatedLetters = ({ text, className }) => {
@@ -51,7 +52,7 @@ const AnimatedLetters = ({ text, className }) => {
   )
 }
 
-// Privacy section component (always stays open after activation)
+// Privacy section component
 const PrivacySection = ({ title, content, borderr, onViewportEnter }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.5 })
@@ -108,7 +109,7 @@ const Banner = () => {
       privacySections.forEach((_, index) => {
         setTimeout(() => {
           setActivatedSections((prev) => new Set([...prev, index]))
-        }, index * 800) // delay between activations
+        }, index * 800)
       })
     }
   }, [isInView, sequentialActivationStarted])
@@ -119,6 +120,9 @@ const Banner = () => {
 
   return (
     <div className="relative" ref={containerRef}>
+      {/* Header added */}
+      <Header />
+
       {/* Banner Image + Headings */}
       <div className="min-h-[600px] w-full relative overflow-hidden">
         <motion.img
@@ -141,7 +145,7 @@ const Banner = () => {
           />
           <AnimatedLetters
             text="Thank you for choosing ZMA. This Privacy Policy explains how we collect, use, and protect information when you visit our website or use our services (web development, AI development, graphic design, and IT services). By using our site or services, you agree to the practices described below."
-            className="text-[var(--text-color)] mt-5"
+            className="text-[var(--text-color)] mt-5 lg:w-[80%] mx-auto"
           />
         </div>
       </div>
@@ -202,7 +206,7 @@ const Banner = () => {
           </motion.div>
         )}
 
-        {/* Desktop Navigation with Active Bar */}
+        {/* Desktop Navigation */}
         <div className="hidden lg:block lg:w-1/4 lg:pr-8 mb-8 lg:mb-0 sticky top-20 self-start h-[calc(100vh-80px)] overflow-y-auto">
           <motion.div
             className="pl-6"

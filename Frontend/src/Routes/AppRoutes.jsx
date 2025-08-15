@@ -1,6 +1,5 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
-import ScrollToTop from "../components/ScrollToTop"; // ⬅️ yahan import
+import ScrollToTop from "../components/ScrollToTop";
 import Layout from "../Layout/Layout";
 import Home from "../pages/home/Home";
 import AIDevelopment from "../pages/service/AiDevelopment/AIDevelopment";
@@ -15,11 +14,12 @@ import BlogDetail from "../pages/Blog/BlogDetail";
 import CaseStudy from "../pages/case_study/CaseStudy";
 import Contact from "../pages/contact/Contact";
 import Privacy_Policy from "../pages/privacy_policy/Privacy_Policy";
+import ImPrints from "../pages/ImPrints/ImPrints";
 
 const AppRoutes = () => {
   return (
     <>
-      <ScrollToTop /> {/* 👈 Ye har route change par scroll reset karega */}
+      <ScrollToTop />
       <Routes>
         {/* Main Layout Routes */}
         <Route path="/" element={<Layout />}>
@@ -31,14 +31,16 @@ const AppRoutes = () => {
           <Route path="about-us" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="privacy-policy" element={<Privacy_Policy />} />
+          <Route path="imprint" element={<ImPrints />} />
           <Route path="case-study" element={<CaseStudy />} />
-          <Route path="*" element={<Error />} />
-        </Route>
 
-        {/* Blog Routes */}
-        <Route path="/blog" element={<BlogLayout />}>
-          <Route index element={<Blog />} />
-          <Route path=":slug" element={<BlogDetail />} />
+          {/* Blog Routes - nested under Layout */}
+          <Route path="blog" element={<BlogLayout />}>
+            <Route index element={<Blog />} />
+            <Route path=":slug" element={<BlogDetail />} />
+          </Route>
+
+          <Route path="*" element={<Error />} />
         </Route>
       </Routes>
     </>

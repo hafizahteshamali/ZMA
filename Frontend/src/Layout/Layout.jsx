@@ -13,7 +13,10 @@ const Layout = () => {
       location.pathname === "/" ||
       location.pathname === "/service/web-development" ||
       location.pathname === "/service/ai-development" ||
-      location.pathname === "/contact" ||
+      location.pathname === "/about-us" ||
+      location.pathname === "/case-study" ||
+      location.pathname === "/blog" ||
+      location.pathname === "privacy-policy" ||
       location.pathname === "privacy-policy"
     ) {
       setIsHeader(true);
