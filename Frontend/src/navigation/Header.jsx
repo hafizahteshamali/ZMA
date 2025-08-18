@@ -78,15 +78,23 @@ const Header = () => {
               {nav.children && (
                 <ul className="absolute top-full left-1/2 transform -translate-x-1/2 bg-white shadow rounded-lg w-[220px] pt-2 pb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-20 mt-2">
                   {nav.children.map((child, cIndex) => (
-                    <li key={cIndex}>
-                      <NavLink
-                        to={child.path}
-                        className="block px-6 py-3 whitespace-nowrap text-gray-700 hover:bg-gray-50 hover:text-[var(--text-hover-color)] text-[14px] transition-all duration-200 ease-in-out hover:font-[500]"
-                      >
-                        {child.text}
-                      </NavLink>
-                    </li>
-                  ))}
+                        <li key={cIndex}>
+                          <NavLink
+                            to={child.path}
+                            className={({ isActive }) =>
+                              `block px-6 py-3 whitespace-nowrap text-gray-700 hover:bg-gray-50 hover:text-[var(--text-hover-color)] text-[14px] transition-all duration-200 ease-in-out hover:font-[500]
+                              ${
+                                isActive
+                                  ? "!text-[var(--text-hover-color)] font-[500]"
+                                  : "text-gray-700 hover:text-[var(--text-hover-color)]"
+                              }`
+                            }
+                            onClick={() => setIsMenu(false)}
+                          >
+                            {child.text}
+                          </NavLink>
+                        </li>
+                      ))}
                 </ul>
               )}
             </li>
