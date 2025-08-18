@@ -32,7 +32,7 @@ export const NavigationData = [
     path: "/about-us",
   },
   {
-    text: "Case Studies",
+    text: "Case Studie",
     path: "/case-study",
   },
   {
