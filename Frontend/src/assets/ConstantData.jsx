@@ -377,40 +377,6 @@ export const AiDevelopBannerData={
 }
 
 
-// export const WhatWeDo1 = {
-//   lgHeading: "What we do?",
-//   servicesCards: [
-//     {
-//       imge: "/assets/images/ai-development/service-card1.png",
-//       smHeading: "Chatbot Development",
-//       para: "We develop intelligent chatbots that leverage advanced NLP to elevate customer interactions and streamline your business processes."
-//     },
-//     {
-//       imge: "/assets/images/ai-development/service-card2.png",
-//       smHeading: "Content Creation",
-//       para: "Our content creation solutions effortlessly generate high-quality, engaging content according to your brand's guidelines to captivate your audience."
-//     },
-//     {
-//       imge: "/assets/images/ai-development/service-card1.png",
-//       smHeading: "Chatbot Development",
-//       para: "We develop intelligent chatbots that leverage advanced NLP to elevate customer interactions and streamline your business processes."
-//     },
-//     {
-//       imge: "/assets/images/ai-development/service-card1.png",
-//       smHeading: "Chatbot Development",
-//       para: "We develop intelligent chatbots that leverage advanced NLP to elevate customer interactions and streamline your business processes."
-//     },
-//     {
-//       imge: "/assets/images/ai-development/service-card1.png",
-//       smHeading: "Chatbot Development",
-//       para: "We develop intelligent chatbots that leverage advanced NLP to elevate customer interactions and streamline your business processes."
-//     },
-//   ]
-// }
-
-
-// Graphic Designing Page
-
 export const GraphicBannerData = {
   smText: "Creative",
   icon: "/assets/images/graphic-designing/start.svg",
