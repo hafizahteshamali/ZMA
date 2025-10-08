@@ -966,7 +966,7 @@ export const ProjectData = [
     visitText: "Visit",
     visitUrl: "https://velraa.com/",
     img: "/assets/images/service/banner-img1.jpg",
-    video1: "/assets/images/service/mobile-guru1.mp4",
+    video1: "/assets/images/case-study/Velraa-video.mp4",
     video2: "/assets/images/service/mobile-guru2.mp4",
     img1Url: "/assets/images/case-study/velra-project.png",
     img2Url: "/assets/images/service/banner-img1.jpg",
@@ -1018,11 +1018,11 @@ export const ProjectData = [
   },
   {
     id: 5,
-    text: "Velraa",
+    text: "Sclera",
     caseStudyText: "Case Study",
-    slug: "velraa",
+    slug: "sclera",
     visitText: "Visit",
-    visitUrl: "https://velraa.com/",
+    visitUrl: "https://www.sclera.at/",
     img: "/assets/images/service/banner-img1.jpg",
     video1: "/assets/images/service/mobile-guru1.mp4",
     video2: "/assets/images/service/mobile-guru2.mp4",
@@ -1031,56 +1031,32 @@ export const ProjectData = [
     caseText: "Case Study",
     isCaseStudy: false,
     websiteUrl: "https://velraa.com/",
-    projectName: "Velraa",
+    projectName:  "Sclera",
     runningOn: "2024 – Today",
-    tech: "Replatforming, UI/UX & E-Commerce",
+    tech: "UI/UX Design, E-Commerce Development",
     phases: ["DESIGN", "CONSULTING", "BUILD"],
-    category: "JEWELRY & APPAREL",
-    aboutPara: "At ZMA-Solutions, we partnered with Velraa to elevate their handcrafted jewelry e-commerce experience. We began by crafting a robust design system in Figma—complete with pixel-perfect layouts, “As Seen In” galleries, and dynamic product detail components—then brought it to life in WordPress with a custom Gutenberg theme. Our implementation seamlessly integrates free-shipping thresholds, 14-day returns, newsletter sign-ups, and real-time inventory updates, all while optimizing for performance, SEO, and mobile-first shopping.",
+    category: ["EYEWEAR", "COSMETICS", "EYECARE"],
+    aboutPara: "We designed and developed the Sclera e-commerce platform for premium colored, scleral, and Halloween contact lenses. Our work involved creating a vibrant UI/UX and optimizing the site for responsive shopping.  Key deliverables include integration of a Virtual Mirror try-on tool for instant previews, secure checkout via PayPal and credit cards, and multilingual multi-currency support (USD, EUR, GBP) on the Simplia e-shop platform hosted in AWS cloud. The result is a seamless, mobile-friendly shopping experience that highlights Sclera’s extensive product range.",
     services: [
       {
         heading: "DESIGN",
-        taggs: ["FIGMA DESIGN SYSTEM", "RESPONSIVE PROTOTYPING", "INTERACTIVE WIREFRAMES", "DESIGN TOKENS", "STYLE GUIDES"]
+        taggs: ["E-Commerce Implementation", "Payment Integration", "Virtual Try-On Feature", "SEO & Performance"]
       },
       {
         heading: "DEVELOPMENT",
         taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
       }
     ],
-    integration: [
-      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", "Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
-    ],
-    keyFeatures: [
-      "Responsive, mobile-first design",
-      "Custom WordPress theme using Gutenberg",
-      "WooCommerce integration",
-      "Product categories with filtering",
-      "As Seen In” gallery module",
-      "Multilingual support via WPML",
-      "SEO optimization using Yoast SEO",
-      "Custom product detail pages",
-      "Gift card product setup",
-      "Newsletter popup with Mailchimp integration",
-      "Newsletter discount automation (10% off)",
-      "Free shipping threshold logic (€35+)",
-      "14-day return policy integration",
-      "Instagram feed widget",
-      "Ring-size & chain-length guides",
-      "WhatsApp support button",
-      "Live chat integration",
-      "Styling tips & blog section",
-      "Secure payments via Stripe, Klarna & PayPal",
-      "Performance optimization (Cloudflare CDN, caching)",
-      "Basic security setup (SSL, anti-spam)"
-    ]
+    integration: ["PayPal", "Credit Card (Stripe)", "FedEx", "USPS", "AWS Cloud", "Virtual Mirror Tool"],
+    keyFeatures: ["Responsive Design", "Virtual Mirror Try-On Tool", "Secure HTTPS Checkout", "Multicurrency (USD/EUR/GBP) Support", "FedEx/USPS Shipping Options", "Social Media Integration (Facebook/Instagram/TikTok)"],
   },
   {
     id: 6,
-    text: "Velraa",
+    text: "Sclera KI Cybersolutions",
     caseStudyText: "Case Study",
-    slug: "velraa",
+    slug: "sclera-ki-cybersolutions",
     visitText: "Visit",
-    visitUrl: "https://velraa.com/",
+    visitUrl: "https://www.sclera-ki-cybersolutions.com/",
     img: "/assets/images/service/banner-img1.jpg",
     video1: "/assets/images/service/mobile-guru1.mp4",
     video2: "/assets/images/service/mobile-guru2.mp4",
@@ -1088,49 +1064,51 @@ export const ProjectData = [
     img2Url: "/assets/images/service/banner-img1.jpg",
     caseText: "Case Study",
     isCaseStudy: true,
-    websiteUrl: "https://velraa.com/",
-    projectName: "Velraa",
+    websiteUrl: "https://www.sclera-ki-cybersolutions.com/",
+    projectName: "Sclera KI Cybersolutions",
     runningOn: "2024 – Today",
-    tech: "Replatforming, UI/UX & E-Commerce",
+    tech: "AI-driven Cybersecurity Platform, UI/UX Design & Web Development",
     phases: ["DESIGN", "CONSULTING", "BUILD"],
-    category: "JEWELRY & APPAREL",
-    aboutPara: "At ZMA-Solutions, we partnered with Velraa to elevate their handcrafted jewelry e-commerce experience. We began by crafting a robust design system in Figma—complete with pixel-perfect layouts, “As Seen In” galleries, and dynamic product detail components—then brought it to life in WordPress with a custom Gutenberg theme. Our implementation seamlessly integrates free-shipping thresholds, 14-day returns, newsletter sign-ups, and real-time inventory updates, all while optimizing for performance, SEO, and mobile-first shopping.",
+    category: [
+      "AI Solutions",
+      "Cybersecurity",
+      "Training"
+    ],
+    aboutPara:  "Sclera-KI Cybersolutions operates at the intersection of artificial intelligence and cybersecurity. We developed a robust website highlighting Sclera’s core services \u2013 AI-driven automation and analytics, proactive penetration testing, and specialized AI training courses \u2013 all presented in a modern, GDPR-compliant UI that reflects the company’s ethos of Praktische KI, Reale Sicherheit (Practical AI, Real Security). The result is a scalable, content-rich portal that positions Sclera as a technological leader in industry resilience and security.",
     services: [
       {
         heading: "DESIGN",
-        taggs: ["FIGMA DESIGN SYSTEM", "RESPONSIVE PROTOTYPING", "INTERACTIVE WIREFRAMES", "DESIGN TOKENS", "STYLE GUIDES"]
+        taggs: [
+          "Custom UI/UX and visual design for a clean, modern interface",
+          "Responsive layout optimized for desktop and mobile",
+          "Interactive graphics and dynamic content integration"
+        ],
       },
       {
         heading: "DEVELOPMENT",
-        taggs: ["WORDPRESS THEME DEVELOPMENT", "GUTENBERG BLOCK CREATION", "WOOCOMMERCE SETUP", "ACF IMPLEMENTATION", "CUSTOM PLUGIN DEVELOPMENT", "PERFORMANCE OPTIMIZATION", "SEO CONFIGURATION", "CDN & CACHING", "CI/CD DEPLOYMENT", "QA & CROSS-BROWSER TESTING"]
+        taggs: [
+          "WordPress development (Elementor-powered) for flexible content management",
+          "Integration of AI solutions and cybersecurity content modules",
+          "Course enrollment and custom contact form functionality",
+          "Implementation of analytics and multi-language support"
+        ]
       }
     ],
     integration: [
-      "Google Analytics", "Google Tag Manager", "Mailchimp Newsletter", "WooCommerce", "Stripe & Klarna Payments", "LiveChat & WhatsApp Support", "Instagram Feed Widget", "Yoast SEO", "WPML Multilingual", "Cloudflare CDN", "GitHub Actions CI/CD", "Sentry Error Monitoring", "ACF REST API", "Newsletter Popup (OptinMonster)", "SMTP (SendGrid)", "Webhooks for Order Notifications"
+      "Hosting and support by ITX-Solution",
+      "WordPress CMS platform",
+      "Custom contact and enrollment forms",
+      "Google Analytics integration"
     ],
     keyFeatures: [
-      "Responsive, mobile-first design",
-      "Custom WordPress theme using Gutenberg",
-      "WooCommerce integration",
-      "Product categories with filtering",
-      "As Seen In” gallery module",
-      "Multilingual support via WPML",
-      "SEO optimization using Yoast SEO",
-      "Custom product detail pages",
-      "Gift card product setup",
-      "Newsletter popup with Mailchimp integration",
-      "Newsletter discount automation (10% off)",
-      "Free shipping threshold logic (€35+)",
-      "14-day return policy integration",
-      "Instagram feed widget",
-      "Ring-size & chain-length guides",
-      "WhatsApp support button",
-      "Live chat integration",
-      "Styling tips & blog section",
-      "Secure payments via Stripe, Klarna & PayPal",
-      "Performance optimization (Cloudflare CDN, caching)",
-      "Basic security setup (SSL, anti-spam)"
-    ]
+      "AI-driven automation and analytics solutions",
+      "Comprehensive penetration testing services",
+      "Industry-focused AI training courses",
+      "AI-powered contract analysis for law firms",
+      "AI-enabled behavioral analytics camera systems",
+      "Online AI courses (retail and automation)",
+      "Responsive, multi-language UI/UX with GDPR compliance"
+    ],
   },
   {
     id: 7,

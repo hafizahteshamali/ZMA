@@ -145,7 +145,7 @@ const Section1 = ({ scrollYProgress, BannerData }) => {
           </p>
           <NormalButton
             text={btnText}
-            className="h-[45px] sm:h-[50px] md:h-[55px] font-semibold w-full lg:w-[50%] bg-[#d5d5f1] shadow-2xl rounded-full text-[var(--text-hover-color)] text-lg sm:text-xl"
+            className="h-[45px] sm:h-[50px] md:h-[45px] font-semibold w-full lg:w-[45%] bg-[#d5d5f1] shadow-2xl rounded-full text-[var(--text-hover-color)] text-lg"
           />
         </div>
 
